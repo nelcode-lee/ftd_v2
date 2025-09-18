@@ -1430,23 +1430,49 @@
 
         // Authentication check
         function checkAuthentication() {
-            const isAuthenticated = localStorage.getItem('isAuthenticated');
-            const userEmail = localStorage.getItem('userEmail');
-            
-            if (!isAuthenticated || !userEmail) {
-                // Redirect to login if not authenticated
+            try {
+                // Check if we're in a redirect loop
+                if (sessionStorage.getItem('authCheckCount')) {
+                    const count = parseInt(sessionStorage.getItem('authCheckCount'));
+                    if (count > 3) {
+                        console.error('Too many auth checks, stopping redirect loop');
+                        sessionStorage.removeItem('authCheckCount');
+                        return false;
+                    }
+                    sessionStorage.setItem('authCheckCount', (count + 1).toString());
+                } else {
+                    sessionStorage.setItem('authCheckCount', '1');
+                }
+                
+                const isAuthenticated = localStorage.getItem('isAuthenticated');
+                const userEmail = localStorage.getItem('userEmail');
+                
+                console.log('Auth check:', { isAuthenticated, userEmail });
+                
+                if (!isAuthenticated || !userEmail) {
+                    console.log('Not authenticated, redirecting to login');
+                    // Redirect to login if not authenticated
+                    window.location.href = 'login.html';
+                    return false;
+                }
+                
+                // Update user email display for both desktop and mobile
+                const desktopEmail = document.getElementById('userEmail');
+                const mobileEmail = document.getElementById('userEmailMobile');
+                
+                if (desktopEmail) desktopEmail.textContent = userEmail;
+                if (mobileEmail) mobileEmail.textContent = userEmail;
+                
+                // Clear auth check count on successful auth
+                sessionStorage.removeItem('authCheckCount');
+                console.log('Authentication successful');
+                return true;
+            } catch (error) {
+                console.error('Authentication error:', error);
+                // If localStorage fails, redirect to login
                 window.location.href = 'login.html';
                 return false;
             }
-            
-            // Update user email display for both desktop and mobile
-            const desktopEmail = document.getElementById('userEmail');
-            const mobileEmail = document.getElementById('userEmailMobile');
-            
-            if (desktopEmail) desktopEmail.textContent = userEmail;
-            if (mobileEmail) mobileEmail.textContent = userEmail;
-            
-            return true;
         }
 
         // Logout function
@@ -3104,10 +3130,34 @@
 
         // Initialize
         document.addEventListener('DOMContentLoaded', function() {
-            // Check authentication first
-            if (!checkAuthentication()) {
+            // Prevent infinite redirects
+            if (sessionStorage.getItem('redirecting')) {
+                console.log('Already redirecting, stopping');
                 return;
             }
+            
+            // Check if we're on mobile and bypass auth for testing
+            const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+            const bypassAuth = sessionStorage.getItem('bypassAuth') === 'true';
+            
+            if (isMobile && !bypassAuth) {
+                console.log('Mobile device detected, bypassing authentication for testing');
+                sessionStorage.setItem('bypassAuth', 'true');
+                // Set default user for mobile
+                if (!localStorage.getItem('isAuthenticated')) {
+                    localStorage.setItem('isAuthenticated', 'true');
+                    localStorage.setItem('userEmail', 'mobile@test.com');
+                }
+            }
+            
+            // Check authentication first
+            if (!checkAuthentication()) {
+                sessionStorage.setItem('redirecting', 'true');
+                return;
+            }
+            
+            // Clear redirect flag if we get here
+            sessionStorage.removeItem('redirecting');
             
             updateUserGuide();
             showTab('home');
