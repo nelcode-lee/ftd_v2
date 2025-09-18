@@ -1287,7 +1287,7 @@
         // Module functions
         function startModule(moduleId) {
             progress.moduleStatus[moduleId] = 'in-progress';
-            updateUser Guide();
+            updateUserGuide();
             alert(`Starting Module ${moduleId}. This would open the module content.`);
         }
 
@@ -2537,7 +2537,7 @@
 
 
         // User Guide tracking
-        function updateUser Guide() {
+        function updateUserGuide() {
             const completed = Object.values(progress.moduleStatus).filter(status => status === 'completed').length;
             const total = Object.keys(progress.moduleStatus).length;
             const percentage = Math.round((completed / total) * 100);
