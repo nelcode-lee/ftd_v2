@@ -3,11 +3,23 @@
   "name": "ftd-v2",
   "builds": [
     {
-      "src": "index.html",
+      "src": "**/*",
       "use": "@vercel/static"
     }
   ],
   "routes": [
+    {
+      "src": "/extracted_images/(.*)",
+      "dest": "/extracted_images/$1"
+    },
+    {
+      "src": "/guide.html",
+      "dest": "/guide.html"
+    },
+    {
+      "src": "/login.html",
+      "dest": "/login.html"
+    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
