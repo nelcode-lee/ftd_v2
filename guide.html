@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Use This Guide - FTD Digital Workbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#F9FAFB',
+                            100: '#E0F2F7',
+                            200: '#E5E7EB',
+                            600: '#6B7280',
+                            700: '#4B5563',
+                            800: '#1E40AF',
+                            900: '#004D40',
+                        },
+                        primary: {
+                            50: '#E0F2F7',
+                            100: '#D1FAE5',
+                            500: '#1D4ED8',
+                            600: '#059669',
+                            700: '#1D4ED8',
+                            800: '#1E40AF',
+                            900: '#004D40',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #004D40 0%, #1E40AF 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        .section-icon {
+            width: 60px;
+            height: 60px;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            margin-bottom: 16px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <header class="gradient-bg text-white shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <button onclick="goBack()" class="mr-4 p-2 rounded-lg hover:bg-white hover:bg-opacity-20 transition-colors">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                        </svg>
+                    </button>
+                    <h1 class="text-xl font-bold">How to Use This Guide</h1>
+                </div>
+                <div class="text-sm opacity-90">
+                    FTD Digital Workbook v4
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <!-- Introduction -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <div class="text-center mb-8">
+                <div class="section-icon bg-blue-100 text-blue-600 mx-auto">
+                    📚
+                </div>
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Welcome to Your FTD Digital Workbook</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    This interactive guide will help you master Forward Tipping Dumper operations through 
+                    multimedia content, interactive exercises, and comprehensive assessments.
+                </p>
+            </div>
+        </div>
+
+        <!-- Features Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
+            <!-- QR Codes -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                <div class="section-icon bg-green-100 text-green-600">
+                    📱
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">QR Code Learning</h3>
+                <p class="text-gray-600 mb-4">
+                    Scan QR codes with your smartphone to access videos, reading materials, and additional resources.
+                </p>
+                <ul class="text-sm text-gray-500 space-y-1">
+                    <li>• Instant access to video content</li>
+                    <li>• Supplementary reading materials</li>
+                    <li>• Mobile-friendly learning</li>
+                </ul>
+            </div>
+
+            <!-- Notepads -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                <div class="section-icon bg-yellow-100 text-yellow-600">
+                    📝
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Digital Notepads</h3>
+                <p class="text-gray-600 mb-4">
+                    Take notes directly in the workbook to reinforce your learning and track important information.
+                </p>
+                <ul class="text-sm text-gray-500 space-y-1">
+                    <li>• Personal note-taking</li>
+                    <li>• Key points highlighting</li>
+                    <li>• Progress tracking</li>
+                </ul>
+            </div>
+
+            <!-- OperateSAFE -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                <div class="section-icon bg-red-100 text-red-600">
+                    🛡️
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">OperateSAFE Stops</h3>
+                <p class="text-gray-600 mb-4">
+                    Safety reminders throughout the course to reinforce Flannery's Health & Safety campaign.
+                </p>
+                <ul class="text-sm text-gray-500 space-y-1">
+                    <li>• Critical safety reminders</li>
+                    <li>• Company-wide safety focus</li>
+                    <li>• Best practice reinforcement</li>
+                </ul>
+            </div>
+
+            <!-- Knowledge Stops -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                <div class="section-icon bg-purple-100 text-purple-600">
+                    🧠
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Knowledge Stops</h3>
+                <p class="text-gray-600 mb-4">
+                    Interactive questions and assessments to test your understanding and reinforce learning.
+                </p>
+                <ul class="text-sm text-gray-500 space-y-1">
+                    <li>• Interactive assessments</li>
+                    <li>• Knowledge reinforcement</li>
+                    <li>• Progress validation</li>
+                </ul>
+            </div>
+
+            <!-- Literacy & Numeracy -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                <div class="section-icon bg-indigo-100 text-indigo-600">
+                    🔢
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Literacy & Numeracy</h3>
+                <p class="text-gray-600 mb-4">
+                    Embedded English, Mathematics, and ICT skills essential for plant operation.
+                </p>
+                <ul class="text-sm text-gray-500 space-y-1">
+                    <li>• Manual reading skills</li>
+                    <li>• Calculation abilities</li>
+                    <li>• Digital screen literacy</li>
+                </ul>
+            </div>
+
+            <!-- Course Objectives -->
+            <div class="bg-white rounded-2xl shadow-lg p-6 card-hover">
+                <div class="section-icon bg-teal-100 text-teal-600">
+                    🎯
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">Course Objectives</h3>
+                <p class="text-gray-600 mb-4">
+                    Clear learning outcomes aligned with National Occupational Standards.
+                </p>
+                <ul class="text-sm text-gray-500 space-y-1">
+                    <li>• Legislation understanding</li>
+                    <li>• Hazard identification</li>
+                    <li>• Safe operation skills</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Course Structure -->
+        <div class="bg-white rounded-2xl shadow-lg p-8 mb-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Course Structure</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">📖 Learning Modules</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">1</span>
+                            <span class="text-gray-700">Introduction & Safe Working Practices</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">2</span>
+                            <span class="text-gray-700">Health & Safety Legislation</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">3</span>
+                            <span class="text-gray-700">Operator Roles & Machine Components</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">4</span>
+                            <span class="text-gray-700">Machine Operation</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">5</span>
+                            <span class="text-gray-700">Material Handling</span>
+                        </div>
+                        <div class="flex items-center p-3 bg-blue-50 rounded-lg">
+                            <span class="w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold mr-3">6</span>
+                            <span class="text-gray-700">Transportation & Assessment</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="text-lg font-semibold text-gray-800 mb-3">🔧 Key Skills You'll Learn</h4>
+                    <div class="space-y-2">
+                        <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span class="text-gray-700">Understanding relevant legislation and regulations</span>
+                        </div>
+                        <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span class="text-gray-700">Identifying machine components and safety features</span>
+                        </div>
+                        <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span class="text-gray-700">Performing pre-operational checks</span>
+                        </div>
+                        <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span class="text-gray-700">Safe maneuvering and operation techniques</span>
+                        </div>
+                        <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span class="text-gray-700">Loading and discharging procedures</span>
+                        </div>
+                        <div class="flex items-start p-3 bg-green-50 rounded-lg">
+                            <span class="text-green-500 mr-3 mt-1">✓</span>
+                            <span class="text-gray-700">Environmental considerations</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-2xl shadow-lg p-8 text-white">
+            <div class="text-center">
+                <h3 class="text-2xl font-bold mb-4">Ready to Get Started?</h3>
+                <p class="text-lg mb-6 opacity-90">
+                    Begin your Forward Tipping Dumper training journey with our comprehensive digital workbook.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="goToWorkbook()" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+                        Start Learning
+                    </button>
+                    <button onclick="goToTests()" class="bg-transparent border-2 border-white text-white px-8 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-600 transition-colors">
+                        Take Assessment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        function goBack() {
+            window.location.href = 'index.html';
+        }
+
+        function goToWorkbook() {
+            window.location.href = 'index.html';
+        }
+
+        function goToTests() {
+            window.location.href = 'index.html#tests';
+        }
+    </script>
+</body>
+</html>
