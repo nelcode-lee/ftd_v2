@@ -1,0 +1,42 @@
+{
+  "openai": {
+    "model": "gpt-4",
+    "temperature": 0.7,
+    "max_tokens": 2000,
+    "api_key_required": true,
+    "fallback_to_basic": true
+  },
+  "test_generation": {
+    "questions_per_module": 5,
+    "mix_question_types": true,
+    "focus_areas": [
+      "safety_procedures",
+      "operational_skills", 
+      "legislation_compliance",
+      "environmental_awareness",
+      "equipment_handling"
+    ],
+    "difficulty_levels": ["easy", "medium", "hard"],
+    "pass_rate": 80
+  },
+  "marking_criteria": {
+    "open_ended_weight": 1.0,
+    "multiple_choice_weight": 1.0,
+    "safety_keywords_bonus": 0.1,
+    "technical_terminology_bonus": 0.1,
+    "minimum_answer_length": 10
+  },
+  "feedback": {
+    "detailed_explanations": true,
+    "strengths_highlighting": true,
+    "improvement_suggestions": true,
+    "safety_focus": true,
+    "encouraging_tone": true
+  },
+  "ui_enhancements": {
+    "ai_powered_badge": true,
+    "real_time_feedback": false,
+    "progress_analytics": true,
+    "personalized_recommendations": true
+  }
+}
