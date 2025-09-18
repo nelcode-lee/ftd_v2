@@ -1,0 +1,1874 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forward Tipping Dumper - Digital Workbook</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Brand colors from Operator Skills Hub
+                        brand: {
+                            50: '#F9FAFB',    // Light gray background
+                            100: '#E0F2F7',   // Light blue (active tabs)
+                            200: '#E5E7EB',   // Light gray borders
+                            600: '#6B7280',   // Gray text
+                            700: '#4B5563',   // Dark gray text
+                            800: '#1E40AF',   // Dark blue
+                            900: '#004D40',   // Dark teal branding
+                        },
+                        primary: {
+                            50: '#E0F2F7',    // Light blue
+                            100: '#D1FAE5',   // Light green
+                            500: '#1D4ED8',   // Main blue
+                            600: '#059669',   // Green
+                            700: '#1D4ED8',   // Blue
+                            800: '#1E40AF',   // Dark blue
+                            900: '#004D40',   // Dark teal
+                        },
+                        success: {
+                            50: '#D1FAE5',    // Light green
+                            100: '#D1FAE5',   // Light green
+                            500: '#10b981',   // Green
+                            600: '#059669',   // Green
+                        },
+                        warning: {
+                            50: '#FFF7ED',    // Light orange
+                            100: '#FFF7ED',   // Light orange
+                            500: '#F59E0B',   // Amber
+                            600: '#D97706',   // Orange
+                        },
+                        danger: {
+                            50: '#FEF2F2',    // Light red
+                            100: '#FEF2F2',   // Light red
+                            500: '#ef4444',   // Red
+                            600: '#DC2626',   // Red
+                        },
+                        purple: {
+                            500: '#8B5CF6',   // Purple for completion rate
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .btn { @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2; }
+        .btn-primary { @apply bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500; }
+        .btn-secondary { @apply bg-white text-primary-600 border border-primary-600 hover:bg-primary-50 focus:ring-primary-500; }
+        .card { @apply bg-white rounded-xl shadow-sm border border-gray-200 p-6; }
+        .safety-card { @apply bg-danger-50 border-l-4 border-danger-600 p-4 rounded-lg; }
+        .progress-bar { @apply w-full bg-gray-200 rounded-full h-2 overflow-hidden; }
+        .progress-fill { @apply h-full bg-primary-600 transition-all duration-300 ease-out; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <div class="min-h-screen">
+        <!-- Branding Bar -->
+        <div class="bg-brand-900 text-white">
+            <div class="px-4 py-6">
+                <!-- Desktop Layout -->
+                <div class="hidden md:flex items-center justify-between">
+                    <div class="flex items-center space-x-4">
+                        <svg class="w-10 h-10 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <div>
+                            <h1 class="text-xl font-bold">Operator Skills Hub</h1>
+                            <p class="text-sm text-white/80">Professional Training Platform</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right min-w-0 flex-1">
+                            <p class="text-sm font-medium text-white truncate max-w-xs" id="userEmail">student@example.com</p>
+                            <p class="text-xs text-white/70">Student Portal</p>
+                        </div>
+                        <button onclick="logout()" class="px-5 py-3 bg-white/10 text-white border border-white/20 rounded-lg text-sm font-medium hover:bg-white/20 transition-colors flex-shrink-0">
+                            Logout
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Mobile Layout -->
+                <div class="md:hidden space-y-4">
+                    <!-- Top Row: Logo and Brand -->
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-8 h-8 text-white flex-shrink-0" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+                        </svg>
+                        <div class="min-w-0 flex-1">
+                            <h1 class="text-lg font-bold truncate">Operator Skills Hub</h1>
+                            <p class="text-xs text-white/80">Professional Training Platform</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Bottom Row: User Info and Logout -->
+                    <div class="flex items-center justify-between">
+                        <div class="min-w-0 flex-1 mr-3">
+                            <p class="text-sm font-medium text-white truncate" id="userEmailMobile">student@example.com</p>
+                            <p class="text-xs text-white/70">Student Portal</p>
+                        </div>
+                        <button onclick="logout()" class="px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg text-sm font-medium hover:bg-white/20 transition-colors flex-shrink-0">
+                            Logout
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Header -->
+        <header class="bg-white border-b border-brand-200">
+            <div class="px-4 py-6">
+                <div class="text-center">
+                    <h1 class="text-2xl font-bold text-brand-900 mb-1">Forward Tipping Dumper</h1>
+                    <p class="text-sm text-brand-700">Skills Bootcamp - Interactive Training Modules</p>
+                    <div class="mt-2">
+                        <span class="inline-block px-3 py-1 bg-primary-100 text-primary-800 text-xs font-medium rounded-full">
+                            A09 CPCS Training Standard
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Mobile Navigation -->
+        <nav class="bg-white shadow-sm border-b border-brand-200 sticky top-0 z-50">
+            <div class="px-4 py-3">
+                <!-- Mobile Tab Navigation -->
+                <div class="grid grid-cols-4 gap-1">
+                    <button onclick="showTab('home')" id="home-tab" class="flex flex-col items-center space-y-1 py-3 px-2 rounded-lg font-medium text-xs bg-brand-100 text-primary-700">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                        </svg>
+                        <span>Home</span>
+                    </button>
+                    <button onclick="showTab('modules')" id="modules-tab" class="flex flex-col items-center space-y-1 py-3 px-2 rounded-lg font-medium text-xs text-brand-600 hover:text-brand-700 hover:bg-brand-50">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <span>Modules</span>
+                    </button>
+                    <button onclick="showTab('quizzes')" id="quizzes-tab" class="flex flex-col items-center space-y-1 py-3 px-2 rounded-lg font-medium text-xs text-brand-600 hover:text-brand-700 hover:bg-brand-50">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>Tests</span>
+                    </button>
+                    <button onclick="showTab('glossary')" id="glossary-tab" class="flex flex-col items-center space-y-1 py-3 px-2 rounded-lg font-medium text-xs text-brand-600 hover:text-brand-700 hover:bg-brand-50">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                        <span>Progress</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Main Content -->
+        <main class="bg-brand-50 min-h-screen pb-20">
+            <div class="px-4 py-6">
+            <!-- Home Tab -->
+            <div id="home-content" class="space-y-8">
+                <!-- Safety Reminder -->
+                <div class="safety-card">
+                    <div class="flex items-center space-x-3">
+                        <svg class="w-6 h-6 text-danger-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                        </svg>
+                        <h3 class="text-lg font-semibold text-danger-800">OperateSAFE</h3>
+                    </div>
+                    <p class="mt-2 text-danger-700">
+                        Always put safety first and STOP any activity that could lead to harm to yourself or others.
+                    </p>
+                </div>
+
+                <!-- Welcome -->
+                <div class="text-center">
+                    <h2 class="text-3xl font-bold text-gray-900 mb-4">Welcome to Your Digital Workbook</h2>
+                    <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                        This interactive workbook will guide you through the Forward Tipping Dumper Skills Bootcamp, 
+                        covering safety, operation, and maintenance procedures.
+                    </p>
+                </div>
+
+                <!-- Student Dashboard Header -->
+                <div class="mb-6">
+                    <div class="flex items-center space-x-3 mb-4">
+                        <svg class="w-6 h-6 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                        </svg>
+                        <div>
+                            <h2 class="text-2xl font-bold text-brand-900">My Learning Progress</h2>
+                            <p class="text-brand-700 text-sm">Track your training progress and access courses</p>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="flex-1 px-4 py-3 bg-primary-700 text-white rounded-lg text-sm font-medium">
+                            📚 Continue Learning
+                        </button>
+                        <button class="flex-1 px-4 py-3 bg-brand-50 text-brand-700 border border-brand-200 rounded-lg text-sm font-medium">
+                            📊 View Progress
+                        </button>
+                    </div>
+                </div>
+
+                <!-- FTD Training Progress Metrics -->
+                <div class="grid grid-cols-2 gap-4 mb-6">
+                    <div class="card text-center">
+                        <div class="flex items-center justify-center mb-3">
+                            <svg class="w-8 h-8 text-primary-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-brand-900 mb-1" id="modules-completed">6</div>
+                        <div class="text-sm text-brand-600">Training Modules</div>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="flex items-center justify-center mb-3">
+                            <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-brand-900 mb-1" id="quizzes-completed">2</div>
+                        <div class="text-sm text-brand-600">Completed</div>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="flex items-center justify-center mb-3">
+                            <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-brand-900 mb-1" id="overall-progress">33%</div>
+                        <div class="text-sm text-brand-600">Overall Progress</div>
+                    </div>
+                    
+                    <div class="card text-center">
+                        <div class="flex items-center justify-center mb-3">
+                            <svg class="w-8 h-8 text-warning-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                        </div>
+                        <div class="text-3xl font-bold text-brand-900 mb-1">2.5h</div>
+                        <div class="text-sm text-brand-600">Time Spent</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modules Tab -->
+            <div id="modules-content" class="space-y-6 hidden">
+                <div class="mb-6">
+                    <h2 class="text-xl font-bold text-brand-900 mb-4">FTD Training Modules</h2>
+                    <div class="relative mb-4">
+                        <input type="text" placeholder="🔍 Search modules..." class="w-full pl-10 pr-4 py-3 border border-brand-200 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent text-base">
+                        <svg class="absolute left-3 top-1/2 transform -translate-y-1/2 text-brand-400 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                        </svg>
+                    </div>
+                    <div class="flex space-x-2">
+                        <button class="px-4 py-2 bg-primary-700 text-white rounded-lg text-sm font-medium">
+                            All Modules
+                        </button>
+                        <button class="px-4 py-2 bg-brand-50 text-brand-700 border border-brand-200 rounded-lg text-sm font-medium">
+                            In Progress
+                        </button>
+                        <button class="px-4 py-2 bg-brand-50 text-brand-700 border border-brand-200 rounded-lg text-sm font-medium">
+                            Completed
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="space-y-4">
+                    <!-- Module 1: Introduction to FTD -->
+                    <div class="card module-card" data-module="1">
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-semibold text-brand-900">Module 1: Introduction to FTD</h3>
+                                <span class="px-3 py-1 bg-success-100 text-success-600 text-xs rounded-full font-medium">Completed</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-success-100 text-success-600 text-xs rounded-full">Essential</span>
+                                <span class="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full">Foundation</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-brand-700 mb-4 text-sm leading-relaxed">
+                            Learn about Forward Tipping Dumpers, their purpose, types, and basic operation principles. Understand the machine components and safety features.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-brand-600 mb-2">
+                                <span>Progress</span>
+                                <span class="font-semibold">100%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="btn btn-primary py-3 text-sm font-medium" onclick="startModule(1)">
+                                🔄 Review
+                            </button>
+                            <button class="btn btn-secondary py-3 text-sm font-medium" onclick="viewModule(1)">
+                                📖 Content
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Module 2: Health & Safety Legislation -->
+                    <div class="card module-card" data-module="2">
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-semibold text-brand-900">Module 2: Health & Safety Legislation</h3>
+                                <span class="px-3 py-1 bg-success-100 text-success-600 text-xs rounded-full font-medium">Completed</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-danger-100 text-danger-600 text-xs rounded-full">Critical</span>
+                                <span class="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full">Legal</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-brand-700 mb-4 text-sm leading-relaxed">
+                            Understand your legal responsibilities under the Health and Safety at Work Act 1974, PUWER regulations, and other relevant legislation.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-brand-600 mb-2">
+                                <span>Progress</span>
+                                <span class="font-semibold">100%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 100%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="btn btn-primary py-3 text-sm font-medium" onclick="startModule(2)">
+                                🔄 Review
+                            </button>
+                            <button class="btn btn-secondary py-3 text-sm font-medium" onclick="viewModule(2)">
+                                📖 Content
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Module 3: Pre-Operational Checks -->
+                    <div class="card module-card" data-module="3">
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-semibold text-brand-900">Module 3: Pre-Operational Checks</h3>
+                                <span class="px-3 py-1 bg-warning-100 text-warning-600 text-xs rounded-full font-medium">In Progress</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-danger-100 text-danger-600 text-xs rounded-full">Critical</span>
+                                <span class="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full">Safety</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-brand-700 mb-4 text-sm leading-relaxed">
+                            Master the essential pre-operational checks including visual inspections, fluid levels, safety systems, and documentation requirements.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-brand-600 mb-2">
+                                <span>Progress</span>
+                                <span class="font-semibold">60%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 60%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="btn btn-primary py-3 text-sm font-medium" onclick="startModule(3)">
+                                ▶️ Continue
+                            </button>
+                            <button class="btn btn-secondary py-3 text-sm font-medium" onclick="viewModule(3)">
+                                📖 Content
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Module 4: Machine Operation -->
+                    <div class="card module-card" data-module="4">
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-semibold text-brand-900">Module 4: Machine Operation</h3>
+                                <span class="px-3 py-1 bg-warning-100 text-warning-600 text-xs rounded-full font-medium">Not Started</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full">Practical</span>
+                                <span class="px-2 py-1 bg-warning-100 text-warning-600 text-xs rounded-full">Advanced</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-brand-700 mb-4 text-sm leading-relaxed">
+                            Learn safe operating procedures, load handling, maneuvering techniques, and emergency procedures for Forward Tipping Dumpers.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-brand-600 mb-2">
+                                <span>Progress</span>
+                                <span class="font-semibold">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="btn btn-primary py-3 text-sm font-medium" onclick="startModule(4)">
+                                🚀 Start
+                            </button>
+                            <button class="btn btn-secondary py-3 text-sm font-medium" onclick="viewModule(4)">
+                                👀 Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Module 5: Environmental Considerations -->
+                    <div class="card module-card" data-module="5">
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-semibold text-brand-900">Module 5: Environmental Considerations</h3>
+                                <span class="px-3 py-1 bg-warning-100 text-warning-600 text-xs rounded-full font-medium">Not Started</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-success-100 text-success-600 text-xs rounded-full">Environmental</span>
+                                <span class="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full">Compliance</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-brand-700 mb-4 text-sm leading-relaxed">
+                            Understand environmental impact, spill prevention, noise control, and sustainable operating practices for FTD operations.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-brand-600 mb-2">
+                                <span>Progress</span>
+                                <span class="font-semibold">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="btn btn-primary py-3 text-sm font-medium" onclick="startModule(5)">
+                                🚀 Start
+                            </button>
+                            <button class="btn btn-secondary py-3 text-sm font-medium" onclick="viewModule(5)">
+                                👀 Preview
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Module 6: Assessment & Certification -->
+                    <div class="card module-card" data-module="6">
+                        <div class="mb-4">
+                            <div class="flex items-center justify-between mb-3">
+                                <h3 class="text-lg font-semibold text-brand-900">Module 6: Assessment & Certification</h3>
+                                <span class="px-3 py-1 bg-warning-100 text-warning-600 text-xs rounded-full font-medium">Locked</span>
+                            </div>
+                            <div class="flex flex-wrap gap-2 mb-3">
+                                <span class="px-2 py-1 bg-purple-100 text-purple-600 text-xs rounded-full">Final</span>
+                                <span class="px-2 py-1 bg-primary-100 text-primary-800 text-xs rounded-full">Assessment</span>
+                            </div>
+                        </div>
+                        
+                        <p class="text-brand-700 mb-4 text-sm leading-relaxed">
+                            Complete the final assessment, practical evaluation, and obtain your CPCS A09 Forward Tipping Dumper certification.
+                        </p>
+                        
+                        <div class="mb-4">
+                            <div class="flex justify-between text-sm text-brand-600 mb-2">
+                                <span>Progress</span>
+                                <span class="font-semibold">0%</span>
+                            </div>
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: 0%"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-cols-2 gap-3">
+                            <button class="btn btn-secondary py-3 text-sm font-medium" disabled>
+                                🔒 Locked
+                            </button>
+                            <button class="btn btn-secondary py-3 text-sm font-medium" onclick="viewModule(6)">
+                                ℹ️ Info
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tests Tab -->
+            <div id="quizzes-content" class="space-y-8 hidden">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-brand-900">Knowledge Stops & Tests</h2>
+                    <div class="flex space-x-3">
+                        <button class="btn btn-primary" onclick="startNewTest()">Start New Test</button>
+                        <button class="btn btn-secondary" onclick="viewTestResults()">View Results</button>
+                    </div>
+                </div>
+                
+                <!-- FTD Test Modules -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-900">Module 1 Test</h3>
+                                <p class="text-sm text-brand-600">Introduction to FTD</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Questions</span>
+                                <span class="font-semibold">5</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Time Limit</span>
+                                <span class="font-semibold">20 min</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Pass Rate</span>
+                                <span class="font-semibold">80%</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-2">
+                            <button class="btn btn-primary flex-1" onclick="startModuleTest(1)">Start Test</button>
+                            <button class="btn btn-secondary" onclick="previewModuleTest(1)">Preview</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-success-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-900">Module 2 Test</h3>
+                                <p class="text-sm text-brand-600">Health & Safety</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Questions</span>
+                                <span class="font-semibold">5</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Time Limit</span>
+                                <span class="font-semibold">25 min</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Pass Rate</span>
+                                <span class="font-semibold">80%</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-2">
+                            <button class="btn btn-success flex-1" onclick="startModuleTest(2)">Start Test</button>
+                            <button class="btn btn-secondary" onclick="previewModuleTest(2)">Preview</button>
+                        </div>
+                    </div>
+                    
+                    <div class="card">
+                        <div class="flex items-center space-x-3 mb-4">
+                            <div class="w-12 h-12 bg-warning-100 rounded-lg flex items-center justify-center">
+                                <svg class="w-6 h-6 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-2.5L13.732 4c-.77-.833-1.964-.833-2.732 0L3.732 16.5c-.77.833.192 2.5 1.732 2.5z" />
+                                </svg>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-brand-900">Module 3 Test</h3>
+                                <p class="text-sm text-brand-600">Pre-Operational Checks</p>
+                            </div>
+                        </div>
+                        <div class="space-y-3">
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Questions</span>
+                                <span class="font-semibold">5</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Time Limit</span>
+                                <span class="font-semibold">30 min</span>
+                            </div>
+                            <div class="flex justify-between text-sm">
+                                <span class="text-brand-600">Pass Rate</span>
+                                <span class="font-semibold">80%</span>
+                            </div>
+                        </div>
+                        <div class="mt-4 flex space-x-2">
+                            <button class="btn btn-warning flex-1" onclick="startModuleTest(3)">Start Test</button>
+                            <button class="btn btn-secondary" onclick="previewModuleTest(3)">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Glossary Tab -->
+            <div id="glossary-content" class="space-y-8 hidden">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-brand-900">Glossary</h2>
+                    <div class="relative">
+                        <input type="text" id="glossary-search" placeholder="Search terms..." 
+                               class="w-64 pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-500 focus:border-transparent">
+                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                            <svg class="h-5 w-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glossary Terms -->
+                <div id="glossary-terms" class="grid gap-4">
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Forward Tipping Dumper</h3>
+                        <p class="text-brand-700">A construction machine designed to carry and unload loose material by tipping its skip forward over the front wheels.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">ROPS</h3>
+                        <p class="text-brand-700">Rollover Protective Structure – a safety feature in cabs to protect the operator in case of a rollover.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">FOPS</h3>
+                        <p class="text-brand-700">Falling Object Protective Structure - a safety feature built into the cab or canopy of the machine designed to protect the operator from falling objects.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">PUWER</h3>
+                        <p class="text-brand-700">Provision & Use of Work Equipment Regulations 1998 - regulations covering work equipment safety.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Banksman</h3>
+                        <p class="text-brand-700">A person who guides the machine operator during movement, especially in confined spaces and when reversing.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Stop Blocks</h3>
+                        <p class="text-brand-700">Concrete barriers or blocks used to prevent vehicle access and indicate stopping points.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Exclusion Zone</h3>
+                        <p class="text-brand-700">A designated area where access is restricted due to potential hazards, such as heavy machinery or dangerous operations.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">MAM</h3>
+                        <p class="text-brand-700">Maximum Authorised Mass - the maximum weight a vehicle is legally allowed to carry.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Spoil</h3>
+                        <p class="text-brand-700">Waste material such as soil or rubble excavated from the ground and transported by FTD.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Traction</h3>
+                        <p class="text-brand-700">Grip - the ability of tyres to maintain contact with the ground surface.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Load Integrity</h3>
+                        <p class="text-brand-700">The condition in which a load remains stable, secure, and contained during transport, ensuring it does not shift, spill, or exceed the limits of the vehicle.</p>
+                    </div>
+                    
+                    <div class="card">
+                        <h3 class="font-semibold text-brand-900 mb-2">Safety Critical</h3>
+                        <p class="text-brand-700">Actions with the machine can have significant health & safety consequences for the operator and others.</p>
+                    </div>
+
+
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+        <!-- Module Modal -->
+        <div id="moduleModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+                    <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                        <h2 id="moduleTitle" class="text-xl font-semibold text-gray-900">Module Content</h2>
+                        <button onclick="closeModule()" class="text-gray-400 hover:text-gray-600">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                        <div id="moduleContent" class="prose max-w-none">
+                            <!-- Module content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Test Modal -->
+        <div id="testModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50">
+            <div class="flex items-center justify-center min-h-screen p-4">
+                <div class="bg-white rounded-lg max-w-4xl w-full max-h-[90vh] overflow-hidden">
+                    <div class="flex items-center justify-between p-6 border-b border-gray-200">
+                        <div>
+                            <h2 id="testTitle" class="text-xl font-semibold text-gray-900">Module Test</h2>
+                            <p id="testProgress" class="text-sm text-gray-600">Question 1 of 15</p>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div id="testTimer" class="text-sm font-medium text-gray-600">20:00</div>
+                            <button onclick="closeTest()" class="text-gray-400 hover:text-gray-600">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 overflow-y-auto max-h-[calc(90vh-120px)]">
+                        <div id="testContent">
+                            <!-- Test content will be inserted here -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <script>
+        // Simple state management
+        let progress = {
+            modulesCompleted: 2,
+            quizzesCompleted: 0,
+            timeSpent: 150, // minutes
+            moduleStatus: { 
+                1: 'completed', 
+                2: 'completed', 
+                3: 'in-progress', 
+                4: 'not-started', 
+                5: 'not-started', 
+                6: 'locked' 
+            }
+        };
+
+        // Authentication check
+        function checkAuthentication() {
+            const isAuthenticated = localStorage.getItem('isAuthenticated');
+            const userEmail = localStorage.getItem('userEmail');
+            
+            if (!isAuthenticated || !userEmail) {
+                // Redirect to login if not authenticated
+                window.location.href = 'login.html';
+                return false;
+            }
+            
+            // Update user email display for both desktop and mobile
+            const desktopEmail = document.getElementById('userEmail');
+            const mobileEmail = document.getElementById('userEmailMobile');
+            
+            if (desktopEmail) desktopEmail.textContent = userEmail;
+            if (mobileEmail) mobileEmail.textContent = userEmail;
+            
+            return true;
+        }
+
+        // Logout function
+        function logout() {
+            localStorage.removeItem('isAuthenticated');
+            localStorage.removeItem('userEmail');
+            localStorage.removeItem('loginTime');
+            window.location.href = 'login.html';
+        }
+
+        // Tab navigation
+        function showTab(tabName) {
+            // Hide all content
+            document.querySelectorAll('[id$="-content"]').forEach(el => el.classList.add('hidden'));
+            
+            // Remove active styling from all tabs
+            document.querySelectorAll('[id$="-tab"]').forEach(el => {
+                el.className = 'flex flex-col items-center space-y-1 py-3 px-2 rounded-lg font-medium text-xs text-brand-600 hover:text-brand-700 hover:bg-brand-50';
+            });
+            
+            // Show selected content
+            document.getElementById(tabName + '-content').classList.remove('hidden');
+            
+            // Add active styling to selected tab
+            document.getElementById(tabName + '-tab').className = 'flex flex-col items-center space-y-1 py-3 px-2 rounded-lg font-medium text-xs bg-brand-100 text-primary-700';
+        }
+
+        // Module functions
+        function startModule(moduleId) {
+            progress.moduleStatus[moduleId] = 'in-progress';
+            updateProgress();
+            alert(`Starting Module ${moduleId}. This would open the module content.`);
+        }
+
+        function viewModule(moduleId) {
+            const moduleContent = {
+                1: {
+                    title: "Introduction to FTD",
+                    content: `
+                        <div class="space-y-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-blue-900 mb-2">What is a Forward Tipping Dumper?</h3>
+                                <p class="text-blue-800">A Forward Tipping Dumper (FTD) is commonly used on construction sites to transport large quantities of materials across rough, undulating terrain. Its ability to handle a mixture of terrain and carry large loads makes it a flexible piece of equipment.</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">FTD Key Features:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>Designed for construction sites and rough terrain</li>
+                                    <li>Transports large quantities of materials efficiently</li>
+                                    <li>Forward tipping mechanism for controlled discharge</li>
+                                    <li>Robust design for heavy-duty operations</li>
+                                    <li>Versatile for various material types</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_01_img_01.png" alt="Forward Tipping Dumper Overview" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Forward Tipping Dumper Overview</h5>
+                <p class="text-sm text-gray-600">FTD machine overview diagram showing main components and features</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_01_img_01.png (2500x1668)</p>
+            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-yellow-900 mb-2">⚠️ OperateSAFE Reminder</h4>
+                                <p class="text-yellow-800">Construction sites are busy places with many dangers. You will be taught how to act responsibly on site, identify common hazards, and operate your machine safely to reduce risks to yourself and others.</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-900 mb-2">📚 Knowledge Stop</h4>
+                                <p class="text-green-800"><strong>Question:</strong> What are the two main plant operator card schemes in the construction plant training sector?</p>
+                                <p class="text-green-700 mt-2"><strong>Answer:</strong> CPCS (Construction Plant Competence Scheme) and NPORS (National Plant Operators Registration Scheme)</p>
+                            </div>
+                        </div>
+                    `
+                },
+                2: {
+                    title: "Health & Safety Legislation",
+                    content: `
+                        <div class="space-y-6">
+                            <div class="bg-red-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-red-900 mb-2">Health and Safety at Work Act 1974</h3>
+                                <p class="text-red-800">The Health and Safety at Work Act 1974 is designed to protect people and the environment from workplace activities. It places certain duties and responsibilities on employers, employees, self-employed, designers and manufacturers.</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">FTD Safety Requirements:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>ROPS (Roll Over Protective Structures) must be fitted</li>
+                                    <li>FOPS (Falling Object Protective Structures) required</li>
+                                    <li>Machines must be stable and properly maintained</li>
+                                    <li>Operator training and certification mandatory</li>
+                                    <li>Regular safety inspections essential</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_12_img_02.png" alt="Health & Safety Legislation Flowchart" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Health & Safety Legislation Flowchart</h5>
+                <p class="text-sm text-gray-600">Diagram showing HSWA 1974, PUWER 98, and related regulations hierarchy</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_12_img_02.png (1575x1038)</p>
+            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-900 mb-2">📚 Knowledge Stop</h4>
+                                <p class="text-green-800"><strong>Question:</strong> What are the key requirements under PUWER 98 for work equipment?</p>
+                                <p class="text-green-700 mt-2"><strong>Answer:</strong> PUWER 98 requires that work equipment is suitable for its intended use, maintained in a safe condition, and used only by people who have received adequate information, instruction, and training.</p>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-900 mb-2">📚 Knowledge Stop</h4>
+                                <p class="text-blue-800"><strong>Question:</strong> What does ROPS stand for and what protection does it provide?</p>
+                                <p class="text-blue-700 mt-2"><strong>Answer:</strong> ROPS stands for Roll-Over Protective Structure. It provides protection for the operator in the event of a roll-over accident by creating a safety zone around the operator's seat.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                3: {
+                    title: "Pre-Operational Checks",
+                    content: `
+                        <div class="space-y-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-blue-900 mb-2">Pre-Operational Checks Requirements</h3>
+                                <p class="text-blue-800">The Health and Safety at Work Act 1974 states that employees must take reasonable care of themselves and others who may be affected by their actions. It is a requirement to check that the machine is safe to use prior to using it.</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">FTD Pre-Operational Checks:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>Check ROPS/FOPS structures are intact</li>
+                                    <li>Verify hydraulic system and tipping mechanism</li>
+                                    <li>Inspect tyres and traction lugs</li>
+                                    <li>Test brakes and steering controls</li>
+                                    <li>Check mirrors and visibility aids</li>
+                                    <li>Ensure load capacity limits are visible</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_18_img_02.png" alt="Pre-Operational Check Diagram" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Pre-Operational Check Diagram</h5>
+                <p class="text-sm text-gray-600">Diagram showing FTD components to check (engine, hydraulics, tyres, ROPS/FOPS)</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_18_img_02.png (266x148)</p>
+            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_18_img_03.png" alt="PPE Requirements" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">PPE Requirements</h5>
+                <p class="text-sm text-gray-600">Diagram showing required PPE (hard hat, safety boots, hi-vis, gloves, etc.)</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_18_img_03.png (715x429)</p>
+            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-yellow-900 mb-2">⚠️ Critical Safety</h4>
+                                <p class="text-yellow-800">Always ensure the steps and handrails are clean and clear of debris in your daily checks. Maintain 3 points of contact when getting on and off the machine.</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-900 mb-2">📚 Knowledge Stop</h4>
+                                <p class="text-green-800"><strong>Question:</strong> Why should you always wear gloves when checking engine oil?</p>
+                                <p class="text-green-700 mt-2"><strong>Answer:</strong> Gloves protect your hands from hot engine components and potential burns, and prevent contamination of the oil with dirt or moisture from your skin.</p>
+                            </div>
+                        </div>
+                    `
+                },
+                4: {
+                    title: "Machine Operation",
+                    content: `
+                        <div class="space-y-6">
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-blue-900 mb-2">Safe Working Practices</h3>
+                                <p class="text-blue-800">The role of the Forward Tipping Dumper operator involves preparing for work, travelling and manoeuvring, setting up for work, working tasks, and shutting down safely.</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">FTD Operation Controls:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>Forward/reverse gear selection</li>
+                                    <li>Hydraulic tipping controls</li>
+                                    <li>Steering and braking systems</li>
+                                    <li>Load monitoring and capacity indicators</li>
+                                    <li>Emergency stop systems</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_22_img_02.png" alt="Visibility Aids Diagram" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Visibility Aids Diagram</h5>
+                <p class="text-sm text-gray-600">Diagram showing mirror positions, cameras, and blind spot areas on FTD</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_22_img_02.png (355x473)</p>
+            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_22_img_03.png" alt="Rotating Seat Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Rotating Seat Dumper</h5>
+                <p class="text-sm text-gray-600">Diagram showing rotating seat mechanism and 180-degree rotation capability</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_22_img_03.png (312x148)</p>
+            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">Travelling on Public Highway:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>Must be registered and taxed as a "special vehicle"</li>
+                                    <li>Must have vehicle insurance</li>
+                                    <li>If exceeding 20 mph: horn in good working condition</li>
+                                    <li>If exceeding 25 mph: speedometer in good working condition</li>
+                                    <li>Must have brakes that enable it to stop</li>
+                                    <li>Must have lights and indicators</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-yellow-900 mb-2">⚠️ Safety Alert</h4>
+                                <p class="text-yellow-800">When operating a rotating seat dumper, you can change the seat and console position to allow the best viewpoint while travelling, manoeuvring and operating the machine. The entire operating platform rotates 180 degrees.</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-900 mb-2">📚 Knowledge Stop</h4>
+                                <p class="text-green-800"><strong>Question:</strong> What is the minimum age requirement for operating a dumper exceeding 7.5T on public highways?</p>
+                                <p class="text-green-700 mt-2"><strong>Answer:</strong> 21 years old for vehicles exceeding 7.5T (MAM - Maximum Authorised Mass).</p>
+                            </div>
+                        </div>
+                    `
+                },
+                5: {
+                    title: "Environmental Considerations",
+                    content: `
+                        <div class="space-y-6">
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-green-900 mb-2">Environmental Impact of Machine Use</h3>
+                                <p class="text-green-800">The main types of pollution associated with construction operations are air pollution, water pollution, and noise pollution. There are various pollution prevention strategies that can be used.</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">Environmental Efficiency:</h4>
+                                <p class="text-gray-700">Operators can minimise their effect on the environment by using the machine efficiently:</p>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700 mt-2">
+                                    <li>Lower engine speeds where possible</li>
+                                    <li>Ensure there is no spillage of fluids</li>
+                                    <li>Keep the machine well maintained</li>
+                                    <li>Ensure prior planning of the work task</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">FTD Material Handling:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li><strong>Aggregates:</strong> Check load distribution and secure tipping</li>
+                                    <li><strong>Wet materials:</strong> Prevent spillage during transport</li>
+                                    <li><strong>Heavy loads:</strong> Monitor tyre pressure and stability</li>
+                                    <li><strong>Hazardous materials:</strong> Follow specific handling procedures</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_28_img_02.png" alt="Material Handling Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Material Handling Procedures</h5>
+                <p class="text-sm text-gray-600">Diagram showing different material types and handling procedures (dense, semi-fluid, spoil)</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_28_img_02.png (562x591)</p>
+            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_29_img_02.png" alt="Environmental Impact Diagram" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Environmental Impact Diagram</h5>
+                <p class="text-sm text-gray-600">Diagram showing air, water, and noise pollution sources and prevention measures</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_29_img_02.png (445x146)</p>
+            </div>
+                            
+                            <div class="bg-blue-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-blue-900 mb-2">💡 Best Practice</h4>
+                                <p class="text-blue-800">It is the dumper operator's responsibility to determine maximum load. Always refer to the manufacturer's guidelines and never exceed safe working limits.</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-900 mb-2">📚 Knowledge Stop</h4>
+                                <p class="text-green-800"><strong>Question:</strong> What are the three main types of pollution associated with construction operations?</p>
+                                <p class="text-green-700 mt-2"><strong>Answer:</strong> Air pollution (dust, emissions), water pollution (runoff, spills), and noise pollution (machinery, operations).</p>
+                            </div>
+                        </div>
+                    `
+                },
+                6: {
+                    title: "Assessment & Certification",
+                    content: `
+                        <div class="space-y-6">
+                            <div class="bg-purple-50 p-4 rounded-lg">
+                                <h3 class="font-semibold text-purple-900 mb-2">End of Work and Shut Down Procedures</h3>
+                                <p class="text-purple-800">When parking the machine at the end of the work period, you must follow the full shut down procedure. Consider where you park your machine carefully.</p>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">Shut Down Requirements:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>Follow full shut down procedure</li>
+                                    <li>Consider parking location carefully</li>
+                                    <li>DO NOT park on site roads or pedestrian routes</li>
+                                    <li>DO NOT park on soft/wet/steep ground</li>
+                                    <li>DO NOT block access/egress routes from buildings</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="space-y-4">
+                                <h4 class="font-semibold text-gray-900">FTD Certification Requirements:</h4>
+                                <ul class="list-disc list-inside space-y-2 text-gray-700">
+                                    <li>CPCS or NPORS operator card required</li>
+                                    <li>Regular refresher training mandatory</li>
+                                    <li>Medical fitness assessment</li>
+                                    <li>Practical and theoretical assessments</li>
+                                    <li>Site-specific training where required</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_35_img_02.png" alt="Machine Transportation Diagram" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Machine Transportation Diagram</h5>
+                <p class="text-sm text-gray-600">Diagram showing FTD loading onto transporter with ramps, chocking, and securing procedures</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_35_img_02.png (259x346)</p>
+            </div>
+                            
+                            <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm">
+                <img src="extracted_images/page_35_img_03.png" alt="Exclusion Zone Diagram" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                <h5 class="font-semibold text-gray-700 mb-2">Exclusion Zone Diagram</h5>
+                <p class="text-sm text-gray-600">Diagram showing exclusion zone requirements and minimum clearance distances</p>
+                <p class="text-xs text-gray-500 mt-2">Source: page_35_img_03.png (444x148)</p>
+            </div>
+                            
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-yellow-900 mb-2">⚠️ Safety Critical</h4>
+                                <p class="text-yellow-800">Plant operators are regarded as 'safety-critical' workers. Their actions with the machine can have significant health & safety consequences for themselves and others. All personnel must be adequately trained and competent for their role.</p>
+                            </div>
+                            
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-semibold text-green-900 mb-2">📚 Knowledge Stop</h4>
+                                <p class="text-green-800"><strong>Question:</strong> What is the minimum clearance required for an exclusion zone when loading a machine onto a transporter?</p>
+                                <p class="text-green-700 mt-2"><strong>Answer:</strong> A minimum clearance of 3 metres around the machine and transporter to ensure safe loading operations and prevent accidents.</p>
+                            </div>
+                        </div>
+                    `
+                }
+            };
+            
+            const module = moduleContent[moduleId];
+            if (module) {
+                document.getElementById('moduleTitle').textContent = module.title;
+                document.getElementById('moduleContent').innerHTML = module.content;
+                document.getElementById('moduleModal').classList.remove('hidden');
+            } else {
+                alert(`Module ${moduleId} content coming soon!`);
+            }
+        }
+
+        function closeModule() {
+            document.getElementById('moduleModal').classList.add('hidden');
+        }
+
+        // Test System
+        let currentTest = null;
+        let testTimer = null;
+        let testStartTime = null;
+
+        // Test data structure
+        const testData = {
+            1: {
+                title: "Module 1: Introduction to FTD",
+                timeLimit: 20, // minutes
+                questions: [
+                    {
+                        id: 1,
+                        type: "multiple_choice",
+                        question: "What are the two main plant operator card schemes in the construction plant training sector?",
+                        options: [
+                            "CPCS and NPORS",
+                            "CITB and CPCS", 
+                            "NPORS and CITB",
+                            "HSE and CPCS"
+                        ],
+                        correct: 0,
+                        explanation: "CPCS (Construction Plant Competence Scheme) and NPORS (National Plant Operators Registration Scheme) are the two main schemes."
+                    },
+                    {
+                        id: 2,
+                        type: "multiple_choice",
+                        question: "What is the primary purpose of a Forward Tipping Dumper?",
+                        options: [
+                            "To lift heavy objects",
+                            "To transport materials across rough terrain",
+                            "To dig trenches",
+                            "To compact soil"
+                        ],
+                        correct: 1,
+                        explanation: "FTDs are designed to transport large quantities of materials across rough, undulating terrain on construction sites."
+                    },
+                    {
+                        id: 3,
+                        type: "open_ended",
+                        question: "List three key course objectives for FTD operation training.",
+                        correctAnswers: [
+                            "Understand relevant legislation",
+                            "Identify machine components",
+                            "Perform pre-shift checks",
+                            "Drive over various terrain",
+                            "Manoeuvre in confined areas",
+                            "Complete loading procedures",
+                            "Discharge loads safely"
+                        ],
+                        explanation: "The course covers legislation, machine knowledge, safety checks, operation skills, and material handling."
+                    },
+                    {
+                        id: 4,
+                        type: "multiple_choice",
+                        question: "Which of the following is NOT a typical FTD operation?",
+                        options: [
+                            "Transporting materials",
+                            "Tipping loads forward",
+                            "Digging foundations",
+                            "Manoeuvring in confined spaces"
+                        ],
+                        correct: 2,
+                        explanation: "FTDs are for transporting and tipping materials, not for digging foundations."
+                    },
+                    {
+                        id: 5,
+                        type: "open_ended",
+                        question: "Explain why FTDs are considered flexible equipment on construction sites.",
+                        correctAnswers: [
+                            "Handle mixed terrain",
+                            "Carry large loads",
+                            "Versatile operation",
+                            "Suitable for various materials"
+                        ],
+                        explanation: "FTDs are flexible because they can handle different types of terrain and carry various materials efficiently."
+                    }
+                ]
+            },
+            2: {
+                title: "Module 2: Health & Safety Legislation",
+                timeLimit: 25,
+                questions: [
+                    {
+                        id: 1,
+                        type: "multiple_choice",
+                        question: "What does HSWA 1974 stand for?",
+                        options: [
+                            "Health and Safety Work Act",
+                            "Health and Safety at Work Act",
+                            "Health and Safety Workers Act",
+                            "Health and Safety Workplace Act"
+                        ],
+                        correct: 1,
+                        explanation: "HSWA 1974 stands for the Health and Safety at Work Act 1974."
+                    },
+                    {
+                        id: 2,
+                        type: "multiple_choice",
+                        question: "What does PUWER 98 regulate?",
+                        options: [
+                            "Personal protective equipment",
+                            "Provision and Use of Work Equipment Regulations",
+                            "Plant and equipment safety",
+                            "Both B and C"
+                        ],
+                        correct: 3,
+                        explanation: "PUWER 98 regulates the Provision and Use of Work Equipment Regulations and covers plant and equipment safety."
+                    },
+                    {
+                        id: 3,
+                        type: "open_ended",
+                        question: "What are the key requirements under PUWER 98 for work equipment?",
+                        correctAnswers: [
+                            "Suitable for intended use",
+                            "Safe for use",
+                            "Maintained in safe condition",
+                            "Used by trained personnel",
+                            "Inspected regularly"
+                        ],
+                        explanation: "PUWER 98 requires equipment to be suitable, safe, maintained, used by trained people, and regularly inspected."
+                    },
+                    {
+                        id: 4,
+                        type: "multiple_choice",
+                        question: "What must ROPS and FOPS provide?",
+                        options: [
+                            "Operator comfort",
+                            "Roll Over and Falling Object Protection",
+                            "Better visibility",
+                            "Fuel efficiency"
+                        ],
+                        correct: 1,
+                        explanation: "ROPS (Roll Over Protective Structures) and FOPS (Falling Object Protective Structures) provide safety protection."
+                    },
+                    {
+                        id: 5,
+                        type: "open_ended",
+                        question: "What is the operator's responsibility regarding Method Statements?",
+                        correctAnswers: [
+                            "Comply with them",
+                            "Follow procedures",
+                            "Report issues",
+                            "Ensure safety"
+                        ],
+                        explanation: "Operators must comply with Method Statements and follow all safety procedures outlined."
+                    }
+                ]
+            },
+            3: {
+                title: "Module 3: Pre-Operational Checks",
+                timeLimit: 30,
+                questions: [
+                    {
+                        id: 1,
+                        type: "multiple_choice",
+                        question: "What PPE is required for FTD operation?",
+                        options: [
+                            "Hard hat and safety boots only",
+                            "Full PPE including hi-vis clothing",
+                            "Just safety boots",
+                            "No special PPE required"
+                        ],
+                        correct: 1,
+                        explanation: "Full PPE including hard hat, safety boots, hi-vis clothing, and other appropriate protection is required."
+                    },
+                    {
+                        id: 2,
+                        type: "multiple_choice",
+                        question: "When checking engine oil, what should you always wear?",
+                        options: [
+                            "Safety glasses",
+                            "Gloves",
+                            "Both A and B",
+                            "No special protection needed"
+                        ],
+                        correct: 2,
+                        explanation: "Always wear gloves when checking engine oil to prevent skin disease and contamination."
+                    },
+                    {
+                        id: 3,
+                        type: "open_ended",
+                        question: "List five items you should check during pre-operational inspection.",
+                        correctAnswers: [
+                            "Engine cover secured",
+                            "Parking brake on",
+                            "Controls neutralised",
+                            "Seat adjustment",
+                            "Steering column",
+                            "Seatbelt",
+                            "Foot brake pressure",
+                            "Mirrors clean",
+                            "Tyres condition",
+                            "Fluid levels"
+                        ],
+                        explanation: "Pre-operational checks include safety systems, controls, seating, visibility aids, and fluid levels."
+                    },
+                    {
+                        id: 4,
+                        type: "multiple_choice",
+                        question: "Why should you fill up fuel at the end of your shift?",
+                        options: [
+                            "To save time next day",
+                            "To prevent condensation in tank",
+                            "To keep fuel fresh",
+                            "To avoid fuel theft"
+                        ],
+                        correct: 1,
+                        explanation: "Filling up at the end of shift prevents condensation building up in the fuel tank."
+                    },
+                    {
+                        id: 5,
+                        type: "open_ended",
+                        question: "What are the safety requirements for getting on and off the machine?",
+                        correctAnswers: [
+                            "Maintain 3 points of contact",
+                            "Keep steps clean",
+                            "Clear handrails",
+                            "Use proper technique",
+                            "Check for debris"
+                        ],
+                        explanation: "Always maintain 3 points of contact and ensure steps and handrails are clean and clear."
+                    }
+                ]
+            },
+            4: {
+                title: "Module 4: Machine Operation",
+                timeLimit: 25,
+                questions: [
+                    {
+                        id: 1,
+                        type: "multiple_choice",
+                        question: "What is the minimum age requirement for operating a dumper exceeding 7.5T on public highways?",
+                        options: [
+                            "18 years old",
+                            "21 years old",
+                            "25 years old",
+                            "No age restriction"
+                        ],
+                        correct: 1,
+                        explanation: "21 years old for vehicles exceeding 7.5T (MAM - Maximum Authorised Mass)."
+                    },
+                    {
+                        id: 2,
+                        type: "multiple_choice",
+                        question: "What should you always ensure when operating a rotating seat dumper?",
+                        options: [
+                            "Seat is locked in position",
+                            "Console is properly aligned",
+                            "Both A and B",
+                            "Neither A nor B"
+                        ],
+                        correct: 2,
+                        explanation: "Both the seat and console must be properly positioned and locked for safe operation."
+                    },
+                    {
+                        id: 3,
+                        type: "open_ended",
+                        question: "List three visibility aids that should be checked before operating an FTD.",
+                        correctAnswers: [
+                            "Mirrors",
+                            "Cameras",
+                            "Clean windows",
+                            "Proper positioning",
+                            "Unobstructed view"
+                        ],
+                        explanation: "Visibility aids include mirrors, cameras, clean windows, and ensuring unobstructed views."
+                    }
+                ]
+            },
+            5: {
+                title: "Module 5: Environmental Considerations",
+                timeLimit: 20,
+                questions: [
+                    {
+                        id: 1,
+                        type: "multiple_choice",
+                        question: "What are the three main types of pollution associated with construction operations?",
+                        options: [
+                            "Air, water, and soil pollution",
+                            "Air, water, and noise pollution",
+                            "Water, soil, and noise pollution",
+                            "Air, soil, and light pollution"
+                        ],
+                        correct: 1,
+                        explanation: "The three main types are air pollution, water pollution, and noise pollution."
+                    },
+                    {
+                        id: 2,
+                        type: "open_ended",
+                        question: "What should be considered when handling different types of materials with an FTD?",
+                        correctAnswers: [
+                            "Material density",
+                            "Spill potential",
+                            "Tipping requirements",
+                            "Load distribution",
+                            "Safety precautions"
+                        ],
+                        explanation: "Consider material density, spill potential, tipping requirements, load distribution, and safety precautions."
+                    }
+                ]
+            },
+            6: {
+                title: "Module 6: Assessment & Certification",
+                timeLimit: 30,
+                questions: [
+                    {
+                        id: 1,
+                        type: "multiple_choice",
+                        question: "What is the minimum clearance required for an exclusion zone when loading a machine onto a transporter?",
+                        options: [
+                            "Half the machine height",
+                            "At least the height of the highest point of the machine",
+                            "Twice the machine height",
+                            "No clearance required"
+                        ],
+                        correct: 1,
+                        explanation: "At least the height of the highest point of the machine is required for safe loading."
+                    },
+                    {
+                        id: 2,
+                        type: "open_ended",
+                        question: "What checks should be performed before loading a machine onto a transporter?",
+                        correctAnswers: [
+                            "Ground support",
+                            "Ramp condition",
+                            "Overhead hazards",
+                            "Positioning on trailer",
+                            "Direction of travel"
+                        ],
+                        explanation: "Check ground support, ramp condition, overhead hazards, positioning, and direction of travel."
+                    }
+                ]
+            }
+        };
+
+        // Test functions
+        function startModuleTest(moduleId) {
+            if (!testData[moduleId]) {
+                alert('Test not available for this module yet.');
+                return;
+            }
+
+            currentTest = {
+                moduleId: moduleId,
+                data: testData[moduleId],
+                currentQuestion: 0,
+                answers: [],
+                startTime: new Date()
+            };
+
+            document.getElementById('testTitle').textContent = currentTest.data.title;
+            document.getElementById('testModal').classList.remove('hidden');
+            
+            startTestTimer();
+            showTestQuestion();
+        }
+
+        function previewModuleTest(moduleId) {
+            if (!testData[moduleId]) {
+                alert('Test not available for this module yet.');
+                return;
+            }
+
+            const test = testData[moduleId];
+            const preview = `
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-900">${test.title}</h3>
+                    <div class="grid grid-cols-2 gap-4 text-sm">
+                        <div>
+                            <span class="font-medium">Questions:</span> ${test.questions.length}
+                        </div>
+                        <div>
+                            <span class="font-medium">Time Limit:</span> ${test.timeLimit} minutes
+                        </div>
+                    </div>
+                    <div class="space-y-2">
+                        <h4 class="font-medium text-gray-900">Sample Questions:</h4>
+                        ${test.questions.slice(0, 3).map((q, i) => `
+                            <div class="p-3 bg-gray-50 rounded">
+                                <p class="text-sm font-medium">${i + 1}. ${q.question}</p>
+                                <p class="text-xs text-gray-600 mt-1">Type: ${q.type === 'multiple_choice' ? 'Multiple Choice' : 'Open Ended'}</p>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="flex space-x-3 mt-6">
+                        <button onclick="startModuleTest(${moduleId})" class="btn btn-primary">Start Test</button>
+                        <button onclick="closeTest()" class="btn btn-secondary">Close</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('testTitle').textContent = `${test.title} - Preview`;
+            document.getElementById('testContent').innerHTML = preview;
+            document.getElementById('testModal').classList.remove('hidden');
+        }
+
+        function startTestTimer() {
+            const timeLimit = currentTest.data.timeLimit * 60; // Convert to seconds
+            let timeLeft = timeLimit;
+            
+            testTimer = setInterval(() => {
+                timeLeft--;
+                const minutes = Math.floor(timeLeft / 60);
+                const seconds = timeLeft % 60;
+                document.getElementById('testTimer').textContent = 
+                    `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                
+                if (timeLeft <= 0) {
+                    submitTest();
+                }
+            }, 1000);
+        }
+
+        function showTestQuestion() {
+            const question = currentTest.data.questions[currentTest.currentQuestion];
+            const questionNum = currentTest.currentQuestion + 1;
+            const totalQuestions = currentTest.data.questions.length;
+            
+            document.getElementById('testProgress').textContent = `Question ${questionNum} of ${totalQuestions}`;
+            
+            let questionHTML = `
+                <div class="space-y-6">
+                    <div class="bg-blue-50 p-4 rounded-lg">
+                        <h3 class="text-lg font-semibold text-blue-900 mb-2">Question ${questionNum}</h3>
+                        <p class="text-blue-800">${question.question}</p>
+                    </div>
+            `;
+
+            if (question.type === 'multiple_choice') {
+                questionHTML += `
+                    <div class="space-y-3">
+                        ${question.options.map((option, index) => `
+                            <label class="flex items-center space-x-3 p-3 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
+                                <input type="radio" name="answer" value="${index}" class="text-primary-600 focus:ring-primary-500">
+                                <span class="text-gray-700">${option}</span>
+                            </label>
+                        `).join('')}
+                    </div>
+                `;
+            } else if (question.type === 'open_ended') {
+                questionHTML += `
+                    <div class="space-y-3">
+                        <textarea id="openAnswer" rows="4" class="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-transparent" 
+                                placeholder="Enter your answer here..."></textarea>
+                        <p class="text-sm text-gray-600">Provide a detailed answer. The system will evaluate your response.</p>
+                    </div>
+                `;
+            }
+
+            questionHTML += `
+                    <div class="flex justify-between pt-6">
+                        <button onclick="previousQuestion()" class="btn btn-secondary" ${currentTest.currentQuestion === 0 ? 'disabled' : ''}>
+                            Previous
+                        </button>
+                        <div class="flex space-x-3">
+                            ${currentTest.currentQuestion === totalQuestions - 1 ? 
+                                '<button onclick="submitTest()" class="btn btn-success">Submit Test</button>' :
+                                '<button onclick="nextQuestion()" class="btn btn-primary">Next Question</button>'
+                            }
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('testContent').innerHTML = questionHTML;
+        }
+
+        function nextQuestion() {
+            saveCurrentAnswer();
+            if (currentTest.currentQuestion < currentTest.data.questions.length - 1) {
+                currentTest.currentQuestion++;
+                showTestQuestion();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentTest.currentQuestion > 0) {
+                currentTest.currentQuestion--;
+                showTestQuestion();
+            }
+        }
+
+        function saveCurrentAnswer() {
+            const question = currentTest.data.questions[currentTest.currentQuestion];
+            let answer = null;
+
+            if (question.type === 'multiple_choice') {
+                const selected = document.querySelector('input[name="answer"]:checked');
+                answer = selected ? parseInt(selected.value) : null;
+            } else if (question.type === 'open_ended') {
+                answer = document.getElementById('openAnswer').value.trim();
+            }
+
+            currentTest.answers[currentTest.currentQuestion] = answer;
+        }
+
+        function submitTest() {
+            clearInterval(testTimer);
+            saveCurrentAnswer();
+            
+            // Calculate score
+            let score = 0;
+            let totalQuestions = currentTest.data.questions.length;
+            
+            currentTest.data.questions.forEach((question, index) => {
+                const userAnswer = currentTest.answers[index];
+                
+                if (question.type === 'multiple_choice') {
+                    if (userAnswer === question.correct) {
+                        score++;
+                    }
+                } else if (question.type === 'open_ended') {
+                    // For demo purposes, we'll use a simple keyword matching
+                    // In a real implementation, this would use OpenAI API
+                    if (userAnswer && userAnswer.length > 10) {
+                        score += 0.5; // Partial credit for attempting
+                        // Check for key terms
+                        const lowerAnswer = userAnswer.toLowerCase();
+                        const keyTerms = question.correctAnswers.map(term => term.toLowerCase());
+                        const foundTerms = keyTerms.filter(term => lowerAnswer.includes(term));
+                        if (foundTerms.length > 0) {
+                            score += 0.5; // Full credit for relevant answer
+                        }
+                    }
+                }
+            });
+
+            const percentage = Math.round((score / totalQuestions) * 100);
+            const passed = percentage >= 80; // 80% pass rate
+
+            showTestResults(score, totalQuestions, percentage, passed);
+        }
+
+        function showTestResults(score, total, percentage, passed) {
+            const resultsHTML = `
+                <div class="text-center space-y-6">
+                    <div class="w-20 h-20 mx-auto rounded-full flex items-center justify-center ${passed ? 'bg-success-100' : 'bg-danger-100'}">
+                        <svg class="w-10 h-10 ${passed ? 'text-success-600' : 'text-danger-600'}" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            ${passed ? 
+                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>' :
+                                '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>'
+                            }
+                        </svg>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-2xl font-bold ${passed ? 'text-success-600' : 'text-danger-600'}">
+                            ${passed ? 'Congratulations!' : 'Test Failed'}
+                        </h3>
+                        <p class="text-gray-600 mt-2">
+                            ${passed ? 'You have passed the test!' : 'You need to score 80% or higher to pass.'}
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="grid grid-cols-3 gap-4 text-center">
+                            <div>
+                                <div class="text-2xl font-bold text-gray-900">${score}</div>
+                                <div class="text-sm text-gray-600">Correct</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold text-gray-900">${total}</div>
+                                <div class="text-sm text-gray-600">Total</div>
+                            </div>
+                            <div>
+                                <div class="text-2xl font-bold ${passed ? 'text-success-600' : 'text-danger-600'}">${percentage}%</div>
+                                <div class="text-sm text-gray-600">Score</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex space-x-3 justify-center">
+                        <button onclick="closeTest()" class="btn btn-primary">Close</button>
+                        ${!passed ? '<button onclick="retakeTest()" class="btn btn-secondary">Retake Test</button>' : ''}
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('testContent').innerHTML = resultsHTML;
+        }
+
+        function retakeTest() {
+            startModuleTest(currentTest.moduleId);
+        }
+
+        function closeTest() {
+            if (testTimer) {
+                clearInterval(testTimer);
+            }
+            document.getElementById('testModal').classList.add('hidden');
+            currentTest = null;
+        }
+
+        function startNewTest() {
+            // Show module selection
+            const moduleSelection = `
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Select Module to Test</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        ${Object.entries(testData).map(([id, test]) => `
+                            <button onclick="startModuleTest(${id})" class="p-4 border border-gray-200 rounded-lg hover:bg-gray-50 text-left">
+                                <h4 class="font-medium text-gray-900">${test.title}</h4>
+                                <p class="text-sm text-gray-600">${test.questions.length} questions • ${test.timeLimit} minutes</p>
+                            </button>
+                        `).join('')}
+                    </div>
+                    <div class="flex justify-end">
+                        <button onclick="closeTest()" class="btn btn-secondary">Cancel</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('testTitle').textContent = 'Start New Test';
+            document.getElementById('testContent').innerHTML = moduleSelection;
+            document.getElementById('testModal').classList.remove('hidden');
+        }
+
+        function viewTestResults() {
+            // Show test history/results
+            const resultsHTML = `
+                <div class="space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-900">Test Results</h3>
+                    <div class="text-center py-8 text-gray-500">
+                        <svg class="w-12 h-12 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                        </svg>
+                        <p>No test results available yet.</p>
+                        <p class="text-sm">Complete a test to see your results here.</p>
+                    </div>
+                    <div class="flex justify-end">
+                        <button onclick="closeTest()" class="btn btn-secondary">Close</button>
+                    </div>
+                </div>
+            `;
+
+            document.getElementById('testTitle').textContent = 'Test Results';
+            document.getElementById('testContent').innerHTML = resultsHTML;
+            document.getElementById('testModal').classList.remove('hidden');
+        }
+
+        function startQuiz(quizId) {
+            alert(`Starting Quiz ${quizId}. This would open the interactive quiz.`);
+        }
+
+
+        // Progress tracking
+        function updateProgress() {
+            const completed = Object.values(progress.moduleStatus).filter(status => status === 'completed').length;
+            const total = Object.keys(progress.moduleStatus).length;
+            const percentage = Math.round((completed / total) * 100);
+            
+            document.getElementById('overall-progress').textContent = percentage + '%';
+            document.getElementById('progress-fill').style.width = percentage + '%';
+            document.getElementById('modules-completed').textContent = total;
+            document.getElementById('quizzes-completed').textContent = completed;
+            
+            // Update time spent display
+            const timeSpentEl = document.querySelector('[id*="time-spent"]');
+            if (timeSpentEl) {
+                const hours = Math.floor(progress.timeSpent / 60);
+                const minutes = progress.timeSpent % 60;
+                timeSpentEl.textContent = hours > 0 ? `${hours}h ${minutes}m` : `${minutes}m`;
+            }
+            
+            // Update module statuses
+            Object.keys(progress.moduleStatus).forEach(moduleId => {
+                const statusEl = document.querySelector(`[data-module="${moduleId}"] .module-status`);
+                if (statusEl) {
+                    const status = progress.moduleStatus[moduleId];
+                    statusEl.textContent = status === 'completed' ? 'Complete' : 
+                                         status === 'in-progress' ? 'In Progress' : 
+                                         status === 'locked' ? 'Locked' : 'Not Started';
+                    statusEl.className = `module-status text-sm ${
+                        status === 'completed' ? 'text-success-600' : 
+                        status === 'in-progress' ? 'text-warning-600' : 
+                        status === 'locked' ? 'text-gray-400' : 'text-gray-500'
+                    }`;
+                }
+            });
+        }
+
+        // PDF Functions
+        function viewPDF(pdfPath) {
+            // Try to open PDF in new tab
+            const pdfWindow = window.open(pdfPath, '_blank');
+            
+            if (!pdfWindow) {
+                // Fallback: Show message if PDF not found
+                alert(`PDF file not found: ${pdfPath}. Please ensure the file is in the project directory.`);
+            }
+        }
+
+        function downloadPDF(pdfPath, downloadName) {
+            // Create download link
+            const link = document.createElement('a');
+            link.href = pdfPath;
+            link.download = downloadName || 'Forward-Tipping-Dumper-Document.pdf';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Glossary search
+        function searchGlossary() {
+            const searchTerm = document.getElementById('glossary-search').value.toLowerCase();
+            const terms = document.querySelectorAll('#glossary-terms .card');
+            
+            terms.forEach(term => {
+                const text = term.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    term.style.display = 'block';
+                } else {
+                    term.style.display = 'none';
+                }
+            });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Check authentication first
+            if (!checkAuthentication()) {
+                return;
+            }
+            
+            updateProgress();
+            showTab('home');
+        });
+    </script>
+</body>
+</html>

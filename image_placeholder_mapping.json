@@ -1,0 +1,92 @@
+{
+  "ftd-overview-diagram.jpg": {
+    "filename": "page_01_img_01.png",
+    "filepath": "extracted_images/page_01_img_01.png",
+    "page": 1,
+    "width": 2500,
+    "height": 1668,
+    "size_kb": 5096,
+    "description": "FTD machine overview diagram showing main components and features"
+  },
+  "hswa-puwer-flowchart.jpg": {
+    "filename": "page_12_img_02.png",
+    "filepath": "extracted_images/page_12_img_02.png",
+    "page": 12,
+    "width": 1575,
+    "height": 1038,
+    "size_kb": 222,
+    "description": "Diagram showing HSWA 1974, PUWER 98, and related regulations hierarchy"
+  },
+  "pre-op-check-diagram.jpg": {
+    "filename": "page_18_img_02.png",
+    "filepath": "extracted_images/page_18_img_02.png",
+    "page": 18,
+    "width": 266,
+    "height": 148,
+    "size_kb": 3,
+    "description": "Diagram showing FTD components to check (engine, hydraulics, tyres, ROPS/FOPS)"
+  },
+  "ppe-requirements.jpg": {
+    "filename": "page_18_img_03.png",
+    "filepath": "extracted_images/page_18_img_03.png",
+    "page": 18,
+    "width": 715,
+    "height": 429,
+    "size_kb": 25,
+    "description": "Diagram showing required PPE (hard hat, safety boots, hi-vis, gloves, etc.)"
+  },
+  "visibility-aids-diagram.jpg": {
+    "filename": "page_22_img_02.png",
+    "filepath": "extracted_images/page_22_img_02.png",
+    "page": 22,
+    "width": 355,
+    "height": 473,
+    "size_kb": 12,
+    "description": "Diagram showing mirror positions, cameras, and blind spot areas on FTD"
+  },
+  "rotating-seat-diagram.jpg": {
+    "filename": "page_22_img_03.png",
+    "filepath": "extracted_images/page_22_img_03.png",
+    "page": 22,
+    "width": 312,
+    "height": 148,
+    "size_kb": 4,
+    "description": "Diagram showing rotating seat mechanism and 180-degree rotation capability"
+  },
+  "material-handling-diagram.jpg": {
+    "filename": "page_28_img_02.png",
+    "filepath": "extracted_images/page_28_img_02.png",
+    "page": 28,
+    "width": 562,
+    "height": 591,
+    "size_kb": 28,
+    "description": "Diagram showing different material types and handling procedures (dense, semi-fluid, spoil)"
+  },
+  "environmental-impact-diagram.jpg": {
+    "filename": "page_29_img_02.png",
+    "filepath": "extracted_images/page_29_img_02.png",
+    "page": 29,
+    "width": 445,
+    "height": 146,
+    "size_kb": 5,
+    "description": "Diagram showing air, water, and noise pollution sources and prevention measures"
+  },
+  "machine-transportation-diagram.jpg": {
+    "filename": "page_35_img_02.png",
+    "filepath": "extracted_images/page_35_img_02.png",
+    "page": 35,
+    "width": 259,
+    "height": 346,
+    "size_kb": 6,
+    "description": "Diagram showing FTD loading onto transporter with ramps, chocking, and securing procedures"
+  },
+  "exclusion-zone-diagram.jpg": {
+    "filename": "page_35_img_03.png",
+    "filepath": "extracted_images/page_35_img_03.png",
+    "page": 35,
+    "width": 444,
+    "height": 148,
+    "size_kb": 4,
+    "description": "Diagram showing exclusion zone requirements and minimum clearance distances"
+  }
+}
