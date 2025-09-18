@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forward Tipping Dumper - Digital Workbook</title>
+    <meta name="description" content="Interactive Forward Tipping Dumper training workbook with modules, tests, and comprehensive learning materials">
+    <meta name="theme-color" content="#004D40">
+    <link rel="preconnect" href="https://cdn.tailwindcss.com">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -102,6 +105,21 @@
         .module-card:hover {
             transform: translateY(-4px);
             box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        /* Image optimization */
+        img {
+            max-width: 100%;
+            height: auto;
+            transition: opacity 0.3s ease;
+        }
+        
+        img[loading="lazy"] {
+            opacity: 0;
+        }
+        
+        img[loading="lazy"].loaded {
+            opacity: 1;
         }
     </style>
 </head>
@@ -1516,7 +1534,7 @@
                     
                 <h4 class="font-semibold text-blue-900 mb-2">📋 Introduction to Forward Tipping Dumper</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_01_img_01.png" alt="Introduction to Forward Tipping Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_01_img_01.jpg" alt="Introduction to Forward Tipping Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Introduction to Forward Tipping Dumper</h5>
                     <p class="text-sm text-gray-600">Visual reference for introduction to forward tipping dumper</p>
                 </div>
@@ -1555,7 +1573,7 @@
                     
                 <h4 class="font-semibold text-green-900 mb-2">🛡️ Safe Working Practices</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/site-safety.jpg" alt="Safe Working Practices" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/site-safety.jpg" alt="Safe Working Practices" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Safe Working Practices</h5>
                     <p class="text-sm text-gray-600">Visual reference for safe working practices</p>
                 </div>
@@ -1710,7 +1728,7 @@
                     
                 <h4 class="font-semibold text-blue-900 mb-2">📋 Additional Legislation and Guidance</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_14_img_02.png" alt="Additional Legislation and Guidance" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_14_img_02.jpg" alt="Additional Legislation and Guidance" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Additional Legislation and Guidance</h5>
                     <p class="text-sm text-gray-600">Visual reference for additional legislation and guidance</p>
                 </div>
@@ -1740,7 +1758,7 @@
                     
                 <h4 class="font-semibold text-yellow-900 mb-2">⚠️ Risk Assessments and Method Statements</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_15_img_02.png" alt="Risk Assessments and Method Statements" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_15_img_02.jpg" alt="Risk Assessments and Method Statements" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Risk Assessments and Method Statements</h5>
                     <p class="text-sm text-gray-600">Visual reference for risk assessments and method statements</p>
                 </div>
@@ -1868,7 +1886,7 @@
                 <h4 class="font-semibold text-blue-900 mb-2">🔧 Major Components of a Forward Tipping Dumper</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
                     <div class="bg-gray-50 rounded-lg mb-3 p-4">
-                        <img src="extracted_images/page_17_img_02.png" alt="Major Components of a Forward Tipping Dumper" class="w-full h-auto rounded-lg" style="max-width: none; height: auto;">
+                        <img src="extracted_images_optimized/page_17_img_02.jpg" alt="Major Components of a Forward Tipping Dumper" class="w-full h-auto rounded-lg" style="max-width: none; height: auto;" loading="lazy">
                     </div>
                     <h5 class="font-semibold text-gray-700 mb-2">Major Components of a Forward Tipping Dumper</h5>
                     <p class="text-sm text-gray-600">Visual reference for major components of a forward tipping dumper</p>
@@ -1898,10 +1916,10 @@
                 <div class="bg-blue-50 p-4 rounded-lg mb-4">
                     <h4 class="font-semibold text-blue-900 mb-2">⛑️ Straight Skip Cabbed Dumper</h4>
                     <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                        <img src="extracted_images/page_01_img_01.png" alt="Straight Skip Cabbed Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                        <img src="extracted_images_optimized/page_01_img_01.jpg" alt="Straight Skip Cabbed Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                         <h5 class="font-semibold text-gray-700 mb-2">Straight Skip Cabbed Dumper</h5>
                         <p class="text-sm text-gray-600">Forward Tipping Dumper Overview for straight skip cabbed dumper</p>
-                        <p class="text-xs text-gray-500 mt-2">Source: page_01_img_01.png</p>
+                        <p class="text-xs text-gray-500 mt-2">Source: page_01_img_01.jpg</p>
                     </div>
                     <div class="text-blue-800 text-sm leading-relaxed">
                         <p class="mb-3">The straight skip cabbed dumper features a fixed skip design with an enclosed operator cab for enhanced safety and comfort.</p>
@@ -1918,7 +1936,7 @@
                 <div class="bg-green-50 p-4 rounded-lg mb-4">
                     <h4 class="font-semibold text-green-900 mb-2">🚜 Forward Tipping Dumper</h4>
                     <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                        <img src="extracted_images/page_18_img_03.png" alt="Forward Tipping Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                        <img src="extracted_images_optimized/page_18_img_03.jpg" alt="Forward Tipping Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                         <h5 class="font-semibold text-gray-700 mb-2">Forward Tipping Dumper</h5>
                         <p class="text-sm text-gray-600">Visual reference for forward tipping dumper with PPE requirements</p>
                     </div>
@@ -1937,10 +1955,10 @@
                 <div class="bg-purple-50 p-4 rounded-lg mb-4">
                     <h4 class="font-semibold text-purple-900 mb-2">🚜 Hi-Tip Skid Loader</h4>
                     <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                        <img src="extracted_images/hi_top_skid_loader.webp" alt="Hi-Tip Skid Loader" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                        <img src="extracted_images_optimized/hi_top_skid_loader.jpg" alt="Hi-Tip Skid Loader" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                         <h5 class="font-semibold text-gray-700 mb-2">Hi-Tip Skid Loader</h5>
                         <p class="text-sm text-gray-600">Visual reference for hi-tip skid loader</p>
-                        <p class="text-xs text-gray-500 mt-2">Source: hi_top_skid_loader.webp</p>
+                        <p class="text-xs text-gray-500 mt-2">Source: hi_top_skid_loader.jpg</p>
                     </div>
                     <div class="text-purple-800 text-sm leading-relaxed">
                         <p class="mb-3">The hi-tip skid loader features a high-lift capability with a skid steer design for maximum maneuverability.</p>
@@ -2024,7 +2042,7 @@
                     
                 <h4 class="font-semibold text-yellow-900 mb-2">🛡️ Personal Protective Equipment (PPE)</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_18_img_03.png" alt="Personal Protective Equipment (PPE)" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_18_img_03.jpg" alt="Personal Protective Equipment (PPE)" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Personal Protective Equipment (PPE)</h5>
                     <p class="text-sm text-gray-600">Visual reference for personal protective equipment (ppe)</p>
                 </div>
@@ -2046,10 +2064,10 @@
                         </ul>
                     </div>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_18_img_03.png" alt="PPE Requirements" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_18_img_03.jpg" alt="PPE Requirements" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Personal Protective Equipment Requirements</h5>
                     <p class="text-sm text-gray-600">Complete PPE checklist for FTD operators</p>
-                    <p class="text-xs text-gray-500 mt-2">Source: page_18_img_03.png (715x429)</p>
+                    <p class="text-xs text-gray-500 mt-2">Source: page_18_img_03.jpg (715x429)</p>
                 </div>
         
                 </div>
@@ -2092,7 +2110,7 @@
                     
                 <h4 class="font-semibold text-orange-900 mb-2">👁️ Visibility Aids</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_22_img_02.png" alt="Visibility Aids" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_22_img_02.jpg" alt="Visibility Aids" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Visibility Aids</h5>
                     <p class="text-sm text-gray-600">Visual reference for visibility aids</p>
                 </div>
@@ -2106,10 +2124,10 @@
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_22_img_02.png" alt="Visibility Aids Diagram" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_22_img_02.jpg" alt="Visibility Aids Diagram" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Visibility Aids and Safety Systems</h5>
                     <p class="text-sm text-gray-600">Mirror positioning and camera system setup</p>
-                    <p class="text-xs text-gray-500 mt-2">Source: page_22_img_02.png (355x473)</p>
+                    <p class="text-xs text-gray-500 mt-2">Source: page_22_img_02.jpg (355x473)</p>
                 </div>
         
                 
@@ -2117,7 +2135,7 @@
                     
                 <h4 class="font-semibold text-red-900 mb-2">⚠️ Operating in Confined Areas</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_25_img_02.png" alt="Operating in Confined Areas" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_25_img_02.jpg" alt="Operating in Confined Areas" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Operating in Confined Areas</h5>
                     <p class="text-sm text-gray-600">Visual reference for operating in confined areas</p>
                 </div>
@@ -2153,10 +2171,10 @@
                         <p class="mb-2">It is important that all work near to overhead lines is properly planned and managed to reduce the risk of accidents. The Health and Safety Executive publication 'Avoiding danger from overhead power lines' (GS6) gives valuable information and guidance on how to safely plan and set up work near to overhead power lines. High voltage electricity can arc across large gaps in certain conditions.</p>
                     </div>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_22_img_03.png" alt="Rotating Seat Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_22_img_03.jpg" alt="Rotating Seat Dumper" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Rotating Seat Dumper Operation</h5>
                     <p class="text-sm text-gray-600">180-degree rotating platform for optimal visibility</p>
-                    <p class="text-xs text-gray-500 mt-2">Source: page_22_img_03.png (312x148)</p>
+                    <p class="text-xs text-gray-500 mt-2">Source: page_22_img_03.jpg (312x148)</p>
                 </div>
         
                 </div>
@@ -2179,10 +2197,10 @@
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_28_img_02.png" alt="Material Handling Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_28_img_02.jpg" alt="Material Handling Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Material Handling and Transportation</h5>
                     <p class="text-sm text-gray-600">Safe procedures for different material types</p>
-                    <p class="text-xs text-gray-500 mt-2">Source: page_28_img_02.png (562x591)</p>
+                    <p class="text-xs text-gray-500 mt-2">Source: page_28_img_02.jpg (562x591)</p>
                 </div>
                 
         
@@ -2234,19 +2252,19 @@
                     
                 <h4 class="font-semibold text-red-900 mb-2">📋 Loading/Unloading Procedures for Machine Transportation</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_31_img_04.png" alt="Unloading Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_31_img_04.jpg" alt="Unloading Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Unloading Procedures</h5>
                     <p class="text-sm text-gray-600">Visual reference for unloading procedures</p>
                 </div>
             
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_31_img_03.png" alt="Loading Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_31_img_03.jpg" alt="Loading Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Loading Procedures</h5>
                     <p class="text-sm text-gray-600">Visual reference for loading procedures</p>
                 </div>
             
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_31_img_02.png" alt="Loading/Unloading Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_31_img_02.jpg" alt="Loading/Unloading Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Loading/Unloading Procedures</h5>
                     <p class="text-sm text-gray-600">Visual reference for loading/unloading procedures</p>
                 </div>
@@ -2279,10 +2297,10 @@
                         </ul>
                     </div>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_35_img_02.png" alt="Machine Transportation Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_35_img_02.jpg" alt="Machine Transportation Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Machine Transportation and Loading</h5>
                     <p class="text-sm text-gray-600">Safe procedures for loading and unloading FTDs</p>
-                    <p class="text-xs text-gray-500 mt-2">Source: page_35_img_02.png (259x346)</p>
+                    <p class="text-xs text-gray-500 mt-2">Source: page_35_img_02.jpg (259x346)</p>
                 </div>
         
                 </div>
@@ -2311,10 +2329,10 @@
                     </div>
                 </div>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_29_img_02.png" alt="Environmental Impact Considerations" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_29_img_02.jpg" alt="Environmental Impact Considerations" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Environmental Impact Considerations</h5>
                     <p class="text-sm text-gray-600">Pollution prevention and environmental best practices</p>
-                    <p class="text-xs text-gray-500 mt-2">Source: page_29_img_02.png (445x146)</p>
+                    <p class="text-xs text-gray-500 mt-2">Source: page_29_img_02.jpg (445x146)</p>
                 </div>
                 
         
@@ -2365,7 +2383,7 @@
                     
                 <h4 class="font-semibold text-yellow-900 mb-2">📋 End of Work and Shut Down Procedures</h4>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_36_img_02.png" alt="End of Work and Shut Down Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_36_img_02.jpg" alt="End of Work and Shut Down Procedures" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">End of Work and Shut Down Procedures</h5>
                     <p class="text-sm text-gray-600">Visual reference for end of work and shut down procedures</p>
                 </div>
@@ -2385,10 +2403,10 @@
                         </ul>
                     </div>
                 <div class="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
-                    <img src="extracted_images/page_35_img_03.png" alt="Exclusion Zone Safety" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;">
+                    <img src="extracted_images_optimized/page_35_img_03.jpg" alt="Exclusion Zone Safety" class="w-full h-auto rounded-lg mb-3" style="max-height: 400px; object-fit: contain;" loading="lazy">
                     <h5 class="font-semibold text-gray-700 mb-2">Exclusion Zone Safety</h5>
                     <p class="text-sm text-gray-600">Safe working areas and exclusion zone requirements</p>
-                    <p class="text-xs text-gray-500 mt-2">Source: page_35_img_03.png (444x148)</p>
+                    <p class="text-xs text-gray-500 mt-2">Source: page_35_img_03.jpg (444x148)</p>
                 </div>
         
                 </div>
@@ -3159,9 +3177,40 @@
             // Clear redirect flag if we get here
             sessionStorage.removeItem('redirecting');
             
+            // Initialize lazy loading
+            initializeLazyLoading();
+            
             updateUserGuide();
             showTab('home');
         });
+        
+        // Lazy loading initialization
+        function initializeLazyLoading() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.addEventListener('load', () => {
+                                img.classList.add('loaded');
+                            });
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            } else {
+                // Fallback for browsers without IntersectionObserver
+                images.forEach(img => {
+                    img.addEventListener('load', () => {
+                        img.classList.add('loaded');
+                    });
+                });
+            }
+        }
     </script>
     
     <!-- Glossary Search Functionality -->
