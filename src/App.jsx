@@ -1,11 +1,13 @@
 import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
+import { TimeTrackingProvider } from './contexts/TimeTrackingContext';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import Modules from './pages/Modules';
 import Tests from './pages/Tests';
 import Glossary from './pages/Glossary';
 import Guide from './pages/Guide';
+import TimeReports from './pages/TimeReports';
 import Navigation from './components/Navigation';
 
 function ProtectedRoute({ children }) {
@@ -68,6 +70,14 @@ function AppContent() {
             </ProtectedRoute>
           } 
         />
+        <Route 
+          path="/time-reports" 
+          element={
+            <ProtectedRoute>
+              <TimeReports />
+            </ProtectedRoute>
+          } 
+        />
       </Routes>
     </div>
   );
@@ -76,9 +86,11 @@ function AppContent() {
 function App() {
   return (
     <AuthProvider>
-      <Router>
-        <AppContent />
-      </Router>
+      <TimeTrackingProvider>
+        <Router>
+          <AppContent />
+        </Router>
+      </TimeTrackingProvider>
     </AuthProvider>
   );
 }

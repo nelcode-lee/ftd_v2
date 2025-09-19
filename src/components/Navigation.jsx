@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Menu, X, BookOpen, Brain, Search, HelpCircle } from 'lucide-react';
+import { Menu, X, BookOpen, Brain, Search, HelpCircle, Clock } from 'lucide-react';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,6 +13,7 @@ const Navigation = () => {
     { name: 'Modules', href: '/modules', icon: '📚' },
     { name: 'Tests', href: '/tests', icon: '🧠' },
     { name: 'Glossary', href: '/glossary', icon: '📖' },
+    { name: 'Time Reports', href: '/time-reports', icon: '⏱️' },
   ];
 
   const isActive = (path) => location.pathname === path;

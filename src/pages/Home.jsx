@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { BookOpen, Brain, Search, AlertTriangle } from 'lucide-react';
+import TimeTrackingDisplay from '../components/TimeTrackingDisplay';
 
 const Home = () => {
   return (
@@ -18,6 +19,9 @@ const Home = () => {
           knowledge needed for safe, efficient FTD operation.
         </p>
       </div>
+
+      {/* Time Tracking Display */}
+      <TimeTrackingDisplay />
 
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">

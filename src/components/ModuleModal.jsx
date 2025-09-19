@@ -1,8 +1,38 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, BookOpen, Target, Lightbulb, Image as ImageIcon } from 'lucide-react';
+import { useTimeTracking } from '../contexts/TimeTrackingContext';
 
 const ModuleModal = ({ module, onClose }) => {
   const [activeSection, setActiveSection] = useState(0);
+  const { startModule, endModule, startSection, endSection } = useTimeTracking();
+
+  // Start tracking module time when modal opens
+  useEffect(() => {
+    startModule(module.id);
+    
+    // Start tracking first section
+    if (module.content.sections && module.content.sections.length > 0) {
+      startSection(module.id, 0);
+    }
+
+    // Cleanup when modal closes
+    return () => {
+      endModule();
+    };
+  }, [module.id, startModule, endModule, startSection]);
+
+  // Track section changes
+  useEffect(() => {
+    if (module.content.sections && module.content.sections[activeSection]) {
+      startSection(module.id, activeSection);
+    }
+  }, [activeSection, module.id, startSection]);
+
+  // Handle modal close with time tracking
+  const handleClose = () => {
+    endModule();
+    onClose();
+  };
 
   const renderImage = (image, alt) => {
     if (!image) return null;
@@ -111,7 +141,7 @@ const ModuleModal = ({ module, onClose }) => {
             </div>
           </div>
           <button
-            onClick={onClose}
+            onClick={handleClose}
             className="text-gray-400 hover:text-gray-600 transition-colors"
           >
             <X className="h-6 w-6" />
