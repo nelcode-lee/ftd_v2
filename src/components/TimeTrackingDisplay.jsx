@@ -99,11 +99,11 @@ const TimeTrackingDisplay = () => {
         </div>
       </div>
 
-      <div className="flex flex-wrap gap-2 mb-4">
+      <div className="flex flex-col sm:flex-row sm:flex-wrap gap-3 mb-4 items-center justify-center">
         {!isTracking ? (
           <button
             onClick={handleStartSession}
-            className="flex items-center space-x-2 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors"
+            className="flex items-center justify-center space-x-2 bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition-colors w-full sm:w-auto min-w-[200px]"
           >
             <Play className="h-4 w-4" />
             <span>Start Learning Session</span>
@@ -111,7 +111,7 @@ const TimeTrackingDisplay = () => {
         ) : (
           <button
             onClick={handleEndSession}
-            className="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors"
+            className="flex items-center justify-center space-x-2 bg-red-600 text-white px-6 py-3 rounded-lg hover:bg-red-700 transition-colors w-full sm:w-auto min-w-[200px]"
           >
             <Pause className="h-4 w-4" />
             <span>End Learning Session</span>
@@ -120,7 +120,7 @@ const TimeTrackingDisplay = () => {
 
         <button
           onClick={handleExportData}
-          className="flex items-center space-x-2 bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+          className="flex items-center justify-center space-x-2 bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors w-full sm:w-auto min-w-[200px]"
         >
           <Download className="h-4 w-4" />
           <span>Export Data</span>
@@ -128,7 +128,7 @@ const TimeTrackingDisplay = () => {
 
         <button
           onClick={handleResetData}
-          className="flex items-center space-x-2 bg-gray-600 text-white px-4 py-2 rounded-lg hover:bg-gray-700 transition-colors"
+          className="flex items-center justify-center space-x-2 bg-gray-600 text-white px-6 py-3 rounded-lg hover:bg-gray-700 transition-colors w-full sm:w-auto min-w-[200px]"
         >
           <RotateCcw className="h-4 w-4" />
           <span>Reset Data</span>
