@@ -18,7 +18,13 @@ export const modules = [
           title: "Introduction to Forward Tipping Dumper",
           content: "A Forward Tipping Dumper (FTD) is commonly used on construction sites. It is used to transport large quantities of materials across a site, usually on rough, undulating terrain. Its ability to handle a mixture of terrain and carry large loads makes it a flexible piece of equipment.",
           image: "/extracted_images/page_01_img_01.png",
-          imageAlt: "Introduction to Forward Tipping Dumper"
+          imageAlt: "Introduction to Forward Tipping Dumper",
+          additionalImages: [
+            {
+              image: "/extracted_images/page_18_img_05.png",
+              imageAlt: "Forward Tipping Dumper Operations"
+            }
+          ]
         },
         {
           title: "Course Objectives",

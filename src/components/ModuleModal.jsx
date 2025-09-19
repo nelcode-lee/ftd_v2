@@ -72,6 +72,9 @@ const ModuleModal = ({ module, onClose }) => {
         )}
 
         {section.image && renderImage(section.image, section.imageAlt || section.title)}
+        {section.additionalImages && section.additionalImages.map((additionalImage, imgIndex) => 
+          renderImage(additionalImage.image, additionalImage.imageAlt || section.title)
+        )}
         {section.video && renderVideo(section.video)}
 
         {section.subsections && (
