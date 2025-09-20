@@ -23,6 +23,56 @@ const Home = () => {
       {/* Time Tracking Display */}
       <TimeTrackingDisplay />
 
+      {/* Our Commitment Section */}
+      <div className="bg-blue-50 border border-blue-200 rounded-2xl shadow-lg p-8 mb-12">
+        <h3 className="text-2xl font-bold text-blue-900 mb-6 text-center">
+          Our Commitment to Implementing an Industry Leading Operated Plant Model
+        </h3>
+        <div className="text-gray-700 leading-relaxed space-y-4">
+          <p>
+            We hope that you enjoy your training with us and that you get the maximum benefit possible 
+            out of the course that you have registered for.
+          </p>
+          <p>
+            Learner success is at the core of our delivery strategy. Our commitment to high quality 
+            training delivery supports the industry-wide need to develop the future generation of plant 
+            operators.
+          </p>
+          <p>
+            In addition to being approved by the Department for Education (DfE) to deliver the skills 
+            bootcamp programme, we are an accredited training provider, registered with the two main 
+            plant operator card schemes in the construction plant training sector, namely CPCS and 
+            NPORS.
+          </p>
+          <p>
+            All trainers and testers are highly experienced in their field and are registered with either 
+            of the two accreditation schemes, some are registered with both.
+          </p>
+          <h4 className="text-lg font-semibold text-blue-900 mt-6 mb-3">
+            What Can You Expect During Your Training?
+          </h4>
+          <p>
+            You can expect the highest level of training and testing, delivered by experienced, and highly 
+            competent trainers and testers. We ensure that our people maintain their high standards 
+            through robust internal and external quality assurance measures. We provide an inclusive 
+            approach to our training delivery model to ensure our courses are accessible where possible.
+          </p>
+          <div className="bg-blue-100 border border-blue-300 rounded-lg p-4 mt-6">
+            <p className="text-blue-800 font-medium">
+              For more information about the Skills Bootcamp in Plant Operations, visit our website:{' '}
+              <a 
+                href="https://www.flanneryplant.com/plant-operator-training" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-blue-600 hover:text-blue-800 underline"
+              >
+                www.flanneryplant.com/plant-operator-training
+              </a>
+            </p>
+          </div>
+        </div>
+      </div>
+
       {/* Quick Actions */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
         <Link to="/modules" className="feature-card p-8 text-center group">

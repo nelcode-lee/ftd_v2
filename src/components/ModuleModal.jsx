@@ -83,9 +83,13 @@ const ModuleModal = ({ module, onClose }) => {
         </h3>
         
         {section.content && (
-          <p className="text-gray-700 mb-4 leading-relaxed">
-            {section.content}
-          </p>
+          <div className={`mb-4 leading-relaxed ${section.isHighlight ? 'bg-blue-50 border border-blue-200 rounded-lg p-4' : 'text-gray-700'}`}>
+            {section.content.split('\n').map((line, index) => (
+              <p key={index} className={`${index > 0 ? 'mt-2' : ''} ${section.isHighlight ? 'text-blue-900' : ''}`}>
+                {line}
+              </p>
+            ))}
+          </div>
         )}
 
         {section.link && (
@@ -101,11 +105,59 @@ const ModuleModal = ({ module, onClose }) => {
           </div>
         )}
 
+        {section.links && section.links.length > 0 && (
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-4">
+            <h4 className="text-lg font-semibold text-gray-900 mb-3">
+              Useful Health and Safety Links
+            </h4>
+            <div className="space-y-2">
+              {section.links.map((link, linkIndex) => (
+                <a 
+                  key={linkIndex}
+                  href={link.url} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="block text-blue-600 hover:text-blue-800 font-medium"
+                >
+                  📄 {link.text}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {section.image && renderImage(section.image, section.imageAlt || section.title)}
         {section.additionalImages && section.additionalImages.map((additionalImage, imgIndex) => 
           renderImage(additionalImage.image, additionalImage.imageAlt || section.title)
         )}
         {section.video && renderVideo(section.video)}
+
+        {section.knowledgeStops && section.knowledgeStops.length > 0 && (
+          <div className="space-y-4 mb-6">
+            {section.knowledgeStops.map((stop, stopIndex) => (
+              <div key={stopIndex} className="bg-green-50 border border-green-200 rounded-lg p-4">
+                <div className="flex items-start space-x-3">
+                  <div className="flex-shrink-0">
+                    <div className="w-6 h-6 bg-green-500 rounded-full flex items-center justify-center">
+                      <span className="text-white text-sm font-bold">?</span>
+                    </div>
+                  </div>
+                  <div className="flex-1">
+                    <h5 className="text-lg font-semibold text-green-900 mb-2">
+                      Knowledge Stop
+                    </h5>
+                    <p className="font-medium text-gray-900 mb-2">
+                      {stop.question}
+                    </p>
+                    <p className="text-gray-700 text-sm">
+                      {stop.answer}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
         {section.subsections && (
         <div className="space-y-6">
@@ -114,9 +166,13 @@ const ModuleModal = ({ module, onClose }) => {
               <h4 className="text-lg font-semibold text-gray-900 mb-2">
                 {subsection.title}
               </h4>
-              <p className="text-gray-700 mb-3">
-                {subsection.content}
-              </p>
+              <div className="text-gray-700 mb-3">
+                {subsection.content.split('\n').map((line, index) => (
+                  <p key={index} className={index > 0 ? 'mt-2' : ''}>
+                    {line}
+                  </p>
+                ))}
+              </div>
               {subsection.image && renderImage(subsection.image, subsection.imageAlt || subsection.title)}
               {subsection.video && renderVideo(subsection.video)}
             </div>

@@ -15,10 +15,16 @@ export const modules = [
       ],
       sections: [
         {
+          title: "Always Remember to OperateSAFE",
+          content: "Throughout the workbook, you will come across OperateSAFE safety reminders. OperateSAFE is an example of a company wide Health & Safety campaign which is championed by Flannery Plant Hire. It is a campaign aimed at driving health and safety awareness and engagement across the business and industry wide. Other companies will champion their own internal and external health and safety campaigns which we encourage you to familiarise yourself with when starting at a new job.\n\nThe OperateSAFE safety reminders throughout the workbook aim to highlight key safety messages to our learners. Scan the QR code here to view the OperateSafe introduction video."
+        },
+        {
+          title: "Literacy – Numeracy – ICT",
+          content: "English, Mathematics and ICT are embedded into the content. You will be required to extract information from the operator manual, conduct simple calculations of bucket capacities and read digital screens in the cab of the machine or using one of our training simulators."
+        },
+        {
           title: "Introduction to Forward Tipping Dumper",
-          content: "A Forward Tipping Dumper (FTD) is commonly used on construction sites. It is used to transport large quantities of materials across a site, usually on rough, undulating terrain. Its ability to handle a mixture of terrain and carry large loads makes it a flexible piece of equipment.",
-          image: "/extracted_images/page_01_img_01.png",
-          imageAlt: "Introduction to Forward Tipping Dumper",
+          content: "A Forward Tipping Dumper (FTD) is commonly used on construction sites. It is used to transport large quantities of materials across a site, usually on rough, undulating terrain. Its ability to handle a mixture of terrain and carry large loads makes it a flexible piece of equipment.\n\nThis course will equip you with the knowledge, skills and confidence to operate the machine safely, protecting both you and those around you. This course offers two certificate options: operating either a tracked or wheeled machine depending on your needs.",
           additionalImages: [
             {
               image: "/extracted_images/page_18_img_05.png",
@@ -28,57 +34,31 @@ export const modules = [
         },
         {
           title: "Course Objectives",
-          content: "This course will equip you with the knowledge, skills and confidence to operate the machine safely, protecting both you and those around you. The course objectives are as follows:",
-          subsections: [
-            {
-              title: "Legislation and Compliance",
-              content: "Understand the relevant legislation relating to work activities and comply with the manufacturer's instructions, using the operator's handbook and other information sources."
-            },
-            {
-              title: "Hazard Identification",
-              content: "Identify the hazards associated with plant or machinery operations and put the appropriate control measures in place."
-            },
-            {
-              title: "Machine Operation",
-              content: "Identify the machine components and operator controls, perform pre-shift and operational checks, and prepare the forward tipping dumper for site and road travel."
-            },
-            {
-              title: "Safe Operation",
-              content: "Drive over various types of terrain, manoeuvre in confined areas, complete a range of loading procedures, and discharge loads into trenches or over edges."
-            }
-          ]
+          content: "The course objectives are as follows:\n\n• Understand the relevant legislation relating to work activities.\n• Comply with the manufacturer's instructions, using the operator's handbook and other information sources.\n• Identify the hazards associated with plant or machinery operations and put the appropriate control measures in place.\n• Identify the machine components and operator controls.\n• Perform pre-shift and operational checks.\n• Prepare the forward tipping dumper for site and road travel.\n• Drive over various types of terrain.\n• Manoeuvre in confined areas.\n• Complete a range of loading procedures.\n• Discharge loads into trenches or over edges.\n• Explain the procedures for loading and unloading on and off a transporter.\n• Shut down machinery safely and secure it at the end of the operation.\n\nN.B. All content delivered on this course meets the requirements set out in the National Occupational Standards for this machine type."
         },
         {
           title: "Construction Site Operations",
           content: "Construction sites are busy places and present many dangers. During this course you will be taught how to act responsibly on site, how to identify common hazards and how to operate your machine safely and efficiently on site to reduce to as low as possible the risks to you and others.",
-          image: "/extracted_images/site-safety.jpg",
-          imageAlt: "Construction Site Safety"
+          links: [
+            {
+              url: "https://www.flanneryplanthire.com/resources/safety/operatesafe-ten-golden-rules-speak-up-stop-work/",
+              text: "OperateSAFE - Ten Golden Rules: Speak Up & Stop Work"
+            }
+          ]
         }
       ],
       knowledgeStops: [
         {
-          question: "What are the two main plant operator card schemes in the construction plant training sector?",
-          answer: "CPCS (Construction Plant Competence Scheme) and NPORS (National Plant Operators Registration Scheme)"
+          question: "List 4 main hazards that are commonly found on a construction site.",
+          answer: "Moving vehicles and machinery, Working at height, Electrical hazards, Manual handling injuries, Slips trips and falls, Noise exposure, Dust and harmful substances, Excavations and confined spaces"
         },
         {
-          question: "List SIX typical subject areas that should be covered in a site induction.",
-          answer: "Access and egress, Safety signs and signals, Emergency procedures, Welfare facilities, Restricted/prohibited areas, Traffic routes, Site layout, Reporting procedures, PPE/RPE requirements, Smoking policy, Waste disposal, Working from/at height, Lifting operations, Electricity, Buried services, Confined spaces, Accident reporting"
+          question: "A dumper is classified by a manufacturer as a six-tonne dumper. What does this mean?",
+          answer: "This refers to the maximum payload capacity of the dumper - it can safely carry up to six tonnes of material in its skip."
         },
         {
-          question: "Why are plant operators generally regarded as safety critical workers?",
-          answer: "Because their actions with the machine can have significant health & safety consequences for themselves and others. Their operations can directly impact the safety of other workers and the public."
-        },
-        {
-          question: "List THREE ways that a plant operator can contribute towards repeat business with the client or principal contractor.",
-          answer: "Good timekeeping, being polite, being safe, doing a good job, cooperating with other workers, following method statements, maintaining high standards"
-        },
-        {
-          question: "The function or job role of a dumper driver, when transporting materials, is to?",
-          answer: "Safely transport materials from loading areas to discharge points, ensure load integrity and security, follow safe operating procedures, and maintain awareness of site conditions and other workers."
-        },
-        {
-          question: "How can a qualification or card benefit a plant operator?",
-          answer: "Demonstrates competence and training, provides industry recognition, may be required for certain sites, shows commitment to safety standards, can lead to better job opportunities and higher pay rates."
+          question: "List 5 effects of hazards:",
+          answer: "Injury to people, Damage to equipment/property, Environmental damage, Production delays/losses, Legal consequences and prosecution"
         }
       ]
     }
@@ -98,6 +78,66 @@ export const modules = [
       ],
       sections: [
         {
+          title: "Health and Safety at Work Act 1974",
+          content: "The Health and Safety at Work Act 1974 is designed to protect people and the environment from workplace activities. It places certain duties and responsibilities on employers, employees, self-employed, designers and manufactures.",
+          video: {
+            title: "Health and safety risk assessment and management",
+            embedUrl: "https://www.youtube.com/embed/xyANahuhGs0",
+            description: "Essential health and safety practices and risk assessment procedures"
+          },
+          links: [
+            {
+              url: "https://www.legislation.gov.uk/ukpga/1974/37/contents",
+              text: "Health and Safety at Work Act 1974 - Full Legislation"
+            },
+            {
+              url: "https://www.hse.gov.uk/pubns/priced/puwer.pdf",
+              text: "PUWER 1998 Regulations"
+            }
+          ],
+          knowledgeStops: [
+            {
+              question: "What does the Health & Safety at Work etc. Act 1974 require employers to do, specifically regarding plant?",
+              answer: "Employers must ensure that plant and equipment is safe and without risks to health, provide adequate training and supervision, maintain equipment in safe condition, and provide information, instruction, training and supervision to ensure health and safety at work."
+            },
+            {
+              question: "List the 3 main duties placed on employees under the Health and Safety at Work act 1974:",
+              answer: "1. Take reasonable care for their own health and safety and that of others who may be affected by their acts or omissions, 2. Cooperate with their employer on health and safety matters, 3. Not intentionally or recklessly interfere with or misuse anything provided in the interests of health, safety or welfare"
+            }
+          ]
+        },
+        {
+          title: "Provision & Use of Work Equipment Regulations 1998 (PUWER 98)",
+          content: "Work equipment is any machinery, appliance, apparatus, tool or installation for use at work (whether exclusively or not). This includes equipment which employees provide for their own use at work. The scope of work equipment is therefore extremely wide.",
+          image: "/extracted_images/page_08_img_03.png",
+          imageAlt: "PUWER 1998 Regulations - Personal Protective Equipment"
+        },
+        {
+          title: "Machine Stability and Protective Structures",
+          content: "Machines must be stable when in use; machines have been known to fall over. ROPS (Roll Over Protective Structures) & FOPS (Falling Object Protective Structures) must be in place to provide some protection to the operator in the event of the machine overturning or from small falling objects.\n\nEquipment must be capable of being maintained safely. Accidents occur during maintenance thus the risks encountered during such maintenance must be reduced.",
+          isHighlight: true
+        },
+        {
+          title: "Additional Legislation and Guidance",
+          content: "Management of Health and Safety at Work Regulations (MHSWR), Construction (Design and Management) Regulations (CDM), Vibration at Work Regulations, Road Traffic Act, HSG 114 – The safe use of vehicles on construction sites, HSG 46 – Guide for small contractors, Plant Safety Group – Safe use of dumpers, Control of Substances Hazardous to Health Regulations, The Control of Noise Regulations"
+        },
+        {
+          title: "Risk Assessments and Method Statements",
+          content: "Employers are required by law to protect your employees, and others, from harm. Under the Management of Health and Safety at Work Regulations 1999, the minimum you must do is: Identify what could cause injury or illness in your business (hazards), Decide how likely it is that someone could be harmed and how seriously (the risk), Take action to eliminate the hazard, or if this isn't possible, control the risk.",
+          image: "/extracted_images/page_13_img_04.png",
+          imageAlt: "Risk Assessment"
+        },
+        {
+          title: "Social Responsibilities",
+          content: "In general plant operators are regarded as 'safety-critical' workers, which means their actions with the machine can have significant health & safety consequences for themselves and others. It is essential that all personnel involved in the planning, supervision and carrying out of mobile plant operations are adequately trained and competent for their role."
+        },
+        {
+          title: "Site Induction",
+          content: "When starting work on a new site you will undergo a site induction. Familiarise yourself with some of the subject areas that will be included in a site induction:\n\n• Access and egress\n• Safety signs and signals\n• Emergency procedures\n• Welfare facilities\n• Restricted/prohibited areas\n• Traffic routes\n• Site layout\n• Reporting procedures\n• PPE/RPE requirements\n• Smoking policy\n• Waste disposal\n• Working from/at height\n• Lifting operations\n• Electricity\n• Buried services\n• Confined spaces\n• Accident reporting\n• Contamination",
+          image: "/extracted_images/page_19_img_02.png",
+          imageAlt: "Site Induction"
+        },
+        {
           title: "Safe Working Practices - The Role of the Forward Tipping Dumper Operator",
           content: "Preparing for work: Conduct all pre-operational checks in accordance with manufacturers and legislative requirements. Travelling and maneuvering: Travel and maneuver the forward tipping dumper safely across varying terrain and inclines.",
           video: {
@@ -107,59 +147,46 @@ export const modules = [
           }
         },
         {
-          title: "Health and Safety at Work Act 1974",
-          content: "The Health and Safety at Work Act 1974 is designed to protect people and the environment from workplace activities. It places certain duties and responsibilities on employers, employees, self-employed, designers and manufactures.",
-          video: {
-            title: "Health and safety risk assessment and management",
-            embedUrl: "https://www.youtube.com/embed/xyANahuhGs0",
-            description: "Essential health and safety practices and risk assessment procedures"
-          },
-          link: "https://www.hse.gov.uk/pubns/priced/puwer.pdf",
-          linkText: "PUWER 1998 Regulations",
-          image: "/extracted_images/page_14_img_02.png",
-          imageAlt: "Health and Safety at Work Act 1974"
-        },
-        {
-          title: "Provision & Use of Work Equipment Regulations 1998 (PUWER 98)",
-          content: "Work equipment is any machinery, appliance, apparatus, tool or installation for use at work (whether exclusively or not). This includes equipment which employees provide for their own use at work. The scope of work equipment is therefore extremely wide.",
-          image: "/extracted_images/page_15_img_02.png",
-          imageAlt: "PUWER 1998 Regulations"
-        },
-        {
-          title: "Additional Legislation and Guidance",
-          content: "Management of Health and Safety at Work Regulations (MHSWR), Construction (Design and Management) Regulations (CDM), Vibration at Work Regulations, Road Traffic Act, HSG 114 – The safe use of vehicles on construction sites, HSG 46 – Guide for small contractors, Plant Safety Group – Safe use of dumpers, Control of Substances Hazardous to Health Regulations, The Control of Noise Regulations",
-          image: "/extracted_images/page_16_img_02.png",
-          imageAlt: "Additional Legislation and Guidance"
-        },
-        {
-          title: "Risk Assessments and Method Statements",
-          content: "Employers are required by law to protect your employees, and others, from harm. Under the Management of Health and Safety at Work Regulations 1999, the minimum you must do is: Identify what could cause injury or illness in your business (hazards), Decide how likely it is that someone could be harmed and how seriously (the risk), Take action to eliminate the hazard, or if this isn't possible, control the risk.",
-          image: "/extracted_images/page_17_img_02.png",
-          imageAlt: "Risk Assessments and Method Statements"
-        },
-        {
-          title: "Social Responsibilities",
-          content: "In general plant operators are regarded as 'safety-critical' workers, which means their actions with the machine can have significant health & safety consequences for themselves and others. It is essential that all personnel involved in the planning, supervision and carrying out of mobile plant operations are adequately trained and competent for their role.",
-          image: "/extracted_images/page_18_img_02.png",
-          imageAlt: "Social Responsibilities"
-        },
-        {
-          title: "Site Induction",
-          content: "When starting work on a new site you will undergo a site induction. Familiarise yourself with some of the subject areas that will be included in a site induction: Access and egress, Safety signs and signals",
-          image: "/extracted_images/page_19_img_02.png",
-          imageAlt: "Site Induction"
-        },
-        {
           title: "Operator Roles & Responsibilities",
-          content: "As a 'safety critical' worker, plant operators are required to: Only use site plant or equipment if you are trained, competent and have been authorised to do so. Only authorised operators should hold vehicle keys. You are required to work safely, efficiently and comply with the method statement.",
-          image: "/extracted_images/page_20_img_02.png",
-          imageAlt: "Operator Roles & Responsibilities"
+          content: "As a 'safety critical' worker, plant operators are required to:\n\n• Only use site plant or equipment if you are trained, competent and have been authorised to do so.\n• Only authorised operators should hold vehicle keys.\n• You are required to work safely, efficiently and comply with the method statement.\n• Be punctual and co-operate with other workers – this can contribute towards repeat business with the client or principal contractor.\n\nOperators should also be trained in the safe operation of the specific machine that they are required to operate.",
+          image: "/extracted_images/trained_operator.jpeg",
+          imageAlt: "Trained Operator",
+          additionalImages: [
+            {
+              image: "/extracted_images/blue_card.jpeg",
+              imageAlt: "CPCS Blue Card"
+            }
+          ]
+        },
+        {
+          title: "Safe Working Practices Relevant to the Role of the Forward Tipping Dumper Operator",
+          content: "The following table outlines the key safe working practices that operators must follow:\n\n**Preparing for work**\nConduct all pre-operational checks in accordance with manufacturers and legislative requirements.\n\n**Travelling and manoeuvring**\nTravel and manoeuvre the forward tipping dumper safely across varying terrain and inclines.\n\n**Setting up for work**\nConduct all necessary safety checks at the loading and discharging areas.\n\n**Working tasks**\n• Receive loads from other machines safely\n• Ensure load integrity and security\n• Tip safely into excavations or over edges\n• Completing work\n• The environmental considerations of machine use\n• Loading/unloading procedures for machine transportation\n\n**Shutting Down**\nCarry out all end of work and shut down procedures."
         }
       ],
       knowledgeStops: [
         {
           question: "What is the primary piece of health and safety legislation in the UK?",
           answer: "The Health and Safety at Work Act 1974"
+        },
+        {
+          question: "Why are plant operators generally regarded as safety critical workers?",
+          answer: "Because their actions with the machine can have significant health & safety consequences for themselves and others. Their operations can directly impact the safety of other workers and the public."
+        },
+        {
+          question: "List SIX typical subject areas that should be covered in a site induction.",
+          answer: "Access and egress, Safety signs and signals, Emergency procedures, Welfare facilities, Restricted/prohibited areas, Traffic routes, Site layout, Reporting procedures, PPE/RPE requirements, Smoking policy, Waste disposal, Working from/at height, Lifting operations, Electricity, Buried services, Confined spaces, Accident reporting"
+        },
+        {
+          question: "What are the two main plant operator card schemes in the construction plant training sector?",
+          answer: "CPCS (Construction Plant Competence Scheme) and NPORS (National Plant Operators Registration Scheme)"
+        },
+        {
+          question: "List THREE ways that a plant operator can contribute towards repeat business with the client or principal contractor.",
+          answer: "Good timekeeping, being polite, being safe, doing a good job, cooperating with other workers, following method statements, maintaining high standards"
+        },
+        {
+          question: "How can a qualification or card benefit a plant operator?",
+          answer: "Demonstrates competence and training, provides industry recognition, may be required for certain sites, shows commitment to safety standards, can lead to better job opportunities and higher pay rates."
         }
       ]
     }
@@ -342,6 +369,10 @@ export const modules = [
         {
           question: "What should be checked before operating a Forward Tipping Dumper?",
           answer: "Visual inspection, fluid levels, safety systems, brakes, steering, and all safety equipment"
+        },
+        {
+          question: "The function or job role of a dumper driver, when transporting materials, is to?",
+          answer: "Safely transport materials from loading areas to discharge points, ensure load integrity and security, follow safe operating procedures, and maintain awareness of site conditions and other workers."
         }
       ]
     }

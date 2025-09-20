@@ -21,7 +21,7 @@ const Glossary = () => {
         <div className="section-icon bg-indigo-100 text-indigo-600 mx-auto mb-6">
           <BookOpen className="h-8 w-8" />
         </div>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">Glossary of Terms</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">Terms and Definitions</h1>
         <p className="text-xl text-gray-600 max-w-3xl mx-auto">
           Search and explore definitions for Forward Tipping Dumper operations, 
           safety procedures, and technical concepts. Use this reference to 
@@ -77,7 +77,7 @@ const Glossary = () => {
 
       {/* Glossary Stats */}
       <div className="mt-12 bg-gray-50 rounded-lg p-6">
-        <h3 className="text-lg font-semibold text-gray-900 mb-4">Glossary Statistics</h3>
+        <h3 className="text-lg font-semibold text-gray-900 mb-4">Term Statistics</h3>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="text-center">
             <div className="text-2xl font-bold text-blue-600 mb-1">
