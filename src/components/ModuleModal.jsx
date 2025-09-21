@@ -132,6 +132,17 @@ const ModuleModal = ({ module, onClose }) => {
         )}
         {section.video && renderVideo(section.video)}
 
+        {section.safetyMessage && (
+          <div 
+            className="rounded-lg p-6 mb-6 text-center"
+            style={{ backgroundColor: section.safetyMessage.background }}
+          >
+            <div className="text-white text-xl md:text-2xl font-semibold leading-relaxed">
+              {section.safetyMessage.text}
+            </div>
+          </div>
+        )}
+
         {section.knowledgeStops && section.knowledgeStops.length > 0 && (
           <div className="space-y-4 mb-6">
             {section.knowledgeStops.map((stop, stopIndex) => (

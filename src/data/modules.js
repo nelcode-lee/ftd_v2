@@ -16,7 +16,11 @@ export const modules = [
       sections: [
         {
           title: "Always Remember to OperateSAFE",
-          content: "Throughout the workbook, you will come across OperateSAFE safety reminders. OperateSAFE is an example of a company wide Health & Safety campaign which is championed by Flannery Plant Hire. It is a campaign aimed at driving health and safety awareness and engagement across the business and industry wide. Other companies will champion their own internal and external health and safety campaigns which we encourage you to familiarise yourself with when starting at a new job.\n\nThe OperateSAFE safety reminders throughout the workbook aim to highlight key safety messages to our learners. Scan the QR code here to view the OperateSafe introduction video."
+          content: "Throughout the workbook, you will come across OperateSAFE safety reminders. OperateSAFE is an example of a company wide Health & Safety campaign which is championed by Flannery Plant Hire. It is a campaign aimed at driving health and safety awareness and engagement across the business and industry wide. Other companies will champion their own internal and external health and safety campaigns which we encourage you to familiarise yourself with when starting at a new job.\n\nThe OperateSAFE safety reminders throughout the workbook aim to highlight key safety messages to our learners. Scan the QR code here to view the OperateSafe introduction video.",
+          safetyMessage: {
+            text: "Always put safety first and STOP any activity that could lead to harm to yourself or others. Always seek assistance and OperateSAFE.",
+            background: "#4A90A4"
+          }
         },
         {
           title: "Literacy – Numeracy – ICT",
