@@ -164,6 +164,8 @@ const ModuleModal = ({ module, onClose }) => {
                     </p>
                     <button
                       onClick={() => {
+                        // Store the module ID for the test page to auto-start
+                        sessionStorage.setItem('autoStartTest', module.id);
                         navigate('/tests');
                         onClose();
                       }}
@@ -276,7 +278,15 @@ const ModuleModal = ({ module, onClose }) => {
           {/* Module Actions */}
           <div className="mt-8 pt-6 border-t border-gray-200">
             <div className="flex flex-col sm:flex-row gap-4">
-              <button className="btn-enter flex-1">
+              <button 
+                onClick={() => {
+                  // Store the module ID for the test page to auto-start
+                  sessionStorage.setItem('autoStartTest', module.id);
+                  navigate('/tests');
+                  onClose();
+                }}
+                className="btn-enter flex-1"
+              >
                 Start Module Test
               </button>
               <button 

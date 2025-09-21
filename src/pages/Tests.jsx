@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Brain, Clock, CheckCircle, RotateCcw } from 'lucide-react';
 import { getAllTests, getTestByModuleId } from '../data/testData';
 import TestModal from '../components/TestModal';
@@ -17,10 +17,24 @@ const Tests = () => {
     title: test.title,
     questions: test.questions.length,
     duration: `${test.timeLimit} minutes`,
-    status: test.id <= 2 ? "available" : "locked", // First 2 modules available for demo
+    status: "available", // All modules available for testing
     score: testResults.find(result => result.testId === test.id)?.percentage || null,
     testData: test
   }));
+
+  // Check for auto-start test from module navigation
+  useEffect(() => {
+    const autoStartTestId = sessionStorage.getItem('autoStartTest');
+    if (autoStartTestId) {
+      const testData = getTestByModuleId(parseInt(autoStartTestId));
+      if (testData) {
+        setSelectedTest(testData);
+        setShowTestModal(true);
+      }
+      // Clear the session storage after use
+      sessionStorage.removeItem('autoStartTest');
+    }
+  }, []);
 
   const handleStartTest = (test) => {
     setSelectedTest(test.testData);
