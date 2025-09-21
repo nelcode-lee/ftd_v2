@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
 import { X, BookOpen, Target, Lightbulb, Image as ImageIcon } from 'lucide-react';
 import { useTimeTracking } from '../contexts/TimeTrackingContext';
+import { useNavigate } from 'react-router-dom';
 
 const ModuleModal = ({ module, onClose }) => {
   const [activeSection, setActiveSection] = useState(0);
   const { startModule, endModule, startSection, endSection } = useTimeTracking();
+  const navigate = useNavigate();
 
   // Start tracking module time when modal opens
   useEffect(() => {
@@ -157,12 +159,18 @@ const ModuleModal = ({ module, onClose }) => {
                     <h5 className="text-lg font-semibold text-green-900 mb-2">
                       Knowledge Stop
                     </h5>
-                    <p className="font-medium text-gray-900 mb-2">
+                    <p className="font-medium text-gray-900 mb-4">
                       {stop.question}
                     </p>
-                    <p className="text-gray-700 text-sm">
-                      {stop.answer}
-                    </p>
+                    <button
+                      onClick={() => {
+                        navigate('/tests');
+                        onClose();
+                      }}
+                      className="btn-primary text-sm px-4 py-2"
+                    >
+                      Test Your Knowledge
+                    </button>
                   </div>
                 </div>
               </div>

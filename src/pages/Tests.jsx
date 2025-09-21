@@ -1,59 +1,55 @@
 import { useState } from 'react';
 import { Brain, Clock, CheckCircle, RotateCcw } from 'lucide-react';
+import { getAllTests, getTestByModuleId } from '../data/testData';
+import TestModal from '../components/TestModal';
 
 const Tests = () => {
   const [testResults, setTestResults] = useState([]);
+  const [selectedTest, setSelectedTest] = useState(null);
+  const [showTestModal, setShowTestModal] = useState(false);
 
-  const mockTests = [
-    {
-      id: 1,
-      title: "Module 1: Forward Tipping Dumper Overview",
-      questions: 5,
-      duration: "15 minutes",
-      status: "available",
-      score: null
-    },
-    {
-      id: 2,
-      title: "Module 2: Health & Safety Legislation",
-      questions: 8,
-      duration: "20 minutes",
-      status: "available",
-      score: null
-    },
-    {
-      id: 3,
-      title: "Module 3: Pre-Operational Checks",
-      questions: 6,
-      duration: "18 minutes",
-      status: "locked",
-      score: null
-    },
-    {
-      id: 4,
-      title: "Module 4: Machine Operation",
-      questions: 10,
-      duration: "25 minutes",
-      status: "locked",
-      score: null
-    },
-    {
-      id: 5,
-      title: "Module 5: Environmental Considerations",
-      questions: 7,
-      duration: "20 minutes",
-      status: "locked",
-      score: null
-    },
-    {
-      id: 6,
-      title: "Module 6: Assessment & Certification",
-      questions: 12,
-      duration: "30 minutes",
-      status: "locked",
-      score: null
-    }
-  ];
+  // Get actual test data
+  const allTests = getAllTests();
+  
+  // Map test data to display format
+  const tests = allTests.map(test => ({
+    id: test.id,
+    title: test.title,
+    questions: test.questions.length,
+    duration: `${test.timeLimit} minutes`,
+    status: test.id <= 2 ? "available" : "locked", // First 2 modules available for demo
+    score: testResults.find(result => result.testId === test.id)?.percentage || null,
+    testData: test
+  }));
+
+  const handleStartTest = (test) => {
+    setSelectedTest(test.testData);
+    setShowTestModal(true);
+  };
+
+  const handleTestComplete = (result) => {
+    // Save test result
+    const newResult = {
+      testId: selectedTest.id,
+      ...result,
+      timestamp: new Date().toISOString()
+    };
+    
+    setTestResults(prev => {
+      const existing = prev.findIndex(r => r.testId === selectedTest.id);
+      if (existing >= 0) {
+        const updated = [...prev];
+        updated[existing] = newResult;
+        return updated;
+      }
+      return [...prev, newResult];
+    });
+  };
+
+  const handleCloseTest = () => {
+    setShowTestModal(false);
+    setSelectedTest(null);
+  };
 
   const getStatusIcon = (status) => {
     switch (status) {
@@ -111,11 +107,13 @@ const Tests = () => {
       {/* Test Statistics */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
         <div className="feature-card p-6 text-center">
-          <div className="text-3xl font-bold text-blue-600 mb-2">6</div>
+          <div className="text-3xl font-bold text-blue-600 mb-2">{tests.length}</div>
           <div className="text-sm text-gray-600">Total Tests</div>
         </div>
         <div className="feature-card p-6 text-center">
-          <div className="text-3xl font-bold text-green-600 mb-2">2</div>
+          <div className="text-3xl font-bold text-green-600 mb-2">
+            {tests.filter(t => t.status === 'available').length}
+          </div>
           <div className="text-sm text-gray-600">Available</div>
         </div>
         <div className="feature-card p-6 text-center">
@@ -123,14 +121,16 @@ const Tests = () => {
           <div className="text-sm text-gray-600">In Progress</div>
         </div>
         <div className="feature-card p-6 text-center">
-          <div className="text-3xl font-bold text-gray-600 mb-2">0</div>
+          <div className="text-3xl font-bold text-gray-600 mb-2">
+            {testResults.filter(r => r.passed).length}
+          </div>
           <div className="text-sm text-gray-600">Completed</div>
         </div>
       </div>
 
       {/* Tests Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {mockTests.map((test) => (
+        {tests.map((test) => (
           <div key={test.id} className="card module-card">
             {/* Test Header */}
             <div className="flex items-start justify-between mb-4">
@@ -169,16 +169,22 @@ const Tests = () => {
             {/* Test Actions */}
             <div className="flex flex-col space-y-2">
               {test.status === 'available' && (
-                <button className="btn-enter w-full">
+                <button 
+                  onClick={() => handleStartTest(test)}
+                  className="btn-enter w-full"
+                >
                   Start Test
                 </button>
               )}
-              {test.status === 'completed' && (
+              {test.score && (
                 <div className="flex space-x-2">
                   <button className="btn-primary flex-1">
                     View Results
                   </button>
-                  <button className="btn-secondary flex-1">
+                  <button 
+                    onClick={() => handleStartTest(test)}
+                    className="btn-secondary flex-1"
+                  >
                     <RotateCcw className="h-4 w-4 mr-1" />
                     Retake
                   </button>
@@ -220,6 +226,14 @@ const Tests = () => {
           </li>
         </ul>
       </div>
+
+      {/* Test Modal */}
+      <TestModal
+        test={selectedTest}
+        isOpen={showTestModal}
+        onClose={handleCloseTest}
+        onComplete={handleTestComplete}
+      />
     </div>
   );
 };
