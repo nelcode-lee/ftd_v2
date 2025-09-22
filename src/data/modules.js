@@ -115,7 +115,9 @@ export const modules = [
         },
         {
           title: "Risk Assessments and Method Statements",
-          content: "Employers are required by law to protect your employees, and others, from harm.\n\nUnder the Management of Health and Safety at Work Regulations 1999, the minimum you must do is:\n\n• Identify what could cause injury or illness in your business (hazards)\n• Decide how likely it is that someone could be harmed and how seriously (the risk)\n• Take action to eliminate the hazard, or if this isn't possible, control the risk.\n\nThe purpose of a Method Statement when on site is to document given specific instructions on how to SAFELY perform a work-related task.\n\nIt is the plant operator's responsibility to COMPLY with the Method Statement."
+          content: "Employers are required by law to protect your employees, and others, from harm.\n\nUnder the Management of Health and Safety at Work Regulations 1999, the minimum you must do is:\n\n• Identify what could cause injury or illness in your business (hazards)\n• Decide how likely it is that someone could be harmed and how seriously (the risk)\n• Take action to eliminate the hazard, or if this isn't possible, control the risk.\n\nThe purpose of a Method Statement when on site is to document given specific instructions on how to SAFELY perform a work-related task.\n\nIt is the plant operator's responsibility to COMPLY with the Method Statement.",
+          image: "/extracted_images/page_13_img_04.png",
+          imageAlt: "Risk Assessment Process"
         },
         {
           title: "Operator Responsibilities",
