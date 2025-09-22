@@ -266,7 +266,11 @@ export const modules = [
             },
             {
               title: "Hydraulic System",
-              content: "Always ensure the filler cap area is clean and pressure in the system is released before removing the cap. Always use a clean container when filling the system to prevent contamination."
+              content: "Always ensure the filler cap area is clean and pressure in the system is released before removing the cap. Always use a clean container when filling the system to prevent contamination.",
+              safetyMessage: {
+                text: "Always Remember to OperateSAFE\n\nNever rely solely on the hydraulics when working under raised components. Use safety props/struts. (Always refer to the manufacturer's instructions)",
+                background: "#4A90A4"
+              }
             },
             {
               title: "Fuel System",
