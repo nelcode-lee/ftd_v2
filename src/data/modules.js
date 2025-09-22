@@ -110,6 +110,14 @@ export const modules = [
           ]
         },
         {
+          title: "Additional Legislation and Guidance",
+          content: "Additional health and safety legislation and guidance documents that apply to forward tipping dumper operations:\n\n• Management of Health and Safety at Work Regulations (MHSWR)\n• Construction (Design and Management) Regulations (CDM)\n• Vibration at Work Regulations\n• Road Traffic Act\n• HSG 114 – The safe use of vehicles on construction sites\n• HSG 46 – Guide for small contractors\n• Plant Safety Group – Safe use of dumpers\n• Control of Substances Hazardous to Health Regulations\n• The Control of Noise Regulations"
+        },
+        {
+          title: "Risk Assessments and Method Statements",
+          content: "Employers are required by law to protect your employees, and others, from harm.\n\nUnder the Management of Health and Safety at Work Regulations 1999, the minimum you must do is:\n\n• Identify what could cause injury or illness in your business (hazards)\n• Decide how likely it is that someone could be harmed and how seriously (the risk)\n• Take action to eliminate the hazard, or if this isn't possible, control the risk.\n\nThe purpose of a Method Statement when on site is to document given specific instructions on how to SAFELY perform a work-related task.\n\nIt is the plant operator's responsibility to COMPLY with the Method Statement."
+        },
+        {
           title: "Operator Responsibilities",
           content: "As a forward tipping dumper operator, you are responsible for:\n\n• Operating equipment safely and competently\n• Following site rules and procedures\n• Reporting defects and safety concerns\n• Wearing appropriate PPE\n• Conducting pre-operational checks\n• Working within your competence level"
         }
