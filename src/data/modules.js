@@ -137,7 +137,13 @@ export const modules = [
         },
         {
           title: "Operator Roles & Responsibilities",
-          content: "As a 'safety critical' worker, plant operators are required to:\n\n• Only use site plant or equipment if you are trained, competent and have been authorised to do so.\n• Only authorised operators should hold vehicle keys.\n• You are required to work safely, efficiently and comply with the method statement.\n• Be punctual and co-operate with other workers – this can contribute towards repeat business with the client or principal contractor."
+          content: "As a 'safety critical' worker, plant operators are required to:\n\n• Only use site plant or equipment if you are trained, competent and have been authorised to do so.\n• Only authorised operators should hold vehicle keys.\n• You are required to work safely, efficiently and comply with the method statement.\n• Be punctual and co-operate with other workers – this can contribute towards repeat business with the client or principal contractor.\n\nOperators should also be trained in the safe operation of the specific machine that they are required to operate, which will include:\n\n• Layout and operation of the controls.\n• Stability limits.\n• Daily checks and how to do them safely.\n\nAlways use the operator's manual for the machine you are operating. This includes safety information, maintenance and information on operation.\n\nGood timekeeping, being polite, being safe and doing a good job are all ways of ensuring repeat business with a client or principle contractor.",
+          subsections: [
+            {
+              title: "Additional Sources of Information",
+              content: "• Codes of Practice\n• Site plans / drawings\n• Risk assessments and method statements\n• COSHH Regulations\n• Safety data sheets\n• Load / tare sheets\n• Inspection and reporting forms / procedures"
+            }
+          ]
         }
       ],
       knowledgeStops: []
