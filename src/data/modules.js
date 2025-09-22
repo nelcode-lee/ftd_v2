@@ -121,7 +121,9 @@ export const modules = [
         },
         {
           title: "Social Responsibilities",
-          content: "In general plant operators are regarded as 'safety-critical' workers, which means their actions with the machine can have significant health & safety consequences for themselves and others.\n\nIt is essential that all personnel involved in the planning, supervision and carrying out of mobile plant operations are adequately trained and competent for their role."
+          content: "In general plant operators are regarded as 'safety-critical' workers, which means their actions with the machine can have significant health & safety consequences for themselves and others.\n\nIt is essential that all personnel involved in the planning, supervision and carrying out of mobile plant operations are adequately trained and competent for their role.",
+          image: "/extracted_images/page_14_img_03.png",
+          imageAlt: "Social Responsibilities and Safety Critical Workers"
         },
         {
           title: "Site Induction",
