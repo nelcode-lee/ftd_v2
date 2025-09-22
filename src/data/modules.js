@@ -505,6 +505,10 @@ export const modules = [
           ]
         },
         {
+          title: "Operating in Confined Areas",
+          content: "Operating dumpers in confined areas requires special attention to spatial awareness, maneuverability, and safety protocols to prevent accidents and ensure safe operation in tight spaces."
+        },
+        {
           title: "Operating Controls",
           content: "Understanding the location and function of all controls is essential for safe operation. Controls include steering, throttle, brake, gear selection, and hydraulic functions."
         },
