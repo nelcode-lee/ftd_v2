@@ -120,8 +120,22 @@ export const modules = [
           imageAlt: "Risk Assessment Process"
         },
         {
-          title: "Operator Responsibilities",
-          content: "As a forward tipping dumper operator, you are responsible for:\n\n• Operating equipment safely and competently\n• Following site rules and procedures\n• Reporting defects and safety concerns\n• Wearing appropriate PPE\n• Conducting pre-operational checks\n• Working within your competence level"
+          title: "Social Responsibilities",
+          content: "In general plant operators are regarded as 'safety-critical' workers, which means their actions with the machine can have significant health & safety consequences for themselves and others.\n\nIt is essential that all personnel involved in the planning, supervision and carrying out of mobile plant operations are adequately trained and competent for their role."
+        },
+        {
+          title: "Site Induction",
+          content: "When starting work on a new site you will undergo a site induction. Familiarise yourself with some of the subject areas that will be included in a site induction:",
+          subsections: [
+            {
+              title: "Key Site Induction Topics",
+              content: "• Access and egress\n• Safety signs and signals\n• Accident reporting\n• Confined spaces\n• Emergency procedures\n• Buried services\n• Reporting structure\n• Contamination\n• PPE/RPE requirements\n• Electricity\n• Welfare facilities\n• Lifting operations\n• Reporting procedures\n• Working from/at height\n• Site Layout\n• Waste disposal\n• Traffic Routes\n• Smoking policy\n• Restricted/prohibited areas"
+            }
+          ]
+        },
+        {
+          title: "Operator Roles & Responsibilities",
+          content: "As a 'safety critical' worker, plant operators are required to:\n\n• Only use site plant or equipment if you are trained, competent and have been authorised to do so.\n• Only authorised operators should hold vehicle keys.\n• You are required to work safely, efficiently and comply with the method statement.\n• Be punctual and co-operate with other workers – this can contribute towards repeat business with the client or principal contractor."
         }
       ],
       knowledgeStops: []
