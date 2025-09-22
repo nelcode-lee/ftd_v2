@@ -165,7 +165,21 @@ export const modules = [
       sections: [
         {
           title: "Major Components Overview",
-          content: "Forward Tipping Dumpers consist of several key components that work together to provide safe and efficient operation. Understanding these components is essential for proper operation and maintenance."
+          content: "Forward Tipping Dumpers consist of several key components that work together to provide safe and efficient operation. Understanding these components is essential for proper operation and maintenance.",
+          additionalImages: [
+            {
+              image: "/extracted_images/page_17_img_03.png",
+              imageAlt: "Forward Tipping Dumper Components"
+            },
+            {
+              image: "/extracted_images/page_17_img_02.png",
+              imageAlt: "Dumper Component Layout"
+            },
+            {
+              image: "/extracted_images/page_17_img_04.png",
+              imageAlt: "Major Component Identification"
+            }
+          ]
         },
         {
           title: "Engine and Power Unit",
