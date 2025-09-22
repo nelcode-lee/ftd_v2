@@ -294,7 +294,25 @@ export const modules = [
             },
             {
               title: "Tyres",
-              content: "Raised lugs on tyres provide traction / grip for moving, steering and braking in soft mud. If tyres are worn, traction and grip will be severely affected."
+              content: "Raised lugs on tyres provide traction / grip for moving, steering and braking in soft mud. If tyres are worn, traction and grip will be severely affected.",
+              safetyMessage: {
+                text: "Always Remember to OperateSAFE\n\nNever rely solely on the hydraulics when working under raised components. Use safety props/struts. (Always refer to the manufacturer's instructions)",
+                background: "#4A90A4"
+              },
+              additionalImages: [
+                {
+                  image: "/extracted_images/page_19_img_03.png",
+                  imageAlt: "Tyre and Wheel Information"
+                },
+                {
+                  image: "/extracted_images/page_19_img_04.png",
+                  imageAlt: "Tyre Safety Guidelines"
+                },
+                {
+                  image: "/extracted_images/page_19_img_05.png",
+                  imageAlt: "Tyre Maintenance"
+                }
+              ]
             }
           ]
         }
