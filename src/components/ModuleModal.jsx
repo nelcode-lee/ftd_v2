@@ -268,7 +268,11 @@ const ModuleModal = ({ module, onClose }) => {
               
               {subsection.image && renderImage(subsection.image, subsection.imageAlt || subsection.title)}
               {subsection.additionalImages && subsection.additionalImages.length > 0 && (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                <div className={`grid gap-4 mb-4 ${
+                  subsection.additionalImages.some(img => img.sideBySide) 
+                    ? 'grid-cols-1 md:grid-cols-2' 
+                    : 'grid-cols-1 md:grid-cols-2'
+                }`}>
                   {subsection.additionalImages.map((additionalImage, imgIndex) => 
                     renderImage(additionalImage.image, additionalImage.imageAlt || subsection.title)
                   )}
