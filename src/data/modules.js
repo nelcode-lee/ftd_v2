@@ -238,7 +238,7 @@ export const modules = [
             {
               title: "Forward Tipping Cabbed Dumper", 
               content: "Features an enclosed operator cab for protection from weather and site conditions.",
-              image: "/extracted_images/page_12_img_02.png",
+              image: "/extracted_images/page_18_img_07.png",
               imageAlt: "Forward Tipping Cabbed Dumper"
             },
             {
