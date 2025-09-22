@@ -329,9 +329,10 @@ export const modules = [
               content: "Foot brake, Parking brake, Steering, Electrics, Horn, Reverse alarm, Flashing beacons, Lights, Tipping lever, Raise/lower skip, Rotate skip."
             }
           ],
-          safetyMessage: {
-            text: "SCAN ME\n\nDual View Dumper\nPre-Operational Checks",
-            background: "#4A90A4"
+          video: {
+            title: "Daily Checks: Dual View Dumper",
+            embedUrl: "https://www.youtube.com/embed/oABC5YmKhr8",
+            description: "Watch this video to see the pre-operational checks in action on a dual view dumper."
           }
         }
       ],
