@@ -394,7 +394,7 @@ export const modules = [
     id: 5,
     title: "Operation & Control Systems",
     description: "Learn operational procedures, control systems, and safe driving techniques.",
-    status: "locked",
+    status: "completed",
     icon: "🎮",
     content: {
       objectives: [
@@ -404,6 +404,24 @@ export const modules = [
         "Practice emergency procedures and responses"
       ],
       sections: [
+        {
+          title: "Towing Equipment with a Dumper – Enhanced Training",
+          content: "Some dumpers have the capability to tow equipment such as small bowsers and compressors. As dumpers are not specifically designed for towing purposes, other methods should be explored before deciding on this purpose.\n\nTowing with a dumper requires enhanced training, in addition to the training delivered within the Skills Bootcamp programme. To assist with your knowledge and understanding of this 'safety critical' activity, below outlines some key safety information when towing with a dumper.",
+          subsections: [
+            {
+              title: "Pre-Towing Safety Considerations",
+              content: "Should you be asked to tow equipment, you must consider the following points:\n\n• All options have been considered and there no other more suitable machine is available.\n• Towing activities are authorised by the manufacturer of the dumper to be used.\n• The equipment to be towed does not exceed the specification set by the manufacturer in terms of the weight of the equipment and the downward load imposed on the towing point.\n• The towing bracket is compatible with the towing eye on the equipment to be towed.\n• You have been trained and are competent to carry out towing activities.\n• The correct towing pin for the towing bracket is used and that the safety pin is located correctly in the towing pin."
+            },
+            {
+              title: "Towing Equipment Compatibility",
+              content: "Towing balls come in a variety of sizes and where the size of ball differs from the towed equipment's towing hitch, there is a danger that the hitch can dislodge from the ball and the towed equipment become detached from the dumper.\n\nThe manufacturers handbook should be consulted to ensure a full understanding of the towing restrictions placed by the manufacturer. It should be noted that manufacturers requirements differ between different models from the same manufacturer."
+            },
+            {
+              title: "Braking System Considerations",
+              content: "The towing ability of the dumper may depend on whether the trailer is fitted with an overrun brake or is non-braked. Using an overweight non-braked trailer could cause loss of control during the braking activity."
+            }
+          ]
+        },
         {
           title: "Operating Controls",
           content: "Understanding the location and function of all controls is essential for safe operation. Controls include steering, throttle, brake, gear selection, and hydraulic functions."
