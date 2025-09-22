@@ -315,6 +315,15 @@ export const modules = [
               ]
             }
           ]
+        },
+        {
+          title: "Forward Tipping Dumper Isolation",
+          content: "Understanding proper isolation procedures is critical for safe maintenance and operation of forward tipping dumpers.",
+          video: {
+            title: "Forward Tipping Dumper Isolation",
+            embedUrl: "https://www.youtube.com/embed/kfcIiqrEaxU",
+            description: "Learn the proper procedures for isolating a forward tipping dumper safely."
+          }
         }
       ],
       knowledgeStops: [
