@@ -274,6 +274,30 @@ export const modules = [
             embedUrl: "https://www.youtube.com/embed/oABC5YmKhr8",
             description: "Watch this video to see the pre-operational checks in action on a dual view dumper."
           }
+        },
+        {
+          title: "Safe Entry and Exit Procedures",
+          content: "Safely getting on and off the Forward Tipping Dumper is essential for preventing injuries and ensuring operator safety.",
+          subsections: [
+            {
+              title: "Safe Entry and Exit Guidelines",
+              content: "• Face the machine using the specific steps and handrails provided.\n• Maintain 3 points of contact wherever possible.\n• Ensure the steps and handrails are clean and clear of debris in your daily checks.\n• Ensure the ground you are stepping out onto or walking on is firm and clear of obstructions before exiting the cab."
+            },
+            {
+              title: "Proper Footwear Requirements",
+              content: "Wearing the correct boots can eliminate injuries.\n• Ensure they are laced up fully and worn correctly."
+            }
+          ]
+        },
+        {
+          title: "Site Travel Preparation",
+          content: "Proper preparation and configuration of the Forward Tipping Dumper before site travel ensures safe operation and compliance with site requirements.",
+          subsections: [
+            {
+              title: "Pre-Travel Configuration Checklist",
+              content: "• Engine cover – secured.\n• Check parking brake – on."
+            }
+          ]
         }
       ],
       knowledgeStops: []
