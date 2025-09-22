@@ -446,7 +446,27 @@ export const modules = [
           safetyMessage: {
             text: "The general rule is to travel the heaviest part of the machine UPHILL. Always refer to the operators manual for correct positioning on inclines/slopes.",
             background: "#4A90A4"
-          }
+          },
+          subsections: [
+            {
+              title: "Machine Travel on Slopes with a Loaded Skip",
+              content: "Always select low travel mode prior to travelling up, down or across slopes which are within manufacturers guidelines.\n\nWhen performing machine travel on slopes with a loaded skip, the heavy end of the machine must always face uphill whichever the travel direction.",
+              image: "/extracted_images/slope_loaded_skip.png",
+              imageAlt: "Machine travel on slopes with loaded skip - correct and incorrect positioning"
+            },
+            {
+              title: "Machine Travel on Slopes with an Unloaded Skip",
+              content: "When performing machine travel on slopes with an unloaded skip, the heavy end of the machine must always face up i.e. the engine end, whichever the travel direction.",
+              image: "/extracted_images/slope_unloaded_skip.png",
+              imageAlt: "Machine travel on slopes with unloaded skip - correct and incorrect positioning"
+            },
+            {
+              title: "Machine Travel Across a Slope",
+              content: "Never travel across a slope with a greater angle of 14 degrees. If the machine is loaded, the load could shift causing instability.",
+              image: "/extracted_images/slope_cross_travel.png",
+              imageAlt: "Machine travel across slope - maximum 14 degree angle limit"
+            }
+          ]
         },
         {
           title: "Travel and Manoeuvre the Dumper",
