@@ -44,11 +44,10 @@ const ModuleModal = ({ module, onClose }) => {
         <img 
           src={image} 
           alt={alt} 
-          className="w-full h-auto rounded-lg mb-3" 
+          className="w-full h-auto rounded-lg" 
           style={{ maxHeight: '400px', objectFit: 'contain' }}
           loading="eager"
         />
-        <h5 className="font-semibold text-gray-700 mb-2">{alt}</h5>
       </div>
     );
   };
