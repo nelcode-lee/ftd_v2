@@ -232,7 +232,7 @@ export const modules = [
             {
               title: "Straight Skip Dumper",
               content: "A basic dumper with a simple skip that tips forward for material discharge.",
-              image: "/extracted_images/page_01_img_01.png",
+              image: "/extracted_images/page_18_img_14.png",
               imageAlt: "Straight Skip Dumper"
             },
             {
