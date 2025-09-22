@@ -101,6 +101,11 @@ export const modules = [
               content: "• Head protection\n• Foot protection\n• High-visibility clothing\n• Weather-appropriate clothing\n• Hearing protection\n• Eye protection\n• Gloves"
             }
           ],
+          video: {
+            title: "OperateSAFE briefing: PPE",
+            embedUrl: "https://www.youtube.com/embed/cp3JD6tBXzk",
+            description: "Watch this OperateSAFE briefing video about Personal Protective Equipment requirements and best practices."
+          },
           safetyMessage: {
             text: "Always Remember to OperateSAFE\n\nAlways wear gloves when carrying out pre-use checks and maintenance on the machine.",
             background: "#4A90A4"
