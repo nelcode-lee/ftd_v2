@@ -287,7 +287,9 @@ export const modules = [
             },
             {
               title: "Proper Footwear Requirements",
-              content: "Wearing the correct boots can eliminate injuries.\n• Ensure they are laced up fully and worn correctly."
+              content: "Wearing the correct boots can eliminate injuries.\n• Ensure they are laced up fully and worn correctly.",
+              image: "/extracted_images/page_23_img_04.png",
+              imageAlt: "Proper Safety Footwear"
             }
           ]
         },
