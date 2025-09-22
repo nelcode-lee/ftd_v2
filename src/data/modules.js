@@ -213,7 +213,17 @@ export const modules = [
           title: "Major Components of a Forward Tipping Dumper",
           content: "Forward Tipping Dumpers consist of several key components including the chassis, skip, hydraulic system, engine, and operator controls.",
           image: "/extracted_images/page_17_img_03.png",
-          imageAlt: "Major Components Overview"
+          imageAlt: "Major Components Overview",
+          additionalImages: [
+            {
+              image: "/extracted_images/page_17_img_04.png",
+              imageAlt: "Forward Tipping Dumper Components"
+            },
+            {
+              image: "/extracted_images/page_17_img_02.png",
+              imageAlt: "Dumper Component Details"
+            }
+          ]
         },
         {
           title: "Different Types of Dumper & Skips",
