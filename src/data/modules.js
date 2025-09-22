@@ -305,7 +305,7 @@ export const modules = [
           subsections: [
             {
               title: "Pre-Travel Configuration Checklist",
-              content: "• Engine cover – secured.\n• Check parking brake – on."
+              content: "• Engine cover – secured.\n• Check parking brake – on.\n• Check controls are neutralised.\n• Adjust seat for comfort / reach.\n• Adjust steering column as appropriate.\n• Wear seatbelt – adjust as required.\n• Foot brake – pressure."
             }
           ]
         },
