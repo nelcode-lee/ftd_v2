@@ -22,8 +22,28 @@ export const modules = [
           content: "Forward Tipping Dumpers are used for:\n\n• Transporting loose materials (soil, gravel, sand, debris)\n• Site clearance and preparation\n• Construction waste removal\n• Material distribution across construction sites\n• Working in confined spaces where larger vehicles cannot operate"
         },
         {
-          title: "Types of Forward Tipping Dumpers",
-          content: "Different types of dumpers are available for various applications and working conditions, each designed for specific operational requirements and site conditions."
+          title: "Different Types of Dumper & Skips",
+          content: "There are several types of FTDs designed for different applications and working conditions.",
+          subsections: [
+            {
+              title: "Straight Skip Dumper",
+              content: "A basic dumper with a simple skip that tips forward for material discharge.",
+              image: "/extracted_images/page_18_img_14.png",
+              imageAlt: "Straight Skip Dumper"
+            },
+            {
+              title: "Forward Tipping Cabbed Dumper", 
+              content: "Features an enclosed operator cab for protection from weather and site conditions.",
+              image: "/extracted_images/page_18_img_07.png",
+              imageAlt: "Forward Tipping Cabbed Dumper"
+            },
+            {
+              title: "Rotating Seat (Swivel Skip) Cabbed Dumper",
+              content: "Advanced dumper with rotating operator seat and swivel skip for enhanced maneuverability and visibility during operations.",
+              image: "/extracted_images/page_18_img_08.png",
+              imageAlt: "Rotating Seat (Swivel Skip) Cabbed Dumper"
+            }
+          ]
         }
       ],
       knowledgeStops: []
