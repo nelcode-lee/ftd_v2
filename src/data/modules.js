@@ -12,7 +12,20 @@ export const modules = [
         "Learn about safety responsibilities and regulations",
         "Identify different types of dumpers and their uses"
       ],
-      sections: [],
+      sections: [
+        {
+          title: "Introduction to Forward Tipping Dumper",
+          content: "Forward Tipping Dumpers (FTDs) are versatile construction vehicles designed for transporting and dumping materials on construction sites. They are essential equipment for efficient material handling in various construction and civil engineering projects."
+        },
+        {
+          title: "Purpose and Applications",
+          content: "Forward Tipping Dumpers are used for:\n\n• Transporting loose materials (soil, gravel, sand, debris)\n• Site clearance and preparation\n• Construction waste removal\n• Material distribution across construction sites\n• Working in confined spaces where larger vehicles cannot operate"
+        },
+        {
+          title: "Types of Forward Tipping Dumpers",
+          content: "Different types of dumpers are available for various applications and working conditions, each designed for specific operational requirements and site conditions."
+        }
+      ],
       knowledgeStops: []
     }
   },
@@ -49,6 +62,18 @@ export const modules = [
             text: "Always Remember to OperateSAFE\n\nAlways wear gloves when carrying out pre-use checks and maintenance on the machine.",
             background: "#4A90A4"
           }
+        },
+        {
+          title: "Health and Safety at Work Act 1974",
+          content: "The Health and Safety at Work Act 1974 is the primary legislation covering occupational health and safety. It places duties on employers to ensure the health, safety and welfare of employees and others who may be affected by work activities."
+        },
+        {
+          title: "PUWER Regulations 1998",
+          content: "The Provision and Use of Work Equipment Regulations 1998 (PUWER) require that equipment provided for use at work is safe, suitable for use, properly maintained and that people using it are adequately trained."
+        },
+        {
+          title: "Operator Responsibilities",
+          content: "As a forward tipping dumper operator, you are responsible for:\n\n• Operating equipment safely and competently\n• Following site rules and procedures\n• Reporting defects and safety concerns\n• Wearing appropriate PPE\n• Conducting pre-operational checks\n• Working within your competence level"
         }
       ],
       knowledgeStops: []
@@ -67,7 +92,32 @@ export const modules = [
         "Recognize major components and safety features",
         "Learn basic operation principles and safety considerations"
       ],
-      sections: [],
+      sections: [
+        {
+          title: "Major Components Overview",
+          content: "Forward Tipping Dumpers consist of several key components that work together to provide safe and efficient operation. Understanding these components is essential for proper operation and maintenance."
+        },
+        {
+          title: "Engine and Power Unit",
+          content: "The engine provides power for both propulsion and hydraulic systems. It must be properly maintained with regular checks of oil levels, coolant, and air filtration systems."
+        },
+        {
+          title: "Hydraulic System",
+          content: "The hydraulic system operates the tipping mechanism and other powered functions. It requires regular fluid level checks and pressure system maintenance."
+        },
+        {
+          title: "Chassis and Frame",
+          content: "The chassis provides the structural foundation for the dumper, supporting the engine, hydraulics, and skip. It must be inspected for damage and wear."
+        },
+        {
+          title: "Skip and Tipping Mechanism",
+          content: "The skip is the material-carrying component that tips forward to discharge loads. The tipping mechanism must be properly maintained and operated within safe limits."
+        },
+        {
+          title: "Safety Features",
+          content: "Modern dumpers include important safety features:\n\n• ROPS (Roll Over Protective Structure)\n• FOPS (Falling Object Protective Structure)\n• Seat belts and operator restraints\n• Warning systems and lights\n• Emergency stops"
+        }
+      ],
       knowledgeStops: []
     }
   },
@@ -129,7 +179,28 @@ export const modules = [
         "Understand load handling and tipping procedures",
         "Practice emergency procedures and responses"
       ],
-      sections: [],
+      sections: [
+        {
+          title: "Operating Controls",
+          content: "Understanding the location and function of all controls is essential for safe operation. Controls include steering, throttle, brake, gear selection, and hydraulic functions."
+        },
+        {
+          title: "Starting and Stopping Procedures",
+          content: "Proper starting and stopping procedures ensure safe operation and extend equipment life. Always follow manufacturer's guidelines for startup and shutdown sequences."
+        },
+        {
+          title: "Safe Driving Techniques",
+          content: "Safe driving techniques include:\n\n• Maintaining appropriate speed for conditions\n• Using proper steering and braking techniques\n• Understanding machine stability limits\n• Negotiating slopes and uneven terrain safely"
+        },
+        {
+          title: "Load Handling",
+          content: "Proper load handling involves understanding load capacity limits, loading techniques, and safe transportation of materials across the work site."
+        },
+        {
+          title: "Tipping Procedures",
+          content: "Safe tipping procedures ensure accurate material placement while maintaining machine stability and operator safety."
+        }
+      ],
       knowledgeStops: []
     }
   },
@@ -146,7 +217,24 @@ export const modules = [
         "Know when to seek technical support",
         "Practice proper maintenance procedures"
       ],
-      sections: [],
+      sections: [
+        {
+          title: "Routine Maintenance Schedule",
+          content: "Regular maintenance is essential for safe operation and equipment longevity. Follow manufacturer's maintenance schedules for daily, weekly, and periodic maintenance tasks."
+        },
+        {
+          title: "Basic Troubleshooting",
+          content: "Basic troubleshooting skills help identify common problems:\n\n• Engine performance issues\n• Hydraulic system problems\n• Electrical faults\n• Steering and brake concerns\n• Unusual noises or vibrations"
+        },
+        {
+          title: "When to Seek Technical Support",
+          content: "Know when to stop operation and seek qualified technical support. Never attempt repairs beyond your competence level or without proper authorization."
+        },
+        {
+          title: "Maintenance Documentation",
+          content: "Proper documentation of maintenance activities is required for compliance and equipment tracking. Always complete maintenance records accurately and promptly."
+        }
+      ],
       knowledgeStops: []
     }
   }
