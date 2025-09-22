@@ -112,6 +112,23 @@ const ModuleModal = ({ module, onClose }) => {
     );
   };
 
+  const renderList = (list) => {
+    if (!list || !Array.isArray(list)) return null;
+    
+    return (
+      <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
+        <ul className="space-y-2">
+          {list.map((item, index) => (
+            <li key={index} className="flex items-start text-gray-700">
+              <span className="text-blue-600 mr-3 mt-1">•</span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    );
+  };
+
   const renderSection = (section, index) => (
     <div key={index} className="mb-8">
         <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
@@ -258,6 +275,7 @@ const ModuleModal = ({ module, onClose }) => {
                 </div>
               )}
               {subsection.table && renderTable(subsection.table)}
+              {subsection.list && renderList(subsection.list)}
               {subsection.video && renderVideo(subsection.video)}
             </div>
           ))}

@@ -506,7 +506,20 @@ export const modules = [
         },
         {
           title: "Operating in Confined Areas",
-          content: "Operating dumpers in confined areas requires special attention to spatial awareness, maneuverability, and safety protocols to prevent accidents and ensure safe operation in tight spaces."
+          content: "Operating dumpers in confined areas requires special attention to spatial awareness, maneuverability, and safety protocols to prevent accidents and ensure safe operation in tight spaces.",
+          subsections: [
+            {
+              title: "Hazards when Operating in a Confined Area",
+              content: "When operating in confined areas, operators must be aware of the following key hazards:",
+              list: [
+                "Fumes",
+                "Noise", 
+                "Limited visibility",
+                "Excessive manoeuvring",
+                "Proximity hazards"
+              ]
+            }
+          ]
         },
         {
           title: "Operating Controls",
