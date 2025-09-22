@@ -483,6 +483,10 @@ export const modules = [
           content: "Operating dumpers in restricted spaces requires special attention to overhead services and safety protocols to prevent accidents and ensure safe operation.",
           image: "/extracted_images/page_33_img_03.png",
           imageAlt: "Travel and Manoeuvre in Areas of Restricted Space - Overhead Services Safety",
+          safetyMessage: {
+            text: "High voltage electricity can arc across large gaps in certain conditions.",
+            background: "#DC2626"
+          },
           subsections: [
             {
               title: "Overhead Services",
