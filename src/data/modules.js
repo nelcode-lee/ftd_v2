@@ -116,6 +116,15 @@ export const modules = [
         {
           title: "Safety Features",
           content: "Modern dumpers include important safety features:\n\n• ROPS (Roll Over Protective Structure)\n• FOPS (Falling Object Protective Structure)\n• Seat belts and operator restraints\n• Warning systems and lights\n• Emergency stops"
+        },
+        {
+          title: "Forward Tipping Dumper Isolation",
+          content: "Understanding proper isolation procedures is critical for safe maintenance and operation of forward tipping dumpers.",
+          video: {
+            title: "Forward Tipping Dumper Isolation",
+            embedUrl: "https://www.youtube.com/embed/kfcIiqrEaxU",
+            description: "Learn the proper procedures for isolating a forward tipping dumper safely."
+          }
         }
       ],
       knowledgeStops: []
@@ -138,6 +147,20 @@ export const modules = [
         {
           title: "Pre-Operational Checks in Accordance with Manufacturers and Legislative Requirements",
           content: "The Health and Safety at Work Act 1974 states that employees must take reasonable care of themselves and others who may be affected by their actions.\n\nIt is a requirement to check that the machine is safe to use prior to using it.\n\nThe following items must be checked prior to use:",
+          additionalImages: [
+            {
+              image: "/extracted_images/page_22_img_05.png",
+              imageAlt: "Figure 1. Check Engine Levels"
+            },
+            {
+              image: "/extracted_images/page_22_img_06.png",
+              imageAlt: "Figure 2. Check the Chassis"
+            },
+            {
+              image: "/extracted_images/page_22_img_07.png",
+              imageAlt: "Figure 3. Check hydraulic hoses"
+            }
+          ],
           subsections: [
             {
               title: "Items/Components to be Checked",
@@ -154,13 +177,7 @@ export const modules = [
             title: "Daily Checks: Dual View Dumper",
             embedUrl: "https://www.youtube.com/embed/oABC5YmKhr8",
             description: "Watch this video to see the pre-operational checks in action on a dual view dumper."
-          },
-          additionalImages: [
-            {
-              image: "/extracted_images/page_22_img_07.png",
-              imageAlt: "Pre-Operational Check Example"
-            }
-          ]
+          }
         }
       ],
       knowledgeStops: []
