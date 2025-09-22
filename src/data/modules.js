@@ -123,11 +123,11 @@ export const modules = [
         },
         {
           title: "Additional Legislation and Guidance",
-          content: "Management of Health and Safety at Work Regulations (MHSWR), Construction (Design and Management) Regulations (CDM), Vibration at Work Regulations, Road Traffic Act, HSG 114 – The safe use of vehicles on construction sites, HSG 46 – Guide for small contractors, Plant Safety Group – Safe use of dumpers, Control of Substances Hazardous to Health Regulations, The Control of Noise Regulations"
+          content: "Management of Health and Safety at Work Regulations (MHSWR)\nConstruction (Design and Management) Regulations (CDM)\nVibration at Work Regulations\nRoad Traffic Act\nHSG 114 – The safe use of vehicles on construction sites\nHSG 46 – Guide for small contractors\nPlant Safety Group – Safe use of dumpers\nControl of Substances Hazardous to Health Regulations\nThe Control of Noise Regulations"
         },
         {
           title: "Risk Assessments and Method Statements",
-          content: "Employers are required by law to protect your employees, and others, from harm. Under the Management of Health and Safety at Work Regulations 1999, the minimum you must do is: Identify what could cause injury or illness in your business (hazards), Decide how likely it is that someone could be harmed and how seriously (the risk), Take action to eliminate the hazard, or if this isn't possible, control the risk.",
+          content: "Employers are required by law to protect your employees, and others, from harm.\n\nUnder the Management of Health and Safety at Work Regulations 1999, the minimum you must do is:\n\n• Identify what could cause injury or illness in your business (hazards)\n• Decide how likely it is that someone could be harmed and how seriously (the risk)\n\nTake action to eliminate the hazard, or if this isn't possible, control the risk.\n\nThe purpose of a Method Statement when on site is to document given specific instructions on how to SAFELY perform a work-related task.\n\nIt is the plant operator's responsibility to COMPLY with the Method Statement.",
           image: "/extracted_images/page_13_img_04.png",
           imageAlt: "Risk Assessment"
         },
