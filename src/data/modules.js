@@ -101,7 +101,13 @@ export const modules = [
         },
         {
           title: "PUWER Regulations 1998",
-          content: "The Provision and Use of Work Equipment Regulations 1998 (PUWER) require that equipment provided for use at work is safe, suitable for use, properly maintained and that people using it are adequately trained."
+          content: "The Provision and Use of Work Equipment Regulations 1998 (PUWER) require that equipment provided for use at work is safe, suitable for use, properly maintained and that people using it are adequately trained.",
+          links: [
+            {
+              url: "/extracted_images/puwer.pdf",
+              text: "PUWER Regulations 1998 - Full Regulations (PDF)"
+            }
+          ]
         },
         {
           title: "Operator Responsibilities",
@@ -132,9 +138,9 @@ export const modules = [
         {
           title: "Engine and Power Unit",
           content: "The engine provides power for both propulsion and hydraulic systems. It must be properly maintained with regular checks of oil levels, coolant, and air filtration systems."
-        },
-        {
-          title: "Hydraulic System",
+            },
+            {
+              title: "Hydraulic System",
           content: "The hydraulic system operates the tipping mechanism and other powered functions. It requires regular fluid level checks and pressure system maintenance."
         },
         {
