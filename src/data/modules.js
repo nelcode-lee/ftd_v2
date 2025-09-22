@@ -402,6 +402,8 @@ export const modules = [
         {
           title: "Personal Protective Equipment (PPE)",
           content: "Always ensure that you wear the full PPE required for the site that you are working on.",
+          image: "/extracted_images/page_29_img_02.png",
+          imageAlt: "Required Personal Protective Equipment Icons",
           subsections: [
             {
               title: "Required PPE",
