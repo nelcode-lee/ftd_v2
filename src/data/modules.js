@@ -257,7 +257,8 @@ export const modules = [
         },
         {
           title: "Principal Components of the Machine",
-          content: "The main components include the power unit, hydraulic system, fuel system, cooling system, and safety structures.",
+          content: "Forward Tipping Dumpers are made up of several key components that work together to ensure safe and efficient operation:\n\n• Power Unit\n• Hydraulic System\n• Fuel System\n• Cooling System\n• Safety Structures",
+          isHighlight: true,
           subsections: [
             {
               title: "Power Unit - Oils",
