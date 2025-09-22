@@ -437,6 +437,10 @@ export const modules = [
           ]
         },
         {
+          title: "Rotating Seat Dumper Operation",
+          content: "When operating a rotating seat dumper, you can change the seat and console position to allow the operator the best viewpoint while travelling, manoeuvring and operating the machine. The entire operating platform rotates 180 degrees.\n\nYou may have viewed the pre-operational checks video earlier in this workbook, but please scan the QR code to view again."
+        },
+        {
           title: "Operating Controls",
           content: "Understanding the location and function of all controls is essential for safe operation. Controls include steering, throttle, brake, gear selection, and hydraulic functions."
         },
