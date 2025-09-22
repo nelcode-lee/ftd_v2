@@ -536,6 +536,10 @@ export const modules = [
                 {
                   image: "/extracted_images/page_35_img_06.png",
                   imageAlt: "Human Detection System - Additional Technology Features"
+                },
+                {
+                  image: "/extracted_images/page_36_img_04.png",
+                  imageAlt: "Human Detection System - Advanced Safety Technology"
                 }
               ]
             }
