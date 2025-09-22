@@ -318,6 +318,10 @@ export const modules = [
               imageAlt: "Mirror and Visibility System Check"
             },
             {
+              image: "/extracted_images/page_26_img_03.png",
+              imageAlt: "Visibility System Components"
+            },
+            {
               image: "/extracted_images/page_26_img_06.png",
               imageAlt: "Visibility Aids Positioning"
             }
