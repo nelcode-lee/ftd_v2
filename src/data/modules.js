@@ -91,7 +91,13 @@ export const modules = [
         },
         {
           title: "Health and Safety at Work Act 1974",
-          content: "The Health and Safety at Work Act 1974 is the primary legislation covering occupational health and safety. It places duties on employers to ensure the health, safety and welfare of employees and others who may be affected by work activities."
+          content: "The Health and Safety at Work Act 1974 is the primary legislation covering occupational health and safety. It places duties on employers to ensure the health, safety and welfare of employees and others who may be affected by work activities.",
+          links: [
+            {
+              url: "/extracted_images/lawleaflet.pdf",
+              text: "Health and Safety at Work Act 1974 - Law Leaflet (PDF)"
+            }
+          ]
         },
         {
           title: "PUWER Regulations 1998",
