@@ -166,18 +166,24 @@ export const modules = [
         {
           title: "Major Components Overview",
           content: "Forward Tipping Dumpers consist of several key components that work together to provide safe and efficient operation. Understanding these components is essential for proper operation and maintenance.",
-          additionalImages: [
+          image: "/extracted_images/page_17_img_03.png",
+          imageAlt: "Forward Tipping Dumper Components"
+        },
+        {
+          title: "Steering and Control Systems",
+          content: "Critical control components ensure precise operation and operator control of the forward tipping dumper.",
+          subsections: [
             {
-              image: "/extracted_images/page_17_img_03.png",
-              imageAlt: "Forward Tipping Dumper Components"
-            },
-            {
+              title: "Steering Ram",
+              content: "The steering ram provides hydraulic power assistance for steering operations, enabling precise control and reduced operator effort during machine operation.",
               image: "/extracted_images/page_17_img_02.png",
-              imageAlt: "Dumper Component Layout"
+              imageAlt: "Steering Ram Component"
             },
             {
-              image: "/extracted_images/page_17_img_04.png",
-              imageAlt: "Major Component Identification"
+              title: "Console",
+              content: "The operator console contains all primary controls, instrumentation, and monitoring systems required for safe and efficient dumper operation.",
+              image: "/extracted_images/page_17_img_04.png", 
+              imageAlt: "Operator Console and Controls"
             }
           ]
         },
