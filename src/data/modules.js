@@ -315,39 +315,6 @@ export const modules = [
               ]
             }
           ]
-        },
-        {
-          title: "Pre-Operational Checks in Accordance with Manufacturers and Legislative Requirements",
-          content: "The Health and Safety at Work Act 1974 states that employees must take reasonable care of themselves and others who may be affected by their actions.\n\nIt is a requirement to check that the machine is safe to use prior to using it.\n\nThe following items must be checked prior to use:",
-          subsections: [
-            {
-              title: "Items/Components to be Checked",
-              content: "Axle oil, Engine oil, Transmission oil, Hydraulic oil, Coolant level, Fuel level, Grease, Air cleaner, Brake oil, Wheel nuts, Tyre pressure, Fan belt."
-            },
-            {
-              title: "Running Checks", 
-              content: "Foot brake, Parking brake, Steering, Electrics, Horn, Reverse alarm, Flashing beacons, Lights, Tipping lever, Raise/lower skip, Rotate skip."
-            }
-          ],
-          video: {
-            title: "Daily Checks: Dual View Dumper",
-            embedUrl: "https://www.youtube.com/embed/oABC5YmKhr8",
-            description: "Watch this video to see the pre-operational checks in action on a dual view dumper."
-          },
-          additionalImages: [
-            {
-              image: "/extracted_images/page_22_img_05.png",
-              imageAlt: "Figure 1. Check Engine Levels"
-            },
-            {
-              image: "/extracted_images/page_22_img_06.png",
-              imageAlt: "Figure 2. Check the Chassis"
-            },
-            {
-              image: "/extracted_images/page_22_img_07.png",
-              imageAlt: "Figure 3. Check hydraulic hoses"
-            }
-          ]
         }
       ],
       knowledgeStops: [
@@ -389,10 +356,37 @@ export const modules = [
       ],
       sections: [
         {
-          title: "Pre-Operational Checks - Manufacturers and Legislative Requirements",
-          content: "The Health and Safety at Work Act 1974 states that employees must take reasonable care of themselves and others who may be affected by their actions. It is a requirement to check that the machine is safe to use prior to using it.",
-          image: "/extracted_images/page_06_img_02.png",
-          imageAlt: "Pre-Operational Checks"
+          title: "Pre-Operational Checks in Accordance with Manufacturers and Legislative Requirements",
+          content: "The Health and Safety at Work Act 1974 states that employees must take reasonable care of themselves and others who may be affected by their actions.\n\nIt is a requirement to check that the machine is safe to use prior to using it.\n\nThe following items must be checked prior to use:",
+          subsections: [
+            {
+              title: "Items/Components to be Checked",
+              content: "Axle oil, Engine oil, Transmission oil, Hydraulic oil, Coolant level, Fuel level, Grease, Air cleaner, Brake oil, Wheel nuts, Tyre pressure, Fan belt."
+            },
+            {
+              title: "Running Checks", 
+              content: "Foot brake, Parking brake, Steering, Electrics, Horn, Reverse alarm, Flashing beacons, Lights, Tipping lever, Raise/lower skip, Rotate skip."
+            }
+          ],
+          video: {
+            title: "Daily Checks: Dual View Dumper",
+            embedUrl: "https://www.youtube.com/embed/oABC5YmKhr8",
+            description: "Watch this video to see the pre-operational checks in action on a dual view dumper."
+          },
+          additionalImages: [
+            {
+              image: "/extracted_images/page_22_img_05.png",
+              imageAlt: "Figure 1. Check Engine Levels"
+            },
+            {
+              image: "/extracted_images/page_22_img_06.png",
+              imageAlt: "Figure 2. Check the Chassis"
+            },
+            {
+              image: "/extracted_images/page_22_img_07.png",
+              imageAlt: "Figure 3. Check hydraulic hoses"
+            }
+          ]
         },
         {
           title: "Personal Protective Equipment (PPE)",
