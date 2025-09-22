@@ -400,18 +400,6 @@ export const modules = [
           }
         },
         {
-          title: "Personal Protective Equipment (PPE)",
-          content: "Always ensure that you wear the full PPE required for the site that you are working on.",
-          image: "/extracted_images/page_29_img_02.png",
-          imageAlt: "Required Personal Protective Equipment Icons",
-          subsections: [
-            {
-              title: "Required PPE",
-              content: "Head protection, Foot protection, High-visibility clothing, Weather-appropriate clothing, Hearing protection, Eye protection, Gloves"
-            }
-          ],
-        },
-        {
           title: "Safely Get On and Off the Forward Tipping Dumper",
           content: "Face the machine using the specific steps and handrails provided. Maintain 3 points of contact wherever possible. Ensure the steps and handrails are clean and clear of debris in your daily checks.",
           image: "/extracted_images/page_30_img_02.png",
