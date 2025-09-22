@@ -89,6 +89,20 @@ export const modules = [
               imageAlt: "Pre-Operational Check Example"
             }
           ]
+        },
+        {
+          title: "Personal Protective Equipment (PPE)",
+          content: "Always ensure that you wear the full PPE required for the site that you are working on.",
+          subsections: [
+            {
+              title: "Required PPE",
+              content: "• Head protection\n• Foot protection\n• High-visibility clothing\n• Weather-appropriate clothing\n• Hearing protection\n• Eye protection\n• Gloves"
+            }
+          ],
+          safetyMessage: {
+            text: "Always Remember to OperateSAFE\n\nAlways wear gloves when carrying out pre-use checks and maintenance on the machine.",
+            background: "#4A90A4"
+          }
         }
       ],
       knowledgeStops: []
