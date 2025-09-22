@@ -329,11 +329,15 @@ export const modules = [
         },
         {
           title: "Pedestrianised Areas",
-          content: "If you are setting up to work in pedestrianised areas, always take the following into consideration.\n\nAlways ensure physical segregation of pedestrians from machines and the work:\n\n• Machine movements\n• Noise\n• Fumes"
+          content: "If you are setting up to work in pedestrianised areas, always take the following into consideration.\n\nAlways ensure physical segregation of pedestrians from machines and the work:\n\n• Machine movements\n• Noise\n• Fumes",
+          image: "/extracted_images/page_27_img_04.png",
+          imageAlt: "Pedestrianised Area Safety Requirements"
         },
         {
           title: "Travelling on a Public Highway",
           content: "When travelling on the public highway, the machine must adhere to the following requirements by law:",
+          image: "/extracted_images/page_27_img_03.png",
+          imageAlt: "Public Highway Operation Requirements",
           subsections: [
             {
               title: "Vehicle Requirements",
