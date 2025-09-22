@@ -529,7 +529,7 @@ export const modules = [
             },
             {
               title: "SAFETY INNOVATION IN FOCUS: HUMAN DETECTION SYSTEMS",
-              content: "Modern safety innovations include advanced human detection systems designed to enhance operator awareness and prevent accidents in confined areas."
+              content: "Modern safety innovations include advanced human detection systems designed to enhance operator awareness and prevent accidents in confined areas.\n\nThe Spillard Human Detection System identifies only human form through deep intelligent mapping. It aims to:\n\n• Warn operators and pedestrians of potential risks of collision.\n• Improve operators all around awareness of their surroundings.\n• Detect human form whilst ignoring ever changing backgrounds.\n• Reduce risk whilst improving the operator and pedestrian interaction.\n\nThe human detection system is an aid to safety only.\n\nIt must be used in addition to the site's safe system of work."
             }
           ]
         },
