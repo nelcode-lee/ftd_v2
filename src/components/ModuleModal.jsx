@@ -76,6 +76,42 @@ const ModuleModal = ({ module, onClose }) => {
     );
   };
 
+  const renderTable = (table) => {
+    if (!table) return null;
+    
+    return (
+      <div className="bg-white p-4 rounded-lg border border-gray-200 shadow-sm mb-4">
+        {table.title && (
+          <h4 className="text-lg font-semibold text-gray-900 mb-4">{table.title}</h4>
+        )}
+        <div className="overflow-x-auto">
+          <table className="w-full border-collapse border border-gray-300">
+            <thead>
+              <tr className="bg-gray-50">
+                {table.headers.map((header, index) => (
+                  <th key={index} className="border border-gray-300 px-4 py-3 text-left font-semibold text-gray-900">
+                    {header}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {table.rows.map((row, rowIndex) => (
+                <tr key={rowIndex} className={rowIndex % 2 === 0 ? 'bg-white' : 'bg-gray-50'}>
+                  {row.map((cell, cellIndex) => (
+                    <td key={cellIndex} className="border border-gray-300 px-4 py-3 text-gray-700">
+                      {cell}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    );
+  };
+
   const renderSection = (section, index) => (
     <div key={index} className="mb-8">
         <h3 className="text-xl font-semibold text-gray-900 mb-4 flex items-center">
@@ -221,6 +257,7 @@ const ModuleModal = ({ module, onClose }) => {
                   )}
                 </div>
               )}
+              {subsection.table && renderTable(subsection.table)}
               {subsection.video && renderVideo(subsection.video)}
             </div>
           ))}

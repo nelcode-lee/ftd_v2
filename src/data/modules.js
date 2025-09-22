@@ -490,7 +490,17 @@ export const modules = [
           subsections: [
             {
               title: "Overhead Services",
-              content: "It is important that all work near to overhead lines is properly planned and managed to reduce the risk of accidents.\n\nThe Health and Safety Executive publication 'Avoiding danger from overhead power lines' (GS6) gives valuable information and guidance on how to safely plan and set up work near to overhead power lines."
+              content: "It is important that all work near to overhead lines is properly planned and managed to reduce the risk of accidents.\n\nThe Health and Safety Executive publication 'Avoiding danger from overhead power lines' (GS6) gives valuable information and guidance on how to safely plan and set up work near to overhead power lines.\n\nGS6 advises establishing exclusion zones around overhead power lines because high voltage electricity can arc across large gaps in certain conditions.",
+              table: {
+                title: "Distances to be Maintained",
+                headers: ["Power Line Type", "Minimum Safe Distance"],
+                rows: [
+                  ["Low-voltage line", "1 m"],
+                  ["11kV and 33 kV lines", "3 m"],
+                  ["132 kV line", "6 m"],
+                  ["275 kV and 400 kV lines", "7 m"]
+                ]
+              }
             }
           ]
         },
