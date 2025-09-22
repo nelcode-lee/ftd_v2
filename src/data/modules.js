@@ -28,7 +28,29 @@ export const modules = [
         "Learn about risk assessments and method statements",
         "Know your responsibilities as an operator"
       ],
-      sections: [],
+      sections: [
+        {
+          title: "Personal Protective Equipment (PPE)",
+          content: "Always ensure that you wear the full PPE required for the site that you are working on.",
+          image: "/extracted_images/PPE.webp",
+          imageAlt: "Personal Protective Equipment Icons",
+          subsections: [
+            {
+              title: "Required PPE",
+              content: "• Head protection\n• Foot protection\n• High-visibility clothing\n• Weather-appropriate clothing\n• Hearing protection\n• Eye protection\n• Gloves"
+            }
+          ],
+          video: {
+            title: "OperateSAFE briefing: PPE",
+            embedUrl: "https://www.youtube.com/embed/cp3JD6tBXzk",
+            description: "Watch this OperateSAFE briefing video about Personal Protective Equipment requirements and best practices."
+          },
+          safetyMessage: {
+            text: "Always Remember to OperateSAFE\n\nAlways wear gloves when carrying out pre-use checks and maintenance on the machine.",
+            background: "#4A90A4"
+          }
+        }
+      ],
       knowledgeStops: []
     }
   },
@@ -89,27 +111,6 @@ export const modules = [
               imageAlt: "Pre-Operational Check Example"
             }
           ]
-        },
-        {
-          title: "Personal Protective Equipment (PPE)",
-          content: "Always ensure that you wear the full PPE required for the site that you are working on.",
-          image: "/extracted_images/PPE.webp",
-          imageAlt: "Personal Protective Equipment Icons",
-          subsections: [
-            {
-              title: "Required PPE",
-              content: "• Head protection\n• Foot protection\n• High-visibility clothing\n• Weather-appropriate clothing\n• Hearing protection\n• Eye protection\n• Gloves"
-            }
-          ],
-          video: {
-            title: "OperateSAFE briefing: PPE",
-            embedUrl: "https://www.youtube.com/embed/cp3JD6tBXzk",
-            description: "Watch this OperateSAFE briefing video about Personal Protective Equipment requirements and best practices."
-          },
-          safetyMessage: {
-            text: "Always Remember to OperateSAFE\n\nAlways wear gloves when carrying out pre-use checks and maintenance on the machine.",
-            background: "#4A90A4"
-          }
         }
       ],
       knowledgeStops: []
