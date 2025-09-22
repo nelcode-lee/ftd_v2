@@ -450,7 +450,17 @@ export const modules = [
         },
         {
           title: "Travel and Manoeuvre the Dumper",
-          content: "When travelling and manoeuvring the dumper, it is important to ensure machine stability to reduce the risk of the dumper becoming stuck or tipping over."
+          content: "When travelling and manoeuvring the dumper, it is important to ensure machine stability to reduce the risk of the dumper becoming stuck or tipping over.",
+          subsections: [
+            {
+              title: "Skip Positioning for Visibility",
+              content: "When on level/undulating ground, the operator can have the skip at the rear when travelling for better visibility."
+            },
+            {
+              title: "Loading and Tipping Positioning",
+              content: "Operator must ensure they face the skip when being loaded and when tipping a load."
+            }
+          ]
         },
         {
           title: "Operating Controls",
