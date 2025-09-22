@@ -310,6 +310,28 @@ export const modules = [
             }
           ]
         }
+      ],
+      knowledgeStops: [
+        {
+          question: "What are the main components of a Forward Tipping Dumper?",
+          answer: "The main components include the chassis, skip, hydraulic system, engine, operator controls, and safety systems"
+        },
+        {
+          question: "Can you identify at least one component you would be checking in the following images?",
+          answer: "Engine oil level, hydraulic fluid level, coolant level, fuel level, tyre condition, brake system, steering system, lights and indicators, mirrors, seat belts, ROPS/FOPS structures"
+        },
+        {
+          question: "If an operator has to top-up the hydraulic oil, state two precautions that ensure cleanliness of the system.",
+          answer: "1) Always ensure the filler cap area is clean before removing the cap, 2) Always use a clean container when filling the system to prevent contamination"
+        },
+        {
+          question: "Why should the machine be re-fuelled at the end of the day?",
+          answer: "To prevent condensation building up in the tank, which can cause water contamination in the fuel system and potential engine problems"
+        },
+        {
+          question: "Name THREE purposes of the raised lugs on tyres and what can happen to a dumper if the lugs are severely worn?",
+          answer: "Three purposes: 1) Provide traction/grip for moving, 2) Enable steering control, 3) Assist with braking in soft mud. If severely worn: traction and grip will be severely affected, making the machine unsafe to operate on soft or slippery surfaces"
+        }
       ]
     }
   },
