@@ -242,6 +242,12 @@ export const modules = [
               imageAlt: "Forward Tipping Cabbed Dumper"
             },
             {
+              title: "Rotating Seat (Swivel Skip) Cabbed Dumper",
+              content: "Features a rotating operator seat and swivel skip capability, allowing the operator to discharge material in multiple directions for enhanced maneuverability and efficiency.",
+              image: "/extracted_images/page_18_img_08.png",
+              imageAlt: "Rotating Seat (Swivel Skip) Cabbed Dumper"
+            },
+            {
               title: "Hi-Tip Skid Loader",
               content: "A compact loader with high-lift capability for confined spaces and precise material placement.",
               image: "/extracted_images/hi_top_skid_loader.webp",
