@@ -183,7 +183,13 @@ export const modules = [
               title: "Console",
               content: "The operator console contains all primary controls, instrumentation, and monitoring systems required for safe and efficient dumper operation.",
               image: "/extracted_images/page_17_img_04.png", 
-              imageAlt: "Operator Console and Controls"
+              imageAlt: "Operator Console and Controls",
+              additionalImages: [
+                {
+                  image: "/extracted_images/page_07_img_04.png",
+                  imageAlt: "Console Control Detail"
+                }
+              ]
             }
           ]
         },
