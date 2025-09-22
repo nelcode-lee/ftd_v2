@@ -479,6 +479,16 @@ export const modules = [
           ]
         },
         {
+          title: "Travel and Manoeuvre in Areas of Restricted Space",
+          content: "Operating dumpers in restricted spaces requires special attention to overhead services and safety protocols to prevent accidents and ensure safe operation.",
+          subsections: [
+            {
+              title: "Overhead Services",
+              content: "It is important that all work near to overhead lines is properly planned and managed to reduce the risk of accidents.\n\nThe Health and Safety Executive publication 'Avoiding danger from overhead power lines' (GS6) gives valuable information and guidance on how to safely plan and set up work near to overhead power lines."
+            }
+          ]
+        },
+        {
           title: "Operating Controls",
           content: "Understanding the location and function of all controls is essential for safe operation. Controls include steering, throttle, brake, gear selection, and hydraulic functions."
         },
