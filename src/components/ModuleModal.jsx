@@ -197,7 +197,30 @@ const ModuleModal = ({ module, onClose }) => {
                   </p>
                 ))}
               </div>
+              
+              {subsection.safetyMessage && (
+                <div 
+                  className="rounded-lg p-6 mb-6 text-center"
+                  style={{ backgroundColor: subsection.safetyMessage.background }}
+                >
+                  <div className="text-white text-xl md:text-2xl font-semibold leading-relaxed">
+                    {subsection.safetyMessage.text.split('\n').map((line, index) => (
+                      <div key={index} className={index > 0 ? 'mt-2' : ''}>
+                        {line}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+              
               {subsection.image && renderImage(subsection.image, subsection.imageAlt || subsection.title)}
+              {subsection.additionalImages && subsection.additionalImages.length > 0 && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  {subsection.additionalImages.map((additionalImage, imgIndex) => 
+                    renderImage(additionalImage.image, additionalImage.imageAlt || subsection.title)
+                  )}
+                </div>
+              )}
               {subsection.video && renderVideo(subsection.video)}
             </div>
           ))}
