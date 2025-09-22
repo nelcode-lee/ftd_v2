@@ -111,7 +111,13 @@ export const modules = [
         },
         {
           title: "Additional Legislation and Guidance",
-          content: "Additional health and safety legislation and guidance documents that apply to forward tipping dumper operations:\n\n• Management of Health and Safety at Work Regulations (MHSWR)\n• Construction (Design and Management) Regulations (CDM)\n• Vibration at Work Regulations\n• Road Traffic Act\n• HSG 114 – The safe use of vehicles on construction sites\n• HSG 46 – Guide for small contractors\n• Plant Safety Group – Safe use of dumpers\n• Control of Substances Hazardous to Health Regulations\n• The Control of Noise Regulations"
+          content: "Additional health and safety legislation and guidance documents that apply to forward tipping dumper operations:\n\n• Management of Health and Safety at Work Regulations (MHSWR)\n• Construction (Design and Management) Regulations (CDM)\n• Vibration at Work Regulations\n• Road Traffic Act\n• HSG 114 – The safe use of vehicles on construction sites\n• HSG 46 – Guide for small contractors\n• Plant Safety Group – Safe use of dumpers\n• Control of Substances Hazardous to Health Regulations\n• The Control of Noise Regulations",
+          links: [
+            {
+              url: "/extracted_images/working ata height.pdf",
+              text: "HSE Working at Height Regulations - Guidance Document (PDF)"
+            }
+          ]
         },
         {
           title: "Risk Assessments and Method Statements",
