@@ -42,6 +42,12 @@ export const modules = [
               content: "Advanced dumper with rotating operator seat and swivel skip for enhanced maneuverability and visibility during operations.",
               image: "/extracted_images/page_18_img_08.png",
               imageAlt: "Rotating Seat (Swivel Skip) Cabbed Dumper"
+            },
+            {
+              title: "Hi Top Skid Loader",
+              content: "Specialized dumper with high-capacity skip designed for loading and transporting larger volumes of materials in construction and industrial applications.",
+              image: "/extracted_images/hi_top_skid_loader.webp",
+              imageAlt: "Hi Top Skid Loader"
             }
           ]
         }
