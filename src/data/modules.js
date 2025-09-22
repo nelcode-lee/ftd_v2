@@ -407,6 +407,20 @@ export const modules = [
         {
           title: "Towing Equipment with a Dumper – Enhanced Training",
           content: "Some dumpers have the capability to tow equipment such as small bowsers and compressors. As dumpers are not specifically designed for towing purposes, other methods should be explored before deciding on this purpose.\n\nTowing with a dumper requires enhanced training, in addition to the training delivered within the Skills Bootcamp programme. To assist with your knowledge and understanding of this 'safety critical' activity, below outlines some key safety information when towing with a dumper.",
+          additionalImages: [
+            {
+              image: "/extracted_images/page_28_img_02.png",
+              imageAlt: "Towing Equipment Setup and Safety"
+            },
+            {
+              image: "/extracted_images/page_28_img_03.png",
+              imageAlt: "Towing Bracket and Pin Configuration"
+            },
+            {
+              image: "/extracted_images/page_28_img_04.png",
+              imageAlt: "Towing Safety and Compatibility Check"
+            }
+          ],
           subsections: [
             {
               title: "Pre-Towing Safety Considerations",
