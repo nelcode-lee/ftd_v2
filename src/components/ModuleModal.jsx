@@ -186,8 +186,8 @@ const ModuleModal = ({ module, onClose }) => {
         {section.subsections && (
         <div className="space-y-6">
           {section.subsections.map((subsection, subIndex) => (
-            <div key={subIndex} className="border-l-4 border-blue-200 pl-4">
-              <h4 className="text-lg font-semibold text-gray-900 mb-2">
+            <div key={subIndex} className={`${subsection.isHighlight ? 'bg-blue-50 border border-blue-200 rounded-lg p-4' : 'border-l-4 border-blue-200 pl-4'}`}>
+              <h4 className={`text-lg font-semibold mb-2 ${subsection.isHighlight ? 'text-blue-800' : 'text-gray-900'}`}>
                 {subsection.title}
               </h4>
               <div className="text-gray-700 mb-3">

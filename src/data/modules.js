@@ -370,11 +370,13 @@ export const modules = [
           subsections: [
             {
               title: "Items/Components to be Checked",
-              content: "Axle oil, Engine oil, Transmission oil, Hydraulic oil, Coolant level, Fuel level, Grease, Air cleaner, Brake oil, Wheel nuts, Tyre pressure, Fan belt."
+              content: "Axle oil, Engine oil, Transmission oil, Hydraulic oil, Coolant level, Fuel level, Grease, Air cleaner, Brake oil, Wheel nuts, Tyre pressure, Fan belt.",
+              isHighlight: true
             },
             {
               title: "Running Checks", 
-              content: "Foot brake, Parking brake, Steering, Electrics, Horn, Reverse alarm, Flashing beacons, Lights, Tipping lever, Raise/lower skip, Rotate skip."
+              content: "Foot brake, Parking brake, Steering, Electrics, Horn, Reverse alarm, Flashing beacons, Lights, Tipping lever, Raise/lower skip, Rotate skip.",
+              isHighlight: true
             }
           ],
           video: {
