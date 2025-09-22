@@ -333,7 +333,21 @@ export const modules = [
             title: "Daily Checks: Dual View Dumper",
             embedUrl: "https://www.youtube.com/embed/oABC5YmKhr8",
             description: "Watch this video to see the pre-operational checks in action on a dual view dumper."
-          }
+          },
+          additionalImages: [
+            {
+              image: "/extracted_images/page_22_img_05.png",
+              imageAlt: "Figure 1. Check Engine Levels"
+            },
+            {
+              image: "/extracted_images/page_22_img_06.png",
+              imageAlt: "Figure 2. Check the Chassis"
+            },
+            {
+              image: "/extracted_images/page_22_img_07.png",
+              imageAlt: "Figure 3. Check hydraulic hoses"
+            }
+          ]
         }
       ],
       knowledgeStops: [
