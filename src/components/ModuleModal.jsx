@@ -129,8 +129,12 @@ const ModuleModal = ({ module, onClose }) => {
         )}
 
         {section.image && renderImage(section.image, section.imageAlt || section.title)}
-        {section.additionalImages && section.additionalImages.map((additionalImage, imgIndex) => 
-          renderImage(additionalImage.image, additionalImage.imageAlt || section.title)
+        {section.additionalImages && section.additionalImages.length > 0 && (
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+            {section.additionalImages.map((additionalImage, imgIndex) => 
+              renderImage(additionalImage.image, additionalImage.imageAlt || section.title)
+            )}
+          </div>
         )}
         {section.video && renderVideo(section.video)}
 
