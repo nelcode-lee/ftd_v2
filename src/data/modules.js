@@ -278,6 +278,8 @@ export const modules = [
         {
           title: "Safe Entry and Exit Procedures",
           content: "Safely getting on and off the Forward Tipping Dumper is essential for preventing injuries and ensuring operator safety.",
+          image: "/extracted_images/page_23_img_06.png",
+          imageAlt: "Safe Entry and Exit Procedures",
           subsections: [
             {
               title: "Safe Entry and Exit Guidelines",
