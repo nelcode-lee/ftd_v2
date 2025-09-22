@@ -54,7 +54,7 @@ export const modules = [
     title: "Pre-Operational Checks & Safety Procedures",
     description: "Master the essential pre-operational checks and safety procedures for safe operation.",
     status: "locked",
-    icon: "🔍", 
+    icon: "🔍",
     content: {
       objectives: [
         "Perform comprehensive pre-operational inspections",
@@ -93,6 +93,8 @@ export const modules = [
         {
           title: "Personal Protective Equipment (PPE)",
           content: "Always ensure that you wear the full PPE required for the site that you are working on.",
+          image: "/extracted_images/PPE.webp",
+          imageAlt: "Personal Protective Equipment Icons",
           subsections: [
             {
               title: "Required PPE",
@@ -129,7 +131,7 @@ export const modules = [
     id: 6,
     title: "Maintenance & Troubleshooting",
     description: "Understand maintenance requirements, common issues, and troubleshooting procedures.",
-    status: "locked", 
+    status: "locked",
     icon: "🔧",
     content: {
       objectives: [
