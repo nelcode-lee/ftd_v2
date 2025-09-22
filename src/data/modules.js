@@ -77,7 +77,12 @@ export const modules = [
               content: "Foot brake, Parking brake, Steering, Electrics, Horn, Reverse alarm, Flashing beacons, Lights, Tipping lever, Raise/lower skip, Rotate skip.",
               isHighlight: true
             }
-          ]
+          ],
+          video: {
+            title: "Daily Checks: Dual View Dumper",
+            embedUrl: "https://www.youtube.com/embed/oABC5YmKhr8",
+            description: "Watch this video to see the pre-operational checks in action on a dual view dumper."
+          }
         }
       ],
       knowledgeStops: []
