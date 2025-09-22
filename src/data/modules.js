@@ -328,6 +328,24 @@ export const modules = [
           ]
         },
         {
+          title: "Pedestrianised Areas",
+          content: "If you are setting up to work in pedestrianised areas, always take the following into consideration.\n\nAlways ensure physical segregation of pedestrians from machines and the work:\n\n• Machine movements\n• Noise\n• Fumes"
+        },
+        {
+          title: "Travelling on a Public Highway",
+          content: "When travelling on the public highway, the machine must adhere to the following requirements by law:",
+          subsections: [
+            {
+              title: "Vehicle Requirements",
+              content: "• The dumper must be registered and taxed as a \"special vehicle\"\n• The dumper must have vehicle insurance\n• If the dumper can exceed 20 mph it must have a horn in good working condition\n• If it can exceed 25 mph it must have a speedometer in good working condition\n• It must have brakes that enable it to stop\n• It must have lights and indicators"
+            },
+            {
+              title: "Operator Requirements",
+              content: "The operator must:\n\n• Hold a full UK or approved car license (Category B)\n• Be a minimum of 18 years old for vehicles between 3.5T and 7.5T\n• Be a minimum of 21 years old for vehicles exceeding 7.5T (MAM)"
+            }
+          ]
+        },
+        {
           title: "OperateSAFE Safety Rules",
           content: "Understanding and following OperateSAFE rules is essential for maintaining safety standards and preventing accidents during dumper operations.",
           video: {
