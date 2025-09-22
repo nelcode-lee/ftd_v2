@@ -481,6 +481,8 @@ export const modules = [
         {
           title: "Travel and Manoeuvre in Areas of Restricted Space",
           content: "Operating dumpers in restricted spaces requires special attention to overhead services and safety protocols to prevent accidents and ensure safe operation.",
+          image: "/extracted_images/page_33_img_03.png",
+          imageAlt: "Travel and Manoeuvre in Areas of Restricted Space - Overhead Services Safety",
           subsections: [
             {
               title: "Overhead Services",
