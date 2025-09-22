@@ -441,6 +441,14 @@ export const modules = [
           content: "When operating a rotating seat dumper, you can change the seat and console position to allow the operator the best viewpoint while travelling, manoeuvring and operating the machine. The entire operating platform rotates 180 degrees.\n\nYou may have viewed the pre-operational checks video earlier in this workbook, but please scan the QR code to view again."
         },
         {
+          title: "Slope and Incline Safety",
+          content: "Operating dumpers on slopes and inclines requires special attention to machine stability and weight distribution to ensure safe operation.",
+          safetyMessage: {
+            text: "The general rule is to travel the heaviest part of the machine UPHILL. Always refer to the operators manual for correct positioning on inclines/slopes.",
+            background: "#4A90A4"
+          }
+        },
+        {
           title: "Operating Controls",
           content: "Understanding the location and function of all controls is essential for safe operation. Controls include steering, throttle, brake, gear selection, and hydraulic functions."
         },
