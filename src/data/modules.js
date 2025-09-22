@@ -302,6 +302,15 @@ export const modules = [
               content: "• Engine cover – secured.\n• Check parking brake – on."
             }
           ]
+        },
+        {
+          title: "OperateSAFE Safety Rules",
+          content: "Understanding and following OperateSAFE rules is essential for maintaining safety standards and preventing accidents during dumper operations.",
+          video: {
+            title: "OperateSAFE Rules, the second instalment!",
+            embedUrl: "https://www.youtube.com/embed/OfvXhYAXFQM",
+            description: "Watch this essential OperateSAFE video covering important safety rules and procedures for construction equipment operation."
+          }
         }
       ],
       knowledgeStops: []
