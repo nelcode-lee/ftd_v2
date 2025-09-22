@@ -310,7 +310,17 @@ export const modules = [
             title: "OperateSAFE Rules, the second instalment!",
             embedUrl: "https://www.youtube.com/embed/OfvXhYAXFQM",
             description: "Watch this essential OperateSAFE video covering important safety rules and procedures for construction equipment operation."
-          }
+          },
+          subsections: [
+            {
+              title: "OperateSAFE Key Behaviours",
+              content: "Care: Take care of yourself and colleagues, make sure you are fit for work.\n\nRespect: Treat others with respect and take pride in your work.\n\nDriving: Safely and appropriately for site or road conditions."
+            },
+            {
+              title: "OperateSAFE Campaign",
+              content: "We have developed and continue to drive a health and safety first culture, the OperateSAFE campaign is key to this ambition. A multifaceted campaign, with a strong emphasis on open communication it focuses on five key behaviours and these ten rules.\n\nIf you need more information on our Operate SAFE campaign visit our Safety Focus page here, as always if you spot good examples of working practice or something that you think needs addressing, you can complete the Operate SAFE observation card online."
+            }
+          ]
         }
       ],
       knowledgeStops: []
