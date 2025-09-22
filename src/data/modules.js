@@ -526,6 +526,10 @@ export const modules = [
                 "Excessive manoeuvring",
                 "Proximity hazards"
               ]
+            },
+            {
+              title: "SAFETY INNOVATION IN FOCUS: HUMAN DETECTION SYSTEMS",
+              content: "Modern safety innovations include advanced human detection systems designed to enhance operator awareness and prevent accidents in confined areas."
             }
           ]
         },
