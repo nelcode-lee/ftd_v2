@@ -449,6 +449,10 @@ export const modules = [
           }
         },
         {
+          title: "Travel and Manoeuvre the Dumper",
+          content: "When travelling and manoeuvring the dumper, it is important to ensure machine stability to reduce the risk of the dumper becoming stuck or tipping over."
+        },
+        {
           title: "Operating Controls",
           content: "Understanding the location and function of all controls is essential for safe operation. Controls include steering, throttle, brake, gear selection, and hydraulic functions."
         },
