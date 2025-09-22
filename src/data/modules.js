@@ -315,6 +315,24 @@ export const modules = [
               ]
             }
           ]
+        },
+        {
+          title: "Pre-Operational Checks in Accordance with Manufacturers and Legislative Requirements",
+          content: "The Health and Safety at Work Act 1974 states that employees must take reasonable care of themselves and others who may be affected by their actions.\n\nIt is a requirement to check that the machine is safe to use prior to using it.\n\nThe following items must be checked prior to use:",
+          subsections: [
+            {
+              title: "Items/Components to be Checked",
+              content: "Axle oil, Engine oil, Transmission oil, Hydraulic oil, Coolant level, Fuel level, Grease, Air cleaner, Brake oil, Wheel nuts, Tyre pressure, Fan belt."
+            },
+            {
+              title: "Running Checks", 
+              content: "Foot brake, Parking brake, Steering, Electrics, Horn, Reverse alarm, Flashing beacons, Lights, Tipping lever, Raise/lower skip, Rotate skip."
+            }
+          ],
+          safetyMessage: {
+            text: "SCAN ME\n\nDual View Dumper\nPre-Operational Checks",
+            background: "#4A90A4"
+          }
         }
       ],
       knowledgeStops: [
