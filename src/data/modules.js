@@ -262,51 +262,35 @@ export const modules = [
           subsections: [
             {
               title: "Power Unit - Oils",
-              content: "Always wear gloves when checking engine oil to prevent skin disease and contamination of oil onto the operating controls and the cab.",
-              image: "/extracted_images/page_21_img_02.png",
-              imageAlt: "Power Unit - Oils"
+              content: "Always wear gloves when checking engine oil to prevent skin disease and contamination of oil onto the operating controls and the cab."
             },
             {
               title: "Hydraulic System",
-              content: "Always ensure the filler cap area is clean and pressure in the system is released before removing the cap. Always use a clean container when filling the system to prevent contamination.",
-              image: "/extracted_images/page_22_img_02.png",
-              imageAlt: "Hydraulic System"
+              content: "Always ensure the filler cap area is clean and pressure in the system is released before removing the cap. Always use a clean container when filling the system to prevent contamination."
             },
             {
               title: "Fuel System",
-              content: "Where possible, plant should be filled up at the end of your shift to prevent condensation building up in the tank.",
-              image: "/extracted_images/page_23_img_02.png",
-              imageAlt: "Fuel System"
+              content: "Where possible, plant should be filled up at the end of your shift to prevent condensation building up in the tank."
             },
             {
               title: "Cooling System",
-              content: "Cooling systems are normally pressurised and removing the cap can allow hot water to escape with the potential for causing SEVERE burns.",
-              image: "/extracted_images/page_24_img_02.png",
-              imageAlt: "Cooling System"
+              content: "Cooling systems are normally pressurised and removing the cap can allow hot water to escape with the potential for causing SEVERE burns."
             },
             {
               title: "Roll Over Protective Structure (ROPS)",
-              content: "ROPS provides some protection to the operating position (as far as is reasonably practicable) in the event of an overturn.",
-              image: "/extracted_images/page_25_img_02.png",
-              imageAlt: "Roll Over Protective Structure"
+              content: "ROPS provides some protection to the operating position (as far as is reasonably practicable) in the event of an overturn."
             },
             {
               title: "Falling Object Protective Structures (FOPS)",
-              content: "Where there is the risk of people operating mobile work equipment being struck by falling material, falling object protective structures (FOPS) or a manufacturer's strengthened cab must be fitted to stop any falling material striking the operator.",
-              image: "/extracted_images/page_26_img_02.png",
-              imageAlt: "Falling Object Protective Structures"
+              content: "Where there is the risk of people operating mobile work equipment being struck by falling material, falling object protective structures (FOPS) or a manufacturer's strengthened cab must be fitted to stop any falling material striking the operator."
             },
             {
               title: "Restraining Systems",
-              content: "Seat belts must be worn even when the cab door is closed. This is because in the event of a roll over (as far as reasonably practical), it will keep the operator within the confines of the operating seat which may minimise injury.",
-              image: "/extracted_images/page_27_img_02.png",
-              imageAlt: "Restraining Systems"
+              content: "Seat belts must be worn even when the cab door is closed. This is because in the event of a roll over (as far as reasonably practical), it will keep the operator within the confines of the operating seat which may minimise injury."
             },
             {
               title: "Tyres",
-              content: "Raised lugs on tyres provide traction / grip for moving, steering and braking in soft mud. If tyres are worn, traction and grip will be severely affected.",
-              image: "/extracted_images/page_28_img_02.png",
-              imageAlt: "Tyres"
+              content: "Raised lugs on tyres provide traction / grip for moving, steering and braking in soft mud. If tyres are worn, traction and grip will be severely affected."
             }
           ]
         }
@@ -364,8 +348,6 @@ export const modules = [
               content: "Head protection, Foot protection, High-visibility clothing, Weather-appropriate clothing, Hearing protection, Eye protection, Gloves"
             }
           ],
-          image: "/extracted_images/page_29_img_02.png",
-          imageAlt: "Personal Protective Equipment"
         },
         {
           title: "Safely Get On and Off the Forward Tipping Dumper",
