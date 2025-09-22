@@ -507,6 +507,8 @@ export const modules = [
         {
           title: "Operating in Confined Areas",
           content: "Operating dumpers in confined areas requires special attention to spatial awareness, maneuverability, and safety protocols to prevent accidents and ensure safe operation in tight spaces.",
+          image: "/extracted_images/page_33_img_05.png",
+          imageAlt: "Operating in Confined Areas - Safety Guidelines and Procedures",
           subsections: [
             {
               title: "Hazards when Operating in a Confined Area",
