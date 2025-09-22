@@ -311,7 +311,17 @@ export const modules = [
         },
         {
           title: "Visibility Aids",
-          content: "Proper visibility is essential for safe dumper operation. Always ensure that all mirrors / cameras are correctly fitted, unbroken, clean, and correctly adjusted.\n\nCheck that ALL mirrors are clean and correctly positioned to provide you with a clear, unobstructed view behind the dumper."
+          content: "Proper visibility is essential for safe dumper operation. Always ensure that all mirrors / cameras are correctly fitted, unbroken, clean, and correctly adjusted.\n\nCheck that ALL mirrors are clean and correctly positioned to provide you with a clear, unobstructed view behind the dumper.",
+          additionalImages: [
+            {
+              image: "/extracted_images/page_26_img_02.png",
+              imageAlt: "Mirror and Visibility System Check"
+            },
+            {
+              image: "/extracted_images/page_26_img_06.png",
+              imageAlt: "Visibility Aids Positioning"
+            }
+          ]
         },
         {
           title: "OperateSAFE Safety Rules",
