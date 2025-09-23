@@ -1,11 +1,11 @@
 // Fresh modules.js - NO PPE content
 export const modules = [
-  {
-    id: 1,
-    title: "Introduction to Forward Tipping Dumper",
-    description: "Learn about Forward Tipping Dumpers, their purpose, types, and basic operation principles.",
-    status: "completed",
-    icon: "🚜",
+    {
+      id: 1,
+      title: "Introduction to Forward Tipping Dumper",
+      description: "Learn about Forward Tipping Dumpers, their purpose, types, and basic operation principles.",
+      status: "completed",
+      icon: "📖",
     content: {
       objectives: [
         "Understand the purpose and applications of Forward Tipping Dumpers",
@@ -52,15 +52,28 @@ export const modules = [
           ]
         }
       ],
-      knowledgeStops: []
+      knowledgeStops: [
+        {
+          question: "List 4 main hazards that are commonly found on a construction site.",
+          answer: "Moving vehicles and machinery, Working at height, Electrical hazards, Manual handling injuries. Additional hazards include slips trips and falls, noise exposure, dust and harmful substances, and excavations and confined spaces."
+        },
+        {
+          question: "A dumper is classified by a manufacturer as a six-tonne dumper. What does this mean?",
+          answer: "This refers to the maximum payload capacity of the dumper - it can safely carry up to six tonnes of material in its skip. This is the safe working load limit for the machine."
+        },
+        {
+          question: "List 5 effects of hazards:",
+          answer: "Injury to people, Damage to equipment/property, Environmental damage, Production delays/losses, Legal consequences and prosecution."
+        }
+      ]
     }
   },
-  {
-    id: 2,
-    title: "Health & Safety, Legislation and Responsibilities",
-    description: "Master health and safety legislation, risk assessments, and operator responsibilities.",
-    status: "completed", 
-    icon: "⚖️",
+    {
+      id: 2,
+      title: "Health & Safety, Legislation and Responsibilities",
+      description: "Master health and safety legislation, risk assessments, and operator responsibilities.",
+      status: "completed", 
+      icon: "🛡️",
     content: {
       objectives: [
         "Understand relevant health and safety legislation",
@@ -150,17 +163,44 @@ export const modules = [
               content: "• Codes of Practice\n• Site plans / drawings\n• Risk assessments and method statements\n• COSHH Regulations\n• Safety data sheets\n• Load / tare sheets\n• Inspection and reporting forms / procedures"
             }
           ]
+        },
+        {
+          title: "Environmental Considerations of Machine Use",
+          content: "The main types of pollution associated with construction operations are:\n\n• Air pollution\n• Water pollution\n• Noise pollution\n\nThere are various pollution prevention strategies that can be used.\n\nOperators can minimise their effect on the environment by using the machine efficiently:",
+          subsections: [
+            {
+              title: "Environmental Best Practices",
+              content: "• Lower engine speeds where possible.\n• Ensure there is no spillage of fluids.\n• Keep the machine well maintained.\n• Ensure prior planning of the work task."
+            }
+          ]
         }
       ],
-      knowledgeStops: []
+      knowledgeStops: [
+        {
+          question: "What does the Health & Safety at Work etc. Act 1974 require employers to do, specifically regarding plant?",
+          answer: "Employers must ensure that plant and equipment is safe and without risks to health, provide adequate training and supervision, maintain equipment in safe condition, and provide information, instruction, training and supervision to ensure health and safety at work."
+        },
+        {
+          question: "List the 3 main duties placed on employees under the Health and Safety at Work Act 1974:",
+          answer: "1) Take reasonable care for their own health and safety and that of others, 2) Cooperate with their employer on health and safety matters, 3) Not intentionally or recklessly interfere with or misuse anything provided in the interests of health, safety or welfare."
+        },
+        {
+          question: "What are the two main plant operator card schemes in the construction plant training sector?",
+          answer: "CPCS (Construction Plant Competence Scheme) and NPORS (National Plant Operators Registration Scheme) are the two main plant operator card schemes in the construction plant training sector."
+        },
+        {
+          question: "Why are plant operators generally regarded as safety critical workers?",
+          answer: "Because their actions with the machine can have significant health & safety consequences for themselves and others. Their operations can directly impact the safety of other workers and the public."
+        }
+      ]
     }
   },
-  {
-    id: 3,
-    title: "Major Components of Forward Tipping Dumper",
-    description: "Explore the main components, systems, and operational features of Forward Tipping Dumpers.",
-    status: "completed",
-    icon: "⚙️",
+    {
+      id: 3,
+      title: "Major Components of Forward Tipping Dumper",
+      description: "Explore the main components, systems, and operational features of Forward Tipping Dumpers.",
+      status: "completed",
+      icon: "🔍",
     content: {
       objectives: [
         "Identify major components and their functions",
@@ -229,15 +269,32 @@ export const modules = [
           }
         }
       ],
-      knowledgeStops: []
+      knowledgeStops: [
+        {
+          question: "What are the main components of a Forward Tipping Dumper that should be checked?",
+          answer: "The main components include the chassis, skip, hydraulic system, engine, operator controls, and safety systems. These are critical for safe operation."
+        },
+        {
+          question: "If an operator has to top-up the hydraulic oil, state two precautions that ensure cleanliness of the system:",
+          answer: "1) Always ensure the filler cap area is clean before removing the cap, 2) Always use a clean container when filling the system to prevent contamination."
+        },
+        {
+          question: "Why should the machine be re-fuelled at the end of the day?",
+          answer: "Re-fuelling at the end of the day prevents condensation building up in the tank, which can cause water contamination in the fuel system and potential engine problems."
+        },
+        {
+          question: "What is the purpose of the hydraulic system in a Forward Tipping Dumper?",
+          answer: "The hydraulic system uses pressurized fluid to transmit power and control the movement of the skip and other machine functions, including lifting, tilting, and steering operations."
+        }
+      ]
     }
   },
-  {
-    id: 4,
-    title: "Pre-Operational Checks & Safety Procedures",
-    description: "Master the essential pre-operational checks and safety procedures for safe operation.",
-    status: "locked",
-    icon: "🔍",
+    {
+      id: 4,
+      title: "Pre-Operational Checks & Safety Procedures",
+      description: "Master the essential pre-operational checks and safety procedures for safe operation.",
+      status: "locked",
+      icon: "✅",
     content: {
       objectives: [
         "Perform comprehensive pre-operational inspections",
@@ -387,15 +444,32 @@ export const modules = [
           ]
         }
       ],
-      knowledgeStops: []
+      knowledgeStops: [
+        {
+          question: "What should be checked before operating a Forward Tipping Dumper?",
+          answer: "Before operating, you should conduct a visual inspection, check fluid levels, safety systems, brakes, steering, and all safety equipment to ensure safe operation."
+        },
+        {
+          question: "The function or job role of a dumper driver, when transporting materials, is to:",
+          answer: "Safely transport materials from loading areas to discharge points, ensure load integrity and security, follow safe operating procedures, and maintain awareness of site conditions and other workers."
+        },
+        {
+          question: "What are the key items to check during pre-operational checks?",
+          answer: "Engine cover secured, parking brake on, controls neutralised, seat adjusted for comfort/reach, steering column adjusted, seatbelt worn and adjusted, foot brake pressure checked."
+        },
+        {
+          question: "What are the requirements for travelling on a public highway with a dumper?",
+          answer: "The dumper must be registered and taxed as a 'special vehicle', have vehicle insurance, horn (if over 20mph), speedometer (if over 25mph), brakes, lights and indicators. Operator must hold full UK car license (Category B), be minimum 18 for 3.5T-7.5T vehicles, 21 for over 7.5T."
+        }
+      ]
     }
   },
-  {
-    id: 5,
-    title: "Operation & Control Systems",
-    description: "Learn operational procedures, control systems, and safe driving techniques.",
-    status: "completed",
-    icon: "🎮",
+    {
+      id: 5,
+      title: "Operation & Control Systems",
+      description: "Learn operational procedures, control systems, and safe driving techniques.",
+      status: "completed",
+      icon: "🎯",
     content: {
       objectives: [
         "Master operational controls and systems",
@@ -475,6 +549,36 @@ export const modules = [
             {
               title: "Loading and Tipping Positioning",
               content: "Operator must ensure they face the skip when being loaded and when tipping a load."
+            },
+            {
+              title: "High Tip Dumper Safety",
+              content: "When operating high tip dumpers, extra care must be taken. The high centre of gravity can cause the machine to tip over if it is not on firm level ground."
+            }
+          ]
+        },
+        {
+          title: "Conduct All Necessary Safety Checks at the Loading and Discharging Area",
+          content: "Prior to setting up for work, the operator must conduct safety checks at the work area to identify any potential hazards.",
+          subsections: [
+            {
+              title: "Ensure Load Integrity/Security",
+              content: "Prior to transporting the load, the following actions must be taken:\n\n• Ensure the load is secured and stable.\n• Check your travel route.\n• Arrange assistance for observation and visibility.\n• Never overload the skip. Overloading obscures the operator's view and significantly reduces visibility. This increases the hazards associated with the people, plant interface.\n\nIt is the dumper operator responsibility to determine maximum load. Always refer to the manufacturer's guidelines.",
+              image: "/extracted_images/page_38_img_03.png",
+              imageAlt: "Load Integrity and Security"
+            }
+          ]
+        },
+        {
+          title: "Loading, Transporting and Discharging Different Materials",
+          content: "Different types of materials require specific handling considerations to ensure safe and efficient operation.",
+          subsections: [
+            {
+              title: "Material Handling Considerations",
+              content: "Denser materials: may overload your tyres and may stick to the body when tipping. You may need to tip at different locations.\n\nSemi-Fluid materials: may spill during travel.\n\nSpoil: this material should be segregated for re-use on or off-site, where possible. It must be placed a minimum distance of the depth of the trench away from the excavation to prevent collapse."
+            },
+            {
+              title: "Discharging Loads",
+              content: "A banksman should be used if deemed necessary in the risk assessment. Cameras are there as a visual aid when approaching the tipping area / stop block.\n\nStop blocks are used to indicate the stopping point of the dumper and to prevent the machine from overrunning into the trench."
             }
           ]
         },
@@ -556,15 +660,44 @@ export const modules = [
           content: "Safe tipping procedures ensure accurate material placement while maintaining machine stability and operator safety."
         }
       ],
-      knowledgeStops: []
+      knowledgeStops: [
+        {
+          question: "What is the correct sequence for operating a Forward Tipping Dumper?",
+          answer: "Pre-start checks, start engine, warm-up, load materials, transport to dump site, position for dumping, discharge load, return to loading area, shutdown procedures."
+        },
+        {
+          question: "What is the general rule for travelling on slopes with a loaded skip?",
+          answer: "The general rule is to travel the heaviest part of the machine UPHILL. Always refer to the operator's manual for correct positioning on inclines/slopes."
+        },
+        {
+          question: "What are the minimum safe distances to maintain from overhead power lines?",
+          answer: "Low-voltage line – 1m, 11kV and 33kV lines – 3m, 132kV line – 6m, 275kV and 400kV lines – 7m."
+        },
+        {
+          question: "What are the main hazards when operating in confined areas?",
+          answer: "Fumes, Noise, Limited visibility, Excessive manoeuvring, and Proximity hazards."
+        },
+        {
+          question: "What does the Spillard Human Detection System aim to do?",
+          answer: "Warn operators and pedestrians of potential collision risks, improve operator awareness, detect human form whilst ignoring changing backgrounds, and reduce risk whilst improving operator-pedestrian interaction."
+        },
+        {
+          question: "What are the key requirements for towing equipment with a dumper?",
+          answer: "All options have been considered, towing activities are authorized by the manufacturer, equipment compatibility, proper training, and correct towing pin with safety pin."
+        },
+        {
+          question: "What actions must be taken prior to transporting a load?",
+          answer: "Ensure the load is secured and stable, check your travel route, arrange assistance for observation and visibility, and never overload the skip. Always refer to manufacturer's guidelines for maximum load."
+        }
+      ]
     }
   },
-  {
-    id: 6,
-    title: "Maintenance & Troubleshooting",
-    description: "Understand maintenance requirements, common issues, and troubleshooting procedures.",
-    status: "locked",
-    icon: "🔧",
+    {
+      id: 6,
+      title: "Maintenance & Troubleshooting",
+      description: "Understand maintenance requirements, common issues, and troubleshooting procedures.",
+      status: "locked",
+      icon: "🧠",
     content: {
       objectives: [
         "Understand routine maintenance schedules",
@@ -588,11 +721,222 @@ export const modules = [
         {
           title: "Maintenance Documentation",
           content: "Proper documentation of maintenance activities is required for compliance and equipment tracking. Always complete maintenance records accurately and promptly."
+        },
+        {
+          title: "Loading/Unloading Procedures for Machine Transportation",
+          content: "The transporter driver is responsible for loading operations. The following checks should be made before loading commences:",
+          image: "/extracted_images/page_44_img_03.png",
+          imageAlt: "Loading/Unloading Procedures for Machine Transportation",
+          subsections: [
+            {
+              title: "Pre-Loading Safety Checks",
+              content: "• Ground support\n• Ramp condition\n• Overhead and other hazards\n• Positioning on trailer\n• Direction of travel"
+            },
+            {
+              title: "Loading Process",
+              content: "The following process should be followed when loading the transporter:\n\n• Remove any dirt or debris from the trailer.\n• Check parking brake.\n• Check trailer bodywork for signs of damage.\n• Position loading ramps securely on the transporter.\n• Stop the engine and secure the machine.\n• Chock wheels to prevent movement.\n• Engage chassis locking bar.\n• Secure to the trailer.\n• Ensure legal load (height/weight of trailer)"
+            },
+            {
+              title: "Exclusion Zone",
+              content: "Always ensure an exclusion zone is in place prior to commencing the loading activity. In areas of no space restrictions, the exclusion zone must:\n\n• Always be clear of personnel.\n• Should have a minimum clearance of at least the height of the highest point of the machine.\n• Sites with space restrictions will require a risk assessment and driver briefing of the site-specific measures and procedures (e.g. motorways with restricted space)."
+            }
+          ]
+        },
+        {
+          title: "End of Work and Shut Down Procedures",
+          content: "When parking the machine at the end of the work period, you must follow the full shut down procedure.\n\nConsider where you park your machine. DO NOT park your machine on site roads, pedestrian routes, soft/wet/steep ground, blocking access / egress routes from buildings.",
+          subsections: [
+            {
+              title: "SHUT DOWN PROCEDURES",
+              content: "• Park on a firm, level surface where possible.\n• If turbo is fitted, you must run down the engine.\n• Apply the handbrake.\n• Switch off the engine.\n• Use the steps and handholds when you dismount.\n• Remove the keys when the machine is left unattended.\n• Lock all compartments.\n• Follow site procedures to indicate it is safe to approach.",
+              image: "/extracted_images/page_46_img_04.png",
+              imageAlt: "Shut Down Procedures",
+              isHighlight: true
+            }
+          ]
         }
       ],
-      knowledgeStops: []
+      knowledgeStops: [
+        {
+          question: "What are the key safety considerations when discharging loads?",
+          answer: "Use a banksman if necessary, ensure stop blocks are in place, check cameras for visibility, and never overrun into trenches. These prevent accidents during discharge operations."
+        },
+        {
+          question: "What is the purpose of routine maintenance on a Forward Tipping Dumper?",
+          answer: "Routine maintenance is essential for safe operation and equipment longevity. It helps prevent breakdowns, ensures optimal performance, and extends the working life of the machine."
+        },
+        {
+          question: "What are some common troubleshooting areas for dumpers?",
+          answer: "Engine performance issues, hydraulic system problems, electrical faults, steering and brake concerns, and unusual noises or vibrations."
+        },
+        {
+          question: "When should you seek technical support for dumper maintenance?",
+          answer: "When problems are beyond basic troubleshooting, when safety systems are affected, when hydraulic or electrical issues occur, or when manufacturer's expertise is required."
+        }
+      ]
     }
   }
 ];
 
-export const glossaryTerms = [];
+export const glossaryTerms = [
+  {
+    term: "Forward Tipping Dumper",
+    definition: "A self-propelled machine designed to carry, lift, and discharge materials by means of a skip which can be tilted forwards to discharge its load."
+  },
+  {
+    term: "Skip",
+    definition: "The load-carrying body of a dumper, designed to contain and discharge materials. Can be fixed or rotating depending on the machine type."
+  },
+  {
+    term: "Payload",
+    definition: "The maximum weight of material that a dumper can safely carry in its skip, as specified by the manufacturer."
+  },
+  {
+    term: "MAM (Maximum Authorised Mass)",
+    definition: "The maximum weight of a vehicle including its load, as specified by the manufacturer for road use."
+  },
+  {
+    term: "PUWER 98",
+    definition: "Provision and Use of Work Equipment Regulations 1998 - UK legislation requiring work equipment to be suitable, properly maintained, and used by trained personnel."
+  },
+  {
+    term: "Risk Assessment",
+    definition: "A systematic process of evaluating potential hazards and implementing control measures to reduce risks to an acceptable level."
+  },
+  {
+    term: "Method Statement",
+    definition: "A document that describes how a specific work task will be carried out safely, including the sequence of work and safety precautions."
+  },
+  {
+    term: "Banksman",
+    definition: "A person who directs vehicle movements and provides guidance to operators, especially during reversing or complex manoeuvres."
+  },
+  {
+    term: "Exclusion Zone",
+    definition: "A designated area around overhead power lines where work is prohibited or restricted to prevent electrical contact."
+  },
+  {
+    term: "Hydraulic System",
+    definition: "A system using pressurized fluid to transmit power and control the movement of the skip and other machine functions."
+  },
+  {
+    term: "Pre-Operational Checks",
+    definition: "Daily inspection procedures carried out before starting work to ensure the machine is safe and ready for operation."
+  },
+  {
+    term: "Safe System of Work",
+    definition: "A formal procedure that identifies hazards and specifies safe working methods to control risks."
+  },
+  {
+    term: "Competent Person",
+    definition: "Someone with sufficient knowledge, experience, and training to safely perform a specific task or role."
+  },
+  {
+    term: "HSE",
+    definition: "Health and Safety Executive - the UK government agency responsible for regulating workplace health and safety."
+  },
+  {
+    term: "CDM Regulations",
+    definition: "Construction (Design and Management) Regulations 2015 - UK legislation covering health and safety in construction projects."
+  },
+  {
+    term: "COSHH",
+    definition: "Control of Substances Hazardous to Health Regulations - UK legislation for managing chemical hazards in the workplace."
+  },
+  {
+    term: "PPE",
+    definition: "Personal Protective Equipment - clothing and equipment worn to protect against workplace hazards."
+  },
+  {
+    term: "RPE",
+    definition: "Respiratory Protective Equipment - equipment designed to protect the wearer from inhaling hazardous substances."
+  },
+  {
+    term: "CPCS",
+    definition: "Construction Plant Competence Scheme - one of the main plant operator card schemes in the UK construction industry."
+  },
+  {
+    term: "NPORS",
+    definition: "National Plant Operators Registration Scheme - an alternative plant operator card scheme in the UK."
+  },
+  {
+    term: "Slope Operation",
+    definition: "Operating machinery on inclined surfaces, requiring special attention to machine stability and weight distribution."
+  },
+  {
+    term: "Confined Space",
+    definition: "An area with limited access and egress that may have poor ventilation and pose additional safety risks."
+  },
+  {
+    term: "Overhead Services",
+    definition: "Utility lines and cables running above ground level, including electricity, gas, water, and telecommunications."
+  },
+  {
+    term: "Stop Blocks",
+    definition: "Physical barriers placed behind dumpers during discharge operations to prevent overrunning into excavations."
+  },
+  {
+    term: "Load Integrity",
+    definition: "Ensuring that materials are properly secured and contained within the skip to prevent spillage during transport."
+  },
+  {
+    term: "Visibility Aids",
+    definition: "Mirrors, cameras, and other devices designed to improve operator visibility and reduce blind spots."
+  },
+  {
+    term: "Human Detection System",
+    definition: "Technology that identifies human presence near machinery to warn operators and prevent accidents."
+  },
+  {
+    term: "Spillard System",
+    definition: "A specific brand of human detection system that uses deep intelligent mapping to identify human forms."
+  },
+  {
+    term: "Towing Equipment",
+    definition: "Additional equipment that can be attached to dumpers for towing trailers, compressors, or other machinery."
+  },
+  {
+    term: "Rotating Seat Dumper",
+    definition: "A dumper with a seat and console that can rotate 180 degrees to provide optimal operator positioning."
+  },
+  {
+    term: "Site Induction",
+    definition: "Mandatory safety briefing provided to all workers before starting work on a construction site."
+  },
+  {
+    term: "Safety Critical Worker",
+    definition: "A worker whose actions can have significant health and safety consequences for themselves and others."
+  },
+  {
+    term: "Proximity Hazards",
+    definition: "Risks associated with working close to other machinery, structures, or personnel in confined areas."
+  },
+  {
+    term: "Manual Handling",
+    definition: "Any activity requiring a person to lift, lower, push, pull, carry, or move a load by hand or bodily force."
+  },
+  {
+    term: "Working at Height",
+    definition: "Any work where a person could fall a distance liable to cause personal injury, typically above 2 meters."
+  },
+  {
+    term: "Excavation",
+    definition: "Any man-made cut, cavity, trench, or depression in the earth's surface formed by earth removal."
+  },
+  {
+    term: "Lifting Operations",
+    definition: "Any operation involving the lifting or lowering of a load using lifting equipment or machinery."
+  },
+  {
+    term: "Traffic Management",
+    definition: "The planning and control of vehicle and pedestrian movements on construction sites to ensure safety."
+  },
+  {
+    term: "Environmental Damage",
+    definition: "Harm to the natural environment caused by construction activities, including pollution and habitat destruction."
+  },
+  {
+    term: "Legal Consequences",
+    definition: "Potential legal action, prosecution, or penalties resulting from health and safety violations or accidents."
+  }
+];

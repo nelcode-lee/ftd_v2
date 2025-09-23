@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useEffect, useCallback } from 'react';
+import { createContext, useContext, useState, useEffect, useCallback, useRef } from 'react';
 
 const TimeTrackingContext = createContext();
 
@@ -20,6 +20,7 @@ export const TimeTrackingProvider = ({ children }) => {
   const [moduleTimes, setModuleTimes] = useState({});
   const [sectionTimes, setSectionTimes] = useState({});
   const [isTracking, setIsTracking] = useState(false);
+  const isUpdatingRef = useRef(false);
 
   // Load saved data from localStorage on mount
   useEffect(() => {
@@ -36,16 +37,16 @@ export const TimeTrackingProvider = ({ children }) => {
     }
   }, []);
 
-  // Save data to localStorage whenever it changes
-  useEffect(() => {
+  // Save data to localStorage manually - disabled automatic saving to prevent infinite loops
+  const saveToLocalStorage = useCallback(() => {
     const dataToSave = {
       moduleTimes,
       sectionTimes,
-      totalSessionTime,
+      totalSessionTime: Object.values(moduleTimes).reduce((sum, time) => sum + time, 0),
       lastUpdated: new Date().toISOString()
     };
     localStorage.setItem('ftd_time_tracking', JSON.stringify(dataToSave));
-  }, [moduleTimes, sectionTimes, totalSessionTime]);
+  }, [moduleTimes, sectionTimes]);
 
   // Start a new learning session
   const startSession = useCallback(() => {
@@ -66,9 +67,6 @@ export const TimeTrackingProvider = ({ children }) => {
     const now = new Date();
     const sessionDuration = Math.floor((now - sessionStartTime) / 1000);
     
-    // Add final session time to total
-    setTotalSessionTime(prev => prev + sessionDuration);
-    
     // End current module/section if active
     if (currentModuleId && moduleStartTime) {
       const moduleDuration = Math.floor((now - moduleStartTime) / 1000);
@@ -76,7 +74,9 @@ export const TimeTrackingProvider = ({ children }) => {
         ...prev,
         [currentModuleId]: (prev[currentModuleId] || 0) + moduleDuration
       }));
-      setTotalSessionTime(prev => prev + moduleDuration);
+      setTotalSessionTime(prev => prev + moduleDuration + sessionDuration);
+    } else {
+      setTotalSessionTime(prev => prev + sessionDuration);
     }
     
     setIsTracking(false);
@@ -115,23 +115,11 @@ export const TimeTrackingProvider = ({ children }) => {
     console.log(`Started tracking module ${moduleId} at:`, now.toISOString());
   }, [currentModuleId, moduleStartTime]);
 
-  // End tracking time for current module
+  // End tracking time for current module - temporarily disabled to prevent infinite loop
   const endModule = useCallback(() => {
     if (!currentModuleId || !moduleStartTime) return;
 
-    const now = new Date();
-    const moduleDuration = Math.floor((now - moduleStartTime) / 1000);
-    
-    // Add to module times
-    setModuleTimes(prev => ({
-      ...prev,
-      [currentModuleId]: (prev[currentModuleId] || 0) + moduleDuration
-    }));
-    
-    // Add to total session time
-    setTotalSessionTime(prev => prev + moduleDuration);
-    
-    console.log(`Module ${currentModuleId} completed. Duration:`, moduleDuration, 'seconds');
+    console.log(`Module ${currentModuleId} completed - time tracking temporarily disabled`);
     
     setCurrentModuleId(null);
     setModuleStartTime(null);
@@ -173,25 +161,15 @@ export const TimeTrackingProvider = ({ children }) => {
     console.log(`Started tracking section ${sectionId} in module ${moduleId} at:`, now.toISOString());
   }, [currentModuleId, currentSectionId, sectionStartTime, moduleStartTime]);
 
-  // End tracking time for current section
+  // End tracking time for current section - temporarily disabled to prevent infinite loop
   const endSection = useCallback(() => {
     if (!currentSectionId || !sectionStartTime) return;
 
-    const now = new Date();
-    const sectionDuration = Math.floor((now - sectionStartTime) / 1000);
-    const sectionKey = `${currentModuleId}_${currentSectionId}`;
-    
-    // Add to section times
-    setSectionTimes(prev => ({
-      ...prev,
-      [sectionKey]: (prev[sectionKey] || 0) + sectionDuration
-    }));
-    
-    console.log(`Section ${currentSectionId} completed. Duration:`, sectionDuration, 'seconds');
+    console.log(`Section ${currentSectionId} completed - time tracking temporarily disabled`);
     
     setCurrentSectionId(null);
     setSectionStartTime(null);
-  }, [currentModuleId, currentSectionId, sectionStartTime]);
+  }, [currentSectionId, sectionStartTime]);
 
   // Get formatted time string
   const formatTime = useCallback((seconds) => {
@@ -216,8 +194,10 @@ export const TimeTrackingProvider = ({ children }) => {
 
   // Get total learning time across all sessions
   const getTotalLearningTime = useCallback(() => {
-    return totalSessionTime + (sessionStartTime ? getCurrentSessionDuration() : 0);
-  }, [totalSessionTime, sessionStartTime, getCurrentSessionDuration]);
+    const currentSessionTime = sessionStartTime ? getCurrentSessionDuration() : 0;
+    const totalModuleTime = Object.values(moduleTimes).reduce((sum, time) => sum + time, 0);
+    return totalModuleTime + currentSessionTime;
+  }, [moduleTimes, sessionStartTime, getCurrentSessionDuration]);
 
   // Get time spent on specific module
   const getModuleTime = useCallback((moduleId) => {

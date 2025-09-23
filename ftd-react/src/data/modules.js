@@ -5,7 +5,7 @@ export const modules = [
     title: "Introduction to Forward Tipping Dumper",
     description: "Learn about Forward Tipping Dumpers, their purpose, types, and basic operation principles. Understand the machine components and safety features.",
     status: "completed",
-    icon: "🚜",
+    icon: "🚛",
     content: {
       objectives: [
         "Understand the purpose and applications of Forward Tipping Dumpers",
@@ -47,32 +47,34 @@ export const modules = [
           content: "Construction sites are busy places and present many dangers. During this course you will be taught how to act responsibly on site, how to identify common hazards and how to operate your machine safely and efficiently on site to reduce to as low as possible the risks to you and others.",
           image: "/extracted_images/site-safety.jpg",
           imageAlt: "Construction Site Safety"
-        }
-      ],
-      knowledgeStops: [
-        {
-          question: "What are the two main plant operator card schemes in the construction plant training sector?",
-          answer: "CPCS (Construction Plant Competence Scheme) and NPORS (National Plant Operators Registration Scheme)"
         },
         {
-          question: "List SIX typical subject areas that should be covered in a site induction.",
-          answer: "Access and egress, Safety signs and signals, Emergency procedures, Welfare facilities, Restricted/prohibited areas, Traffic routes, Site layout, Reporting procedures, PPE/RPE requirements, Smoking policy, Waste disposal, Working from/at height, Lifting operations, Electricity, Buried services, Confined spaces, Accident reporting"
-        },
-        {
-          question: "Why are plant operators generally regarded as safety critical workers?",
-          answer: "Because their actions with the machine can have significant health & safety consequences for themselves and others. Their operations can directly impact the safety of other workers and the public."
-        },
-        {
-          question: "List THREE ways that a plant operator can contribute towards repeat business with the client or principal contractor.",
-          answer: "Good timekeeping, being polite, being safe, doing a good job, cooperating with other workers, following method statements, maintaining high standards"
-        },
-        {
-          question: "The function or job role of a dumper driver, when transporting materials, is to?",
-          answer: "Safely transport materials from loading areas to discharge points, ensure load integrity and security, follow safe operating procedures, and maintain awareness of site conditions and other workers."
-        },
-        {
-          question: "How can a qualification or card benefit a plant operator?",
-          answer: "Demonstrates competence and training, provides industry recognition, may be required for certain sites, shows commitment to safety standards, can lead to better job opportunities and higher pay rates."
+          title: "Plant Operator Card Schemes",
+          content: "In addition to being approved by the Department for Education (DfE) to deliver the skills bootcamp programme, we are an accredited training provider, registered with the two main plant operator card schemes in the construction plant training sector.",
+          subsections: [
+            {
+              title: "CPCS (Construction Plant Competence Scheme)",
+              content: "CPCS is one of the leading certification schemes for plant operators in the UK construction industry. It provides a nationally recognized qualification that demonstrates an operator's competence and knowledge in operating construction plant safely and efficiently."
+            },
+            {
+              title: "NPORS (National Plant Operators Registration Scheme)",
+              content: "NPORS is another major plant operator certification scheme that offers training and testing for construction plant operators. It focuses on both traditional testing methods and competence-based assessment to ensure operators can work safely and effectively."
+            },
+            {
+              title: "Training Quality Assurance",
+              content: "All trainers and testers are highly experienced in their field and are registered with either of the two accreditation schemes, some are registered with both. We ensure that our people maintain their high standards through robust internal and external quality assurance measures."
+            }
+          ],
+          knowledgeStops: [
+            {
+              question: "What are the two main plant operator card schemes in the construction plant training sector?",
+              answer: "CPCS (Construction Plant Competence Scheme) and NPORS (National Plant Operators Registration Scheme)"
+            },
+            {
+              question: "How can a qualification or card benefit a plant operator?",
+              answer: "Demonstrates competence and training, provides industry recognition, may be required for certain sites, shows commitment to safety standards, can lead to better job opportunities and higher pay rates."
+            }
+          ]
         }
       ]
     }
@@ -111,49 +113,101 @@ export const modules = [
           link: "https://www.hse.gov.uk/pubns/priced/puwer.pdf",
           linkText: "PUWER 1998 Regulations",
           image: "/extracted_images/page_14_img_02.png",
-          imageAlt: "Health and Safety at Work Act 1974"
+          imageAlt: "Health and Safety at Work Act 1974",
+          knowledgeStops: [
+            {
+              question: "What is the primary piece of health and safety legislation in the UK?",
+              answer: "The Health and Safety at Work Act 1974"
+            },
+            {
+              question: "What does the Health & Safety at Work etc. Act 1974 require employers to do, specifically regarding plant?",
+              answer: "Ensure plant and equipment is safe, provide adequate training and supervision, maintain equipment safely, and provide information, instruction, training and supervision to ensure health and safety at work"
+            },
+            {
+              question: "List the 3 main duties placed on employees under the Health and Safety at Work Act 1974:",
+              answer: "1) Take reasonable care for their own health and safety and that of others, 2) Cooperate with their employer on health and safety matters, 3) Not intentionally or recklessly interfere with or misuse anything provided in the interests of health, safety or welfare"
+            }
+          ]
         },
         {
           title: "Provision & Use of Work Equipment Regulations 1998 (PUWER 98)",
           content: "Work equipment is any machinery, appliance, apparatus, tool or installation for use at work (whether exclusively or not). This includes equipment which employees provide for their own use at work. The scope of work equipment is therefore extremely wide.",
           image: "/extracted_images/page_15_img_02.png",
-          imageAlt: "PUWER 1998 Regulations"
+          imageAlt: "PUWER 1998 Regulations",
+          knowledgeStops: [
+            {
+              question: "What does PUWER 1998 require regarding work equipment?",
+              answer: "Work equipment must be suitable for its intended use, maintained in a safe condition, inspected regularly, and only used by people who have received adequate information, instruction and training"
+            }
+          ]
         },
         {
           title: "Additional Legislation and Guidance",
           content: "Management of Health and Safety at Work Regulations (MHSWR), Construction (Design and Management) Regulations (CDM), Vibration at Work Regulations, Road Traffic Act, HSG 114 – The safe use of vehicles on construction sites, HSG 46 – Guide for small contractors, Plant Safety Group – Safe use of dumpers, Control of Substances Hazardous to Health Regulations, The Control of Noise Regulations",
           image: "/extracted_images/page_16_img_02.png",
-          imageAlt: "Additional Legislation and Guidance"
+          imageAlt: "Additional Legislation and Guidance",
+          knowledgeStops: [
+            {
+              question: "What additional legislation covers health and safety in construction?",
+              answer: "Management of Health and Safety at Work Regulations (MHSWR), Construction (Design and Management) Regulations (CDM), Vibration at Work Regulations, Road Traffic Act, HSG 114, HSG 46, Plant Safety Group guidelines, COSHH Regulations, Control of Noise Regulations"
+            },
+            {
+              question: "What are the main types of pollution associated with construction operations?",
+              answer: "Air pollution, Water pollution, and Noise pollution"
+            },
+            {
+              question: "What are the key environmental best practices when operating plant?",
+              answer: "Use the machine efficiently, minimize emissions, prevent fuel and oil spills, reduce noise levels, and follow site environmental policies"
+            }
+          ]
         },
         {
           title: "Risk Assessments and Method Statements",
           content: "Employers are required by law to protect your employees, and others, from harm. Under the Management of Health and Safety at Work Regulations 1999, the minimum you must do is: Identify what could cause injury or illness in your business (hazards), Decide how likely it is that someone could be harmed and how seriously (the risk), Take action to eliminate the hazard, or if this isn't possible, control the risk.",
           image: "/extracted_images/page_17_img_02.png",
-          imageAlt: "Risk Assessments and Method Statements"
+          imageAlt: "Risk Assessments and Method Statements",
+          knowledgeStops: [
+            {
+              question: "What is the purpose of a Method Statement?",
+              answer: "To document specific instructions on how to SAFELY perform a work-related task, including the sequence of work and safety precautions"
+            }
+          ]
         },
         {
           title: "Social Responsibilities",
           content: "In general plant operators are regarded as 'safety-critical' workers, which means their actions with the machine can have significant health & safety consequences for themselves and others. It is essential that all personnel involved in the planning, supervision and carrying out of mobile plant operations are adequately trained and competent for their role.",
           image: "/extracted_images/page_18_img_02.png",
-          imageAlt: "Social Responsibilities"
+          imageAlt: "Social Responsibilities",
+          knowledgeStops: [
+            {
+              question: "Why are plant operators generally regarded as safety critical workers?",
+              answer: "Because their actions with the machine can have significant health & safety consequences for themselves and others. Their operations can directly impact the safety of other workers and the public"
+            }
+          ]
         },
         {
           title: "Site Induction",
           content: "When starting work on a new site you will undergo a site induction. Familiarise yourself with some of the subject areas that will be included in a site induction: Access and egress, Safety signs and signals",
           image: "/extracted_images/page_19_img_02.png",
-          imageAlt: "Site Induction"
+          imageAlt: "Site Induction",
+          knowledgeStops: [
+            {
+              question: "List SIX typical subject areas that should be covered in a site induction:",
+              answer: "Access and egress, Safety signs and signals, Emergency procedures, Welfare facilities, Restricted/prohibited areas, Traffic routes, Site layout, Reporting procedures, PPE/RPE requirements, Smoking policy, Waste disposal, Working from/at height, Lifting operations, Electricity, Buried services, Confined spaces, Accident reporting"
+            }
+          ]
         },
         {
           title: "Operator Roles & Responsibilities",
           content: "As a 'safety critical' worker, plant operators are required to: Only use site plant or equipment if you are trained, competent and have been authorised to do so. Only authorised operators should hold vehicle keys. You are required to work safely, efficiently and comply with the method statement.",
           image: "/extracted_images/page_20_img_02.png",
-          imageAlt: "Operator Roles & Responsibilities"
-        }
-      ],
-      knowledgeStops: [
-        {
-          question: "What is the primary piece of health and safety legislation in the UK?",
-          answer: "The Health and Safety at Work Act 1974"
+          imageAlt: "Operator Roles & Responsibilities",
+          knowledgeStops: [
+            {
+              question: "What are the main duties of a plant operator as a safety critical worker?",
+              answer: "Only use site plant if trained and authorized, work safely and efficiently, comply with method statements, be punctual and cooperative, and maintain high standards to ensure repeat business"
+            }
+          ]
         }
       ]
     }
@@ -163,7 +217,7 @@ export const modules = [
     title: "Major Components of Forward Tipping Dumper",
     description: "Understand the major components, hydraulic systems, engine systems, and safety features of Forward Tipping Dumpers.",
     status: "not-started",
-    icon: "🔧",
+    icon: "⚙️",
     content: {
       objectives: [
         "Identify major machine components and their functions",
@@ -277,6 +331,18 @@ export const modules = [
         {
           question: "Name THREE purposes of the raised lugs on tyres and what can happen to a dumper if the lugs are severely worn?",
           answer: "Three purposes: 1) Provide traction/grip for moving, 2) Enable steering control, 3) Assist with braking in soft mud. If severely worn: traction and grip will be severely affected, making the machine unsafe to operate on soft or slippery surfaces"
+        },
+        {
+          question: "What is the purpose of ROPS (Roll Over Protective Structure)?",
+          answer: "ROPS provides some protection to the operating position (as far as is reasonably practicable) in the event of an overturn"
+        },
+        {
+          question: "What is the purpose of FOPS (Falling Object Protective Structures)?",
+          answer: "FOPS or a manufacturer's strengthened cab must be fitted to stop any falling material striking the operator where there is risk of people being struck by falling material"
+        },
+        {
+          question: "Why must seat belts be worn even when the cab door is closed?",
+          answer: "In the event of a roll over (as far as reasonably practical), it will keep the operator within the confines of the operating seat which may minimise injury"
         }
       ]
     }
@@ -336,6 +402,34 @@ export const modules = [
         {
           question: "What should be checked before operating a Forward Tipping Dumper?",
           answer: "Visual inspection, fluid levels, safety systems, brakes, steering, and all safety equipment"
+        },
+        {
+          question: "What PPE is required when operating a Forward Tipping Dumper?",
+          answer: "Head protection, Foot protection, High-visibility clothing, Weather-appropriate clothing, Hearing protection, Eye protection, and Gloves"
+        },
+        {
+          question: "What are the key points for safely getting on and off the Forward Tipping Dumper?",
+          answer: "Face the machine using specific steps and handrails, maintain 3 points of contact wherever possible, ensure steps and handrails are clean and clear of debris, ensure ground is firm and clear of obstructions before exiting"
+        },
+        {
+          question: "What items should be checked in the pre-travel configuration checklist?",
+          answer: "Engine cover secured, parking brake on, controls neutralised, seat adjusted for comfort/reach, steering column adjusted appropriately, seatbelt worn and adjusted, foot brake pressure checked"
+        },
+        {
+          question: "What should be checked regarding visibility aids?",
+          answer: "All mirrors/cameras correctly fitted, unbroken, clean, and correctly adjusted. Check that ALL mirrors are clean and correctly positioned to provide clear, unobstructed view behind the dumper"
+        },
+        {
+          question: "What are the requirements for travelling on a public highway?",
+          answer: "Dumper must be registered and taxed as 'special vehicle', have vehicle insurance, horn if exceeding 20mph, speedometer if exceeding 25mph, brakes enabling it to stop, lights and indicators, operator must hold full UK car license (Category B), be minimum 18 for 3.5T-7.5T vehicles, minimum 21 for vehicles exceeding 7.5T"
+        },
+        {
+          question: "What considerations are needed when working in pedestrianised areas?",
+          answer: "Always ensure physical segregation of pedestrians from machines and work, consider machine movements, noise, and fumes"
+        },
+        {
+          question: "What are the daily checks that should be performed?",
+          answer: "Items/Components to be checked: Engine oil, hydraulic fluid, coolant, fuel, tyres, brakes, steering, lights, mirrors, seat belts, ROPS/FOPS. Running checks: Engine operation, hydraulic functions, steering response, brake effectiveness, skip operation"
         }
       ]
     }
@@ -345,7 +439,7 @@ export const modules = [
     title: "Travel and Manoeuvre Operations",
     description: "Learn safe operating procedures, load handling, maneuvering techniques, and emergency procedures for Forward Tipping Dumpers.",
     status: "locked",
-    icon: "🚛",
+    icon: "🎮",
     content: {
       objectives: [
         "Master safe operating procedures and techniques",
@@ -395,6 +489,42 @@ export const modules = [
         {
           question: "What is the correct sequence for operating a Forward Tipping Dumper?",
           answer: "Pre-start checks, start engine, warm-up, load materials, transport to dump site, position for dumping, discharge load, return to loading area, shutdown procedures"
+        },
+        {
+          question: "What is the general rule for travelling on slopes with a loaded skip?",
+          answer: "The general rule is to travel the heaviest part of the machine UPHILL. Always refer to the operator's manual for correct positioning on inclines/slopes"
+        },
+        {
+          question: "What are the minimum safe distances to maintain from overhead power lines?",
+          answer: "Low-voltage line – 1m, 11kV and 33kV lines – 3m, 132kV line – 6m, 275kV and 400kV lines – 7m"
+        },
+        {
+          question: "What are the main hazards when operating in confined areas?",
+          answer: "Fumes, Noise, Limited visibility, Excessive manoeuvring, and Proximity hazards"
+        },
+        {
+          question: "What does the Spillard Human Detection System aim to do?",
+          answer: "Warn operators and pedestrians of potential collision risks, improve operator awareness, detect human form whilst ignoring changing backgrounds, and reduce risk whilst improving operator-pedestrian interaction"
+        },
+        {
+          question: "What are the key requirements for towing equipment with a dumper?",
+          answer: "All options considered, manufacturer authorization, compatible equipment, proper training, correct towing pin and safety pin, equipment weight within manufacturer specifications"
+        },
+        {
+          question: "What are the requirements for working in pedestrianised areas?",
+          answer: "Always ensure physical segregation of pedestrians from machines and work, consider machine movements, noise, and fumes"
+        },
+        {
+          question: "What are the requirements for travelling on a public highway?",
+          answer: "Dumper must be registered and taxed as 'special vehicle', have vehicle insurance, horn if exceeding 20mph, speedometer if exceeding 25mph, brakes enabling it to stop, lights and indicators, operator must hold full UK car license (Category B)"
+        },
+        {
+          question: "What safety considerations are needed when manoeuvring in areas of restricted space?",
+          answer: "Check overhead services, maintain safe distances from power lines, use banksman if necessary, be aware of blind spots, and follow site traffic management plans"
+        },
+        {
+          question: "What is the purpose of a rotating seat dumper?",
+          answer: "Allows the operator to change seat and console position to provide the best viewpoint while travelling, manoeuvring and operating the machine"
         }
       ]
     }
@@ -404,7 +534,7 @@ export const modules = [
     title: "Loading and Discharging Operations",
     description: "Master loading procedures, load security, material handling, and discharging techniques for safe and efficient operations.",
     status: "locked",
-    icon: "📦",
+    icon: "🔧",
     content: {
       objectives: [
         "Learn proper loading procedures and techniques",
@@ -454,6 +584,34 @@ export const modules = [
         {
           question: "What are the key safety considerations when discharging loads?",
           answer: "Use a banksman if necessary, ensure stop blocks are in place, check cameras for visibility, and never overrun into trenches"
+        },
+        {
+          question: "What actions must be taken to ensure load integrity and security?",
+          answer: "Ensure the load is secured and stable, check your travel route, arrange assistance for observation and visibility, never overload the skip as it obscures the operator's view and significantly reduces visibility"
+        },
+        {
+          question: "What are the considerations when loading, transporting and discharging different materials?",
+          answer: "Denser materials: may overload tyres and stick to the body when tipping, may need to tip at different locations. Semi-Fluid materials: may spill during travel. Spoil: should be segregated for re-use on or off-site where possible"
+        },
+        {
+          question: "What are the main types of pollution associated with construction operations?",
+          answer: "Air pollution, Water pollution, and Noise pollution"
+        },
+        {
+          question: "What checks should be made before loading a dumper onto a transporter?",
+          answer: "Ground support, Ramp condition, Overhead and other hazards, Positioning on trailer, Direction of travel"
+        },
+        {
+          question: "What is an exclusion zone and why is it important?",
+          answer: "A designated area where access is restricted due to potential hazards such as heavy machinery or dangerous operations. It's important for preventing accidents and protecting workers"
+        },
+        {
+          question: "What are the key shut down procedures?",
+          answer: "Park on level ground, lower skip completely, engage parking brake, turn off engine, remove key, secure machine, complete documentation, report any defects"
+        },
+        {
+          question: "What environmental best practices should be followed when operating plant?",
+          answer: "Use the machine efficiently, minimize emissions, prevent fuel and oil spills, reduce noise levels, and follow site environmental policies"
         }
       ]
     }

@@ -87,7 +87,12 @@ function App() {
   return (
     <AuthProvider>
       <TimeTrackingProvider>
-        <Router>
+        <Router
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true
+          }}
+        >
           <AppContent />
         </Router>
       </TimeTrackingProvider>

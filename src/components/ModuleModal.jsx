@@ -5,34 +5,20 @@ import { useNavigate } from 'react-router-dom';
 
 const ModuleModal = ({ module, onClose }) => {
   const [activeSection, setActiveSection] = useState(0);
-  const { startModule, endModule, startSection, endSection } = useTimeTracking();
+  // Time tracking temporarily disabled
+  // const { startModule, endModule, startSection, endSection } = useTimeTracking();
   const navigate = useNavigate();
 
   // Start tracking module time when modal opens
+  // Time tracking effect - temporarily disabled to prevent infinite loop
   useEffect(() => {
-    startModule(module.id);
-    
-    // Start tracking first section
-    if (module.content.sections && module.content.sections.length > 0) {
-      startSection(module.id, 0);
-    }
+    console.log('Module modal opened for module:', module.id);
+    // Time tracking temporarily disabled
+  }, [module.id]);
 
-    // Cleanup when modal closes
-    return () => {
-      endModule();
-    };
-  }, [module.id, startModule, endModule, startSection]);
-
-  // Track section changes
-  useEffect(() => {
-    if (module.content.sections && module.content.sections[activeSection]) {
-      startSection(module.id, activeSection);
-    }
-  }, [activeSection, module.id, startSection]);
-
-  // Handle modal close with time tracking
+  // Handle modal close - time tracking temporarily disabled
   const handleClose = () => {
-    endModule();
+    console.log('Module modal closed');
     onClose();
   };
 
@@ -184,7 +170,9 @@ const ModuleModal = ({ module, onClose }) => {
         {section.additionalImages && section.additionalImages.length > 0 && (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
             {section.additionalImages.map((additionalImage, imgIndex) => 
-              renderImage(additionalImage.image, additionalImage.imageAlt || section.title)
+              <div key={imgIndex}>
+                {renderImage(additionalImage.image, additionalImage.imageAlt || section.title)}
+              </div>
             )}
           </div>
         )}
@@ -274,7 +262,9 @@ const ModuleModal = ({ module, onClose }) => {
                     : 'grid-cols-1 md:grid-cols-2'
                 }`}>
                   {subsection.additionalImages.map((additionalImage, imgIndex) => 
-                    renderImage(additionalImage.image, additionalImage.imageAlt || subsection.title)
+                    <div key={imgIndex}>
+                      {renderImage(additionalImage.image, additionalImage.imageAlt || subsection.title)}
+                    </div>
                   )}
                 </div>
               )}
@@ -294,7 +284,9 @@ const ModuleModal = ({ module, onClose }) => {
         {/* Modal Header */}
         <div className="flex items-center justify-between p-6 border-b border-gray-200">
           <div className="flex items-center space-x-3">
-            <div className="text-2xl">{module.icon}</div>
+            <div className="text-2xl">
+              {module.icon || '📚'}
+            </div>
             <div>
               <h2 className="text-xl font-semibold text-gray-900">
                 Module {module.id}: {module.title}

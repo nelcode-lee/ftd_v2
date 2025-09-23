@@ -45,7 +45,9 @@ const ModuleCard = ({ module, onClick }) => {
       {/* Module Header */}
       <div className="flex items-start justify-between mb-4">
         <div className="flex items-center space-x-3">
-          <div className="text-3xl">{module.icon}</div>
+          <div className="text-3xl">
+            <span>{module.icon || '📚'}</span>
+          </div>
           <div>
             <h3 className="text-lg font-semibold text-gray-900 group-hover:text-blue-600 transition-colors">
               Module {module.id}

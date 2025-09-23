@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
-import { Menu, X, BookOpen, Brain, Search, HelpCircle } from 'lucide-react';
+import { Menu, X, BookOpen, Brain, Search, HelpCircle, Clock } from 'lucide-react';
 
 const Navigation = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -13,6 +13,7 @@ const Navigation = () => {
     { name: 'Modules', href: '/modules', icon: '📚' },
     { name: 'Tests', href: '/tests', icon: '🧠' },
     { name: 'Glossary', href: '/glossary', icon: '📖' },
+    { name: 'Time Reports', href: '/time-reports', icon: '⏱️' },
   ];
 
   const isActive = (path) => location.pathname === path;
@@ -35,12 +36,12 @@ const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex space-x-8">
+          <nav className="flex space-x-2 md:space-x-4 lg:space-x-8">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className={`flex items-center space-x-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors ${
                   isActive(item.href)
                     ? 'bg-white/20 text-white'
                     : 'text-white/80 hover:text-white hover:bg-white/10'
@@ -53,8 +54,8 @@ const Navigation = () => {
           </nav>
 
           {/* User Info and Actions */}
-          <div className="hidden md:flex items-center space-x-4">
-            <div className="text-right">
+          <div className="flex items-center space-x-2 lg:space-x-4">
+            <div className="text-right hidden lg:block">
               <p className="text-sm font-medium text-white truncate max-w-xs">
                 {userEmail}
               </p>
@@ -62,21 +63,22 @@ const Navigation = () => {
             </div>
             <Link
               to="/guide"
-              className="px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg text-sm font-medium hover:bg-white/20 transition-colors flex items-center space-x-2"
+              className="px-2 sm:px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg text-xs sm:text-sm font-medium hover:bg-white/20 transition-colors flex items-center space-x-1 sm:space-x-2"
             >
               <HelpCircle className="h-4 w-4" />
-              <span>Guide</span>
+              <span className="hidden md:inline">Guide</span>
             </Link>
             <button
               onClick={logout}
-              className="px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg text-sm font-medium hover:bg-white/20 transition-colors"
+              className="px-2 sm:px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg text-xs sm:text-sm font-medium hover:bg-white/20 transition-colors"
             >
-              Logout
+              <span className="hidden md:inline">Logout</span>
+              <span className="md:hidden">Exit</span>
             </button>
           </div>
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="hidden">
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className="text-white hover:text-white/80 p-2"
@@ -88,7 +90,7 @@ const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMobileMenuOpen && (
-          <div className="md:hidden border-t border-white/20 py-4">
+          <div className="sm:hidden border-t border-white/20 py-4">
             <div className="space-y-2">
               {navigation.map((item) => (
                 <Link

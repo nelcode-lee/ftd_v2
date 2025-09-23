@@ -8,7 +8,7 @@ const Home = () => {
       {/* Welcome Section */}
       <div className="text-center mb-12">
         <div className="section-icon bg-blue-100 text-blue-600 mx-auto mb-6">
-          🚜
+          ⛑️
         </div>
         <h2 className="text-4xl font-bold text-gray-900 mb-4">
           Forward Tipping Dumper Training

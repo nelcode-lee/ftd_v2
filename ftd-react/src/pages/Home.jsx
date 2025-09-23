@@ -1,7 +1,16 @@
 import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 import { BookOpen, Brain, Search, AlertTriangle } from 'lucide-react';
+import { useTimeTracking } from '../contexts/TimeTrackingContext';
 
 const Home = () => {
+  const { startSession } = useTimeTracking();
+
+  // Start session when user reaches home page
+  useEffect(() => {
+    startSession();
+  }, [startSession]);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Welcome Section */}

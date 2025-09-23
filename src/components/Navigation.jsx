@@ -26,7 +26,7 @@ const Navigation = () => {
           <div className="flex items-center">
             <Link to="/" className="flex items-center space-x-3">
               <div className="h-10 w-10 bg-white/20 rounded-lg flex items-center justify-center">
-                <span className="text-2xl">🚜</span>
+                <span className="text-2xl">🚛</span>
               </div>
               <div className="text-white">
                 <h1 className="text-xl font-bold">Forward Tipping Dumper</h1>
