@@ -1,20 +1,5 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "ftd-react/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "ftd-react/dist"
-      }
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "buildCommand": "cd ftd-react && npm run build",
-  "outputDirectory": "ftd-react/dist"
+  "outputDirectory": "ftd-react/dist",
+  "installCommand": "cd ftd-react && npm install"
 }
