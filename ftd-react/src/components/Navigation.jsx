@@ -35,62 +35,28 @@ const Navigation = () => {
             </Link>
           </div>
 
-          {/* Desktop Navigation */}
-          <nav className="flex space-x-2 md:space-x-4 lg:space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className={`flex items-center space-x-1 sm:space-x-2 px-2 sm:px-3 py-2 rounded-lg text-xs sm:text-sm font-medium transition-colors ${
-                  isActive(item.href)
-                    ? 'bg-white/20 text-white'
-                    : 'text-white/80 hover:text-white hover:bg-white/10'
-                }`}
-              >
-                <span>{item.icon}</span>
-                <span>{item.name}</span>
-              </Link>
-            ))}
-          </nav>
-
-          {/* User Info and Actions */}
-          <div className="flex items-center space-x-2 lg:space-x-4">
+          {/* User Info and Hamburger Menu */}
+          <div className="flex items-center space-x-4">
             <div className="text-right hidden lg:block">
               <p className="text-sm font-medium text-white truncate max-w-xs">
                 {userEmail}
               </p>
               <p className="text-xs text-white/70">Student Portal</p>
             </div>
-            <Link
-              to="/guide"
-              className="px-2 sm:px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg text-xs sm:text-sm font-medium hover:bg-white/20 transition-colors flex items-center space-x-1 sm:space-x-2"
-            >
-              <HelpCircle className="h-4 w-4" />
-              <span className="hidden md:inline">Guide</span>
-            </Link>
-            <button
-              onClick={logout}
-              className="px-2 sm:px-4 py-2 bg-white/10 text-white border border-white/20 rounded-lg text-xs sm:text-sm font-medium hover:bg-white/20 transition-colors"
-            >
-              <span className="hidden md:inline">Logout</span>
-              <span className="md:hidden">Exit</span>
-            </button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="hidden">
+            
+            {/* Hamburger Menu Button */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-white hover:text-white/80 p-2"
+              className="text-white hover:text-white/80 p-2 rounded-lg hover:bg-white/10 transition-colors"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
             </button>
           </div>
         </div>
 
-        {/* Mobile Navigation */}
+        {/* Hamburger Navigation Menu - Works for both desktop and mobile */}
         {isMobileMenuOpen && (
-          <div className="sm:hidden border-t border-white/20 py-4">
+          <div className="border-t border-white/20 py-4">
             <div className="space-y-2">
               {navigation.map((item) => (
                 <Link
@@ -107,9 +73,9 @@ const Navigation = () => {
                   <span>{item.name}</span>
                 </Link>
               ))}
-              
+
               <div className="pt-4 border-t border-white/20">
-                <div className="px-3 py-2">
+                <div className="px-3 py-2 lg:hidden">
                   <p className="text-sm font-medium text-white truncate">
                     {userEmail}
                   </p>
